@@ -123,16 +123,7 @@ class ReceiptBuilder:
     payment_type_part = image_payment_details[index1+5:index2,:]
 
     return payment_part, payment_type_part
-  # def segment_totals_part(image_total):
-  # vertical_hist_normalized, horizontal_hist_normalized = calculate_histograms(image_total)
-  # rect_ys_list = determine_vertical_splitting_rectangles(image_total, horizontal_hist_normalized, threshold_scale = 0.03, min_diff = 30)
 
-  # index1, index2 = rect_ys_list[0][:2]
-
-  # payment_part = image_total[:index1-5,:]
-  # payment_type_part = image_total[index1+5:index2,:]
-
-  # return payment_part, payment_type_part
   @staticmethod
   def extract_product_names(product_images):
     """
@@ -184,7 +175,7 @@ class ReceiptBuilder:
     values_part = payment_part[:,index2:]
 
     # Perform OCR on values part of the payment amount details
-    df_values = ReceiptUtil.perform_ocr(values_part, ocr_config = '--psm 6 -c tessedit_char_whitelist=.0123456789')
+    df_values = ReceiptUtil.perform_ocr(values_part, ocr_config = '--psm 6 -c tessedit_char_whitelist=.0123456789', lang = None)
 
     # Extract the needed total payment numbers
     total_amount_standalone = float(df_values.iloc[0].text)
@@ -218,6 +209,6 @@ class ReceiptBuilder:
     df_names = ReceiptUtil.perform_ocr(names_part, ocr_config = f'--psm 4 -c tessedit_char_whitelist={charset}', lang = 'eng')
     is_paid_cash = ReceiptUtil.is_payment_cash(df_names.text.to_list())
 
-    values, _ = ReceiptUtil.perform_ocr_obtain_values(values_part, ocr_config = '--psm 6 -c tessedit_char_whitelist=.0123456789', return_type = float)
+    values, _ = ReceiptUtil.perform_ocr_obtain_values(values_part, ocr_config = '--psm 6 -c tessedit_char_whitelist=.0123456789', return_type = float, lang = None)
     cashless, cash, paid_cash, change, bonus, prepayment, credit = ReceiptUtil.distribute_values_in_payment_type(values, is_paid_cash)
     return cashless, cash, paid_cash, change, bonus, prepayment, credit

@@ -106,16 +106,17 @@ class ReceiptService:
     rect_xs_list = ReceiptUtil.determine_horizontal_splitting_rectangles(image_products, vertical_hist_normalized)
     clear_products_part, clear_quantities_part, clear_prices_part, clear_amounts_part = ReceiptBuilder.segment_products_part(image_products, rect_xs_list)
 
-    quantities, df_quantities = ReceiptUtil.perform_ocr_obtain_values(image=clear_quantities_part, ocr_config='--psm 6 -c tessedit_char_whitelist=.0123456789',
-                                                      return_type = float)
+    quantities, df_quantities = ReceiptUtil.perform_ocr_obtain_values(image=clear_quantities_part,
+                                                                      ocr_config='--psm 6 -c tessedit_char_whitelist=.0123456789',
+                                                      return_type = float, lang = None)
 
     product_images = ReceiptUtil.prepare_product_images(clear_products_part, df_quantities, quantities_image_height = clear_quantities_part.shape[0])
     product_names = ReceiptBuilder.extract_product_names(product_images)
 
     prices, _ = ReceiptUtil.perform_ocr_obtain_values(image=clear_prices_part, ocr_config='--psm 6 -c tessedit_char_whitelist=.0123456789',
-                                                      return_type = float)
+                                                      return_type = float, lang = None)
     amounts, _ = ReceiptUtil.perform_ocr_obtain_values(image=clear_amounts_part, ocr_config='--psm 6 -c tessedit_char_whitelist=.0123456789',
-                                                      return_type = float)
+                                                      return_type = float, lang = None)
 
     products = [Product(product_names[i], quantities[i], prices[i], amounts[i]) for i in range(len(product_names))]
     return ReceiptProductList(products)
