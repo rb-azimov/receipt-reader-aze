@@ -29,17 +29,29 @@ class OCRProperties:
         self.payment_type_part_numbers_ocr_properties = payment_type_part_numbers_ocr_properties
 
 class ApplicationProperties:
+    upper_letters = 'ABCÇDEƏFGĞHXIİJKQLMNOÖPRSŞTUÜVYZ'
+    lower_letters = 'abcçdeəfgğhxıijkqlmnoöprsştuüvyz'
+    azerbaijani_alphabet = upper_letters + lower_letters
+    chartset = ' ' + '%_-№' + azerbaijani_alphabet + '.0123456789'
+    general_part_config = f'--psm 6 -c tessedit_char_whitelist={chartset}'
+
+    upper_letters = 'ABCÇDEƏFGĞHXIİJKQLMNOÖPRSŞTUÜVYZ'
+    lower_letters = 'abcçdeəfgğhxıijkqlmnoöprsştuüvyz'
+    azerbaijani_alphabet = upper_letters + lower_letters
+    chartset = ' ' + '%_-' + azerbaijani_alphabet + '.0123456789'
+    product_names_config = f'--psm 4 -c tessedit_char_whitelist={chartset}'
+
+    charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxvz'
+    payment_type_part_names_config = f'--psm 4 -c tessedit_char_whitelist={charset}'
+
     ocr_properties = OCRProperties(
-        general_part_ocr_properties = OCRProperty(config = '', lang = ''),
-        product_names_ocr_properties = OCRProperty(config = '', lang = ''),
-        quantities_ocr_properties = OCRProperty(config = '', lang = ''),
-        prices_ocr_properties = OCRProperty(config = '', lang = ''),
-        amounts_ocr_properties = OCRProperty(config = '', lang = ''),
-        payment_amount_part_ocr_properties = OCRProperty(config = '', lang = ''),
-        payment_type_part_names_ocr_properties = OCRProperty(config = '', lang = ''),
-        payment_type_part_numbers_ocr_properties = OCRProperty(config = '', lang = '')
+        general_part_ocr_properties = OCRProperty(config = general_part_config, lang = 'eng+aze'),
+        product_names_ocr_properties = OCRProperty(config = product_names_config, lang = 'eng+aze'),
+        quantities_ocr_properties = OCRProperty(config = '--psm 6 -c tessedit_char_whitelist=.0123456789', lang = None),
+        prices_ocr_properties = OCRProperty(config = '--psm 6 -c tessedit_char_whitelist=.0123456789', lang = None),
+        amounts_ocr_properties = OCRProperty(config = '--psm 6 -c tessedit_char_whitelist=.0123456789', lang = None),
+        payment_amount_part_ocr_properties = OCRProperty(config = '--psm 6 -c tessedit_char_whitelist=.0123456789', lang = None),
+        payment_type_part_names_ocr_properties = OCRProperty(config = payment_type_part_names_config, lang = 'eng'),
+        payment_type_part_numbers_ocr_properties = OCRProperty(config = '--psm 6 -c tessedit_char_whitelist=.0123456789', lang = None)
     )
-
-
-
 

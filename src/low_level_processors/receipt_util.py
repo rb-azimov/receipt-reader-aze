@@ -6,6 +6,9 @@ import requests
 import pandas as pd
 from rapidfuzz import fuzz, process
 
+from src.low_level_processors.application_properties import ApplicationProperties
+
+
 class ReceiptUtil:
   """
   Class for utility/helper functions to
@@ -201,7 +204,7 @@ class ReceiptUtil:
       multi_token_keywords = []
     if one_token_keywords is None:
       one_token_keywords = []
-
+    """
     # Basic characteristics for OCR
     upper_letters = 'ABCÇDEƏFGĞHXIİJKQLMNOÖPRSŞTUÜVYZ'
     lower_letters = 'abcçdeəfgğhxıijkqlmnoöprsştuüvyz'
@@ -210,6 +213,11 @@ class ReceiptUtil:
 
     # Extract text from the given image (image -> recognition df)
     df_general = ReceiptUtil.perform_ocr(image, ocr_config = f'--psm 6 -c tessedit_char_whitelist={chartset}', lang = 'eng+aze').reset_index(drop=True)
+    """
+
+    # Extract text from the given image (image -> recognition df)
+    ocr_property = ApplicationProperties.ocr_properties.general_part_ocr_properties
+    df_general = ReceiptUtil.perform_ocr(image, ocr_config = ocr_property.config , lang = ocr_property.lang).reset_index(drop=True)
 
     df_general['MergedStrings'] = df_general['text'] + ' ' + df_general['text'].shift(-1)
     df_last_content = df_general.iloc[-1:]
