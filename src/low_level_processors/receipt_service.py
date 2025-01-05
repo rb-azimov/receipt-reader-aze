@@ -1,3 +1,6 @@
+import math
+import time
+
 from src.low_level_processors.Util import Util
 from src.low_level_processors.application_properties_service import ApplicationPropertiesService
 from src.low_level_processors.receipt_builder import ReceiptBuilder
@@ -26,9 +29,6 @@ class ReceiptService:
 
   """
 
-  def __init__(self, app_props):
-    self.app_props = app_props
-
   def mine_receipt(self, fiscal_code: str):
     """
     Acquires receipt image from E-kassa using the fiscal code.
@@ -42,15 +42,15 @@ class ReceiptService:
     Returns:
         return_type: Receipt instance
     """
+    start_time = time.time()
     image_ekassa_gray = ReceiptUtil.read_image_from_ekassa(fiscal_code)
 
     ApplicationPropertiesService.current_receipt_fiscal_code = fiscal_code
-    ApplicationPropertiesService.current_receipt_processing_start_date_time = Util.obtain_current_datetime()
+    ApplicationPropertiesService.current_receipt_processing_start_date_time = Util.prepare_current_datetime()
     image_general, image_products, image_payment = ReceiptBuilder.split_receipt_logical_parts(image_ekassa_gray)
 
     if ApplicationPropertiesService.is_debug_on:
       ApplicationPropertiesService.logger.log_image('Ekassa image (gray)', image_ekassa_gray)
-      ApplicationPropertiesService.logger.log_text('Logical parts acquisition', 'Receipt was split!')
       ApplicationPropertiesService.logger.log_image('general part of receipt', image_general)
       ApplicationPropertiesService.logger.log_image('products part of receipt', image_products)
       ApplicationPropertiesService.logger.log_image('payments part of receipt', image_payment)
@@ -60,6 +60,12 @@ class ReceiptService:
     payment_info = self.perform_ner_on_payment_details_part(image_payment)
 
     receipt = Receipt(general_info, products, payment_info)
+    processing_time = time.time() - start_time
+    if ApplicationPropertiesService.is_debug_on:
+      ApplicationPropertiesService.logger.log_text('device properties', Util.prepare_device_properties())
+      ApplicationPropertiesService.logger.log_text('general results',
+                                                   f'Processed in {math.ceil(processing_time)} seconds!\n\n' +
+                                                   receipt.__str__())
     return receipt
 
   def perform_ner_on_general_part(self, image_general):
@@ -81,6 +87,10 @@ class ReceiptService:
     cashier_part_image, date_time_part_image = ReceiptBuilder.segment_cashier_date_time_part(image_general, df, selected_df)
     cashier_value_dict, _, _ = ReceiptUtil.rule_based_text_extraction(cashier_part_image, multi_token_keywords = None, one_token_keywords = ['Cashier:',])
     date_time_value_dict, _, _ = ReceiptUtil.rule_based_text_extraction(date_time_part_image, multi_token_keywords = None, one_token_keywords = ['Date:', 'Time:'])
+
+    if ApplicationPropertiesService.is_debug_on:
+      ApplicationPropertiesService.logger.log_image('general-cashier part image', cashier_part_image)
+      ApplicationPropertiesService.logger.log_image('general-datetime part image', date_time_part_image)
 
     for key, value in cashier_value_dict.items():
       results_dict[key] = value
@@ -120,6 +130,12 @@ class ReceiptService:
                    threshold_scale = splitting_property.threshold_scale, min_diff = splitting_property.min_difference)
     clear_products_part, clear_quantities_part, clear_prices_part, clear_amounts_part = ReceiptBuilder.segment_products_part(image_products, rect_xs_list)
 
+    if ApplicationPropertiesService.is_debug_on:
+      ApplicationPropertiesService.logger.log_image('Products', clear_products_part)
+      ApplicationPropertiesService.logger.log_image('Quantities', clear_quantities_part)
+      ApplicationPropertiesService.logger.log_image('Prices', clear_prices_part)
+      ApplicationPropertiesService.logger.log_image('Amounts', clear_amounts_part)
+
     ocr_property = ApplicationPropertiesService.ocr_properties.quantities_ocr_property
     quantities, df_quantities = ReceiptUtil.perform_ocr_obtain_values(image=clear_quantities_part,
                 ocr_config=ocr_property.config, return_type = float, lang = ocr_property.lang)
@@ -127,6 +143,7 @@ class ReceiptService:
     product_line_margin = ApplicationPropertiesService.margin_properties.product_line_margin
     product_images = ReceiptUtil.prepare_product_images(clear_products_part, df_quantities,
                      quantities_image_height = clear_quantities_part.shape[0], product_line_margin = product_line_margin)
+
     product_names = ReceiptBuilder.extract_product_names(product_images)
 
     ocr_property = ApplicationPropertiesService.ocr_properties.prices_ocr_property

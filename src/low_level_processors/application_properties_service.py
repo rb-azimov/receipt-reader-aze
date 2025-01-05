@@ -9,7 +9,7 @@ class ApplicationPropertiesService:
     version = None
     is_debug_on = False
     current_receipt_fiscal_code = 'Undefined'
-    current_receipt_processing_start_date_time = Util.obtain_current_datetime()
+    current_receipt_processing_start_date_time = Util.prepare_current_datetime()
     logger = None
 
     @staticmethod

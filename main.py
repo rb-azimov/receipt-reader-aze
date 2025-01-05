@@ -6,11 +6,6 @@ from src.low_level_processors.properties import OCRProperties, OCRProperty, Spli
     MarginProperties, TextSimilarityThresholdProperties
 from src.low_level_processors.receipt_service import ReceiptService
 import time, math
-import platform
-import psutil
-import matplotlib.pyplot as plt
-
-from src.low_level_processors.receipt_util import ReceiptUtil
 
 pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 
@@ -73,14 +68,9 @@ def prepare_application_properties(is_debug_on = False):
     )
 
 def main():
-    print('<< Device Properties >>')
-    print("System:", platform.system())
-    print("Processor:", platform.processor())
-    print("CPU Cores:", psutil.cpu_count(logical=False))  # Physical cores
-    print("Logical CPUs:", psutil.cpu_count(logical=True))
-    print("RAM Size (GB):", round(psutil.virtual_memory().total / (1024 ** 3), 2))
-    print("CPU Frequency (GHz):", psutil.cpu_freq().current / 1000)
-    print('\n')
+    application_properties = prepare_application_properties(is_debug_on = True)
+    ApplicationPropertiesService.load_properties(application_properties)
+    receipt_service = ReceiptService()
 
     fiscal_codes = [
         'wPeLM3wvuBUCQn4TMN5ZQZvheV7XuQg97meruVsqRVT',
@@ -92,20 +82,10 @@ def main():
         'ER9s8qbNzEsyVcj2vhRi7yJGxsUgKkVvE7fydNX2Mz7y',
         '97mG868j3tAdNn1AWwemUtt93B4F9ycDHvmoMdqFcqWy'
     ]
-    fiscal_code = fiscal_codes[-1]
-
-    application_properties = prepare_application_properties(is_debug_on = True)
-    ApplicationPropertiesService.load_properties(application_properties)
-
-    receipt_service = ReceiptService(app_props=None)
-    start_time = time.time()
-    receipt = receipt_service.mine_receipt(fiscal_code)
-    processing_time = time.time() - start_time
-    print(receipt.__str__())
-    print(f'\n\nProcessed in {math.ceil(processing_time)} seconds!')
-
-    # plt.imshow(ReceiptUtil.read_image_from_ekassa(fiscal_code), cmap='gray')
-    # plt.show()
+    for i in range(len(fiscal_codes)):
+        fiscal_code = fiscal_codes[i]
+        receipt = receipt_service.mine_receipt(fiscal_code)
+    # print(receipt.__str__())
 
 if __name__ == '__main__':
     main()

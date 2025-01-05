@@ -123,9 +123,13 @@ class ReceiptUtil:
     product_lines_ys.append((y1-product_line_margin,y2))
 
     product_images = []
-    for product_line_ys in product_lines_ys:
+    for i in range(len(product_lines_ys)):
+      product_line_ys = product_lines_ys[i]
       y1, y2 = product_line_ys
-      product_images.append(products_part[y1:y2,:])
+      product_image = products_part[y1:y2,:]
+      product_images.append(product_image)
+      if ApplicationPropertiesService.is_debug_on:
+        ApplicationPropertiesService.logger.log_image(f'Product-{i + 1}', product_image)
     return product_images
 
   @staticmethod

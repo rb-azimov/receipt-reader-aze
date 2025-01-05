@@ -36,7 +36,7 @@ class LowLevelReceiptMinerLogger:
         os.makedirs(fiscal_code_dir, exist_ok=True)
         log_file_name = LowLevelReceiptMinerLogger.sanitize_string(f"{tag}_text.log")
         log_file_path = os.path.join(fiscal_code_dir, log_file_name)
-        with open(log_file_path, "w") as f:
+        with open(log_file_path, "w", encoding="utf-8") as f:
             f.write(text)
         logging.info(f"Logged text for {image_id} during {tag}")
 
