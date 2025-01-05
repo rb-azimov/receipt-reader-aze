@@ -1,10 +1,21 @@
 import pytesseract
 from src.low_level_processors.receipt_service import ReceiptService
 import time, math
+import platform
+import psutil
 
 pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 
 def main():
+    print('<< Device Properties >>')
+    print("System:", platform.system())
+    print("Processor:", platform.processor())
+    print("CPU Cores:", psutil.cpu_count(logical=False))  # Physical cores
+    print("Logical CPUs:", psutil.cpu_count(logical=True))
+    print("RAM Size (GB):", round(psutil.virtual_memory().total / (1024 ** 3), 2))
+    print("CPU Frequency (GHz):", psutil.cpu_freq().current / 1000)
+    print('\n')
+
     fiscal_codes = [
         'wPeLM3wvuBUCQn4TMN5ZQZvheV7XuQg97meruVsqRVT',
         'Dh8hsAoFVGFcyEzwYdmmykoZZZPhm5LeVe9r9VZQy9AH',
