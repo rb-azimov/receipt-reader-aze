@@ -1,4 +1,4 @@
-from src.low_level_processors.application_properties import ApplicationProperties, ApplicationPropertiesService
+from src.low_level_processors.application_properties_service import ApplicationPropertiesService
 from src.low_level_processors.receipt_util import ReceiptUtil
 
 

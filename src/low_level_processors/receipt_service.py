@@ -1,4 +1,5 @@
-from src.low_level_processors.application_properties import ApplicationProperties, ApplicationPropertiesService
+from src.low_level_processors.Util import Util
+from src.low_level_processors.application_properties_service import ApplicationPropertiesService
 from src.low_level_processors.receipt_builder import ReceiptBuilder
 from src.low_level_processors.receipt_util import ReceiptUtil
 from src.models.product import Product
@@ -42,7 +43,17 @@ class ReceiptService:
         return_type: Receipt instance
     """
     image_ekassa_gray = ReceiptUtil.read_image_from_ekassa(fiscal_code)
+
+    ApplicationPropertiesService.current_receipt_fiscal_code = fiscal_code
+    ApplicationPropertiesService.current_receipt_processing_start_date_time = Util.obtain_current_datetime()
     image_general, image_products, image_payment = ReceiptBuilder.split_receipt_logical_parts(image_ekassa_gray)
+
+    if ApplicationPropertiesService.is_debug_on:
+      ApplicationPropertiesService.logger.log_image('Ekassa image (gray)', image_ekassa_gray)
+      ApplicationPropertiesService.logger.log_text('Logical parts acquisition', 'Receipt was split!')
+      ApplicationPropertiesService.logger.log_image('general part of receipt', image_general)
+      ApplicationPropertiesService.logger.log_image('products part of receipt', image_products)
+      ApplicationPropertiesService.logger.log_image('payments part of receipt', image_payment)
 
     general_info = self.perform_ner_on_general_part(image_general)
     products = self.perform_ner_on_products_part(image_products)

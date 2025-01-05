@@ -6,7 +6,7 @@ import requests
 import pandas as pd
 from rapidfuzz import fuzz, process
 
-from src.low_level_processors.application_properties import ApplicationProperties, ApplicationPropertiesService
+from src.low_level_processors.application_properties_service import ApplicationPropertiesService
 
 
 class ReceiptUtil:

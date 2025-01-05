@@ -1,6 +1,7 @@
 import pytesseract
 
-from src.low_level_processors.application_properties import ApplicationProperties, ApplicationPropertiesService
+from src.low_level_processors.application_properties_service import ApplicationPropertiesService
+from src.low_level_processors.application_properties import ApplicationProperties
 from src.low_level_processors.properties import OCRProperties, OCRProperty, SplittingProperties, SplittingProperty, \
     MarginProperties, TextSimilarityThresholdProperties
 from src.low_level_processors.receipt_service import ReceiptService
@@ -13,7 +14,7 @@ from src.low_level_processors.receipt_util import ReceiptUtil
 
 pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 
-def prepare_application_properties():
+def prepare_application_properties(is_debug_on = False):
     upper_letters = 'ABCÇDEƏFGĞHXIİJKQLMNOÖPRSŞTUÜVYZ'
     lower_letters = 'abcçdeəfgğhxıijkqlmnoöprsştuüvyz'
     azerbaijani_alphabet = upper_letters + lower_letters
@@ -67,7 +68,8 @@ def prepare_application_properties():
         ocr_properties,
         splitting_properties,
         margin_properties,
-        text_similarity_threshold_properties
+        text_similarity_threshold_properties,
+        is_debug_on
     )
 
 def main():
@@ -92,9 +94,9 @@ def main():
     ]
     fiscal_code = fiscal_codes[-1]
 
-    application_properties = prepare_application_properties()
+    application_properties = prepare_application_properties(is_debug_on = True)
     ApplicationPropertiesService.load_properties(application_properties)
-    
+
     receipt_service = ReceiptService(app_props=None)
     start_time = time.time()
     receipt = receipt_service.mine_receipt(fiscal_code)
@@ -102,8 +104,8 @@ def main():
     print(receipt.__str__())
     print(f'\n\nProcessed in {math.ceil(processing_time)} seconds!')
 
-    plt.imshow(ReceiptUtil.read_image_from_ekassa(fiscal_code), cmap='gray')
-    plt.show()
+    # plt.imshow(ReceiptUtil.read_image_from_ekassa(fiscal_code), cmap='gray')
+    # plt.show()
 
 if __name__ == '__main__':
     main()
