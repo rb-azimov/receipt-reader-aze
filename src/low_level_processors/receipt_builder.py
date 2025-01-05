@@ -1,4 +1,4 @@
-from src.low_level_processors.application_properties import ApplicationProperties
+from src.low_level_processors.application_properties import ApplicationProperties, ApplicationPropertiesService
 from src.low_level_processors.receipt_util import ReceiptUtil
 
 
@@ -37,7 +37,7 @@ class ReceiptBuilder:
     """
 
     _, horizontal_hist_normalized = ReceiptUtil.calculate_histograms(image, is_cleaning_applied = False)
-    splitting_property = ApplicationProperties.splitting_properties.receipt_logical_splitting_property
+    splitting_property = ApplicationPropertiesService.splitting_properties.receipt_logical_splitting_property
     rect_ys_list = ReceiptUtil.determine_vertical_splitting_rectangles(image, horizontal_hist_normalized,
                     threshold_scale = splitting_property.threshold_scale, min_diff = splitting_property.min_difference)
 
@@ -45,8 +45,8 @@ class ReceiptBuilder:
     rect_ys_prod = rect_ys_list[0]
     rect_ys_total = rect_ys_list[1]
 
-    general_part_bottom_margin = ApplicationProperties.margin_properties.general_part_bottom_margin
-    payment_part_bottom_margin = ApplicationProperties.margin_properties.payment_part_bottom_margin
+    general_part_bottom_margin = ApplicationPropertiesService.margin_properties.general_part_bottom_margin
+    payment_part_bottom_margin = ApplicationPropertiesService.margin_properties.payment_part_bottom_margin
     image_general = image[:rect_ys_prod[0] - general_part_bottom_margin, :]
     image_products = image[rect_ys_prod[0]:rect_ys_prod[1], :]
     image_total = image[rect_ys_total[0]:rect_ys_total[1] - payment_part_bottom_margin, :]
@@ -75,7 +75,7 @@ class ReceiptBuilder:
     cashier_keyword = 'Cashier:' # Used to note the splitting location of the general part
     index, keyword, matched_string, keyword_token_count = selected_df[selected_df.Keyword == cashier_keyword].iloc[0]
 
-    cashier_date_time_top_margin = ApplicationProperties.margin_properties.cashier_date_time_top_margin
+    cashier_date_time_top_margin = ApplicationPropertiesService.margin_properties.cashier_date_time_top_margin
     y_start = df.iloc[index].top - cashier_date_time_top_margin
     cashier_part_image = image[y_start:,:image.shape[1] // 2]
     date_time_part_image = image[y_start:,image.shape[1] // 2:]
@@ -122,12 +122,12 @@ class ReceiptBuilder:
         return: payment_part, payment_type_part
     """
     vertical_hist_normalized, horizontal_hist_normalized = ReceiptUtil.calculate_histograms(image_payment_details)
-    splitting_property = ApplicationProperties.splitting_properties.payment_to_amount_type_splitting_property
+    splitting_property = ApplicationPropertiesService.splitting_properties.payment_to_amount_type_splitting_property
     rect_ys_list = ReceiptUtil.determine_vertical_splitting_rectangles(image_payment_details, horizontal_hist_normalized,
                    threshold_scale = splitting_property.threshold_scale, min_diff = splitting_property.min_difference) # WARNING! 0.3
 
     index1, index2 = rect_ys_list[0][:2]
-    payment_amount_part_margin = ApplicationProperties.margin_properties.payment_amount_part_margin
+    payment_amount_part_margin = ApplicationPropertiesService.margin_properties.payment_amount_part_margin
     payment_part = image_payment_details[:index1 - payment_amount_part_margin,:]
     payment_type_part = image_payment_details[index1 + payment_amount_part_margin:index2,:]
 
@@ -150,7 +150,7 @@ class ReceiptBuilder:
     product_names = []
     for i in range(len(product_images)):
       product_image = product_images[i]
-      ocr_property = ApplicationProperties.ocr_properties.product_names_ocr_property
+      ocr_property = ApplicationPropertiesService.ocr_properties.product_names_ocr_property
       df_product = ReceiptUtil.perform_ocr(product_image, ocr_config = ocr_property.config, lang = ocr_property.lang)
       product_name = ' '.join(df_product.iloc[:-2].text.to_list())
 
@@ -172,7 +172,7 @@ class ReceiptBuilder:
     """
     # Split {payment_part} into names and values images (totally 2)
     vertical_hist_normalized, horizontal_hist_normalized = ReceiptUtil.calculate_histograms(payment_part)
-    splitting_property = ApplicationProperties.splitting_properties.payment_amount_to_name_value_splitting_property
+    splitting_property = ApplicationPropertiesService.splitting_properties.payment_amount_to_name_value_splitting_property
     rect_xs_list = ReceiptUtil.determine_horizontal_splitting_rectangles(payment_part, vertical_hist_normalized,
                     threshold_scale = splitting_property.threshold_scale, min_diff = splitting_property.min_difference)
 
@@ -181,7 +181,7 @@ class ReceiptBuilder:
     values_part = payment_part[:,index2:]
 
     # Perform OCR on values part of the payment amount details
-    ocr_property = ApplicationProperties.ocr_properties.payment_amount_part_ocr_property
+    ocr_property = ApplicationPropertiesService.ocr_properties.payment_amount_part_ocr_property
     df_values = ReceiptUtil.perform_ocr(values_part, ocr_config = ocr_property.config, lang = ocr_property.lang)
 
     # Extract the needed total payment numbers
@@ -204,23 +204,23 @@ class ReceiptBuilder:
         return: cashless, cash, paid_cash, change, bonus, prepayment, credit
     """
     vertical_hist_normalized, horizontal_hist_normalized = ReceiptUtil.calculate_histograms(payment_type_part)
-    splitting_property = ApplicationProperties.splitting_properties.payment_type_to_name_value_splitting_property
+    splitting_property = ApplicationPropertiesService.splitting_properties.payment_type_to_name_value_splitting_property
     rect_xs_list = ReceiptUtil.determine_horizontal_splitting_rectangles(payment_type_part, vertical_hist_normalized,
                    threshold_scale = splitting_property.threshold_scale, min_diff = splitting_property.min_difference)
 
-    payment_type_name_value_margin = ApplicationProperties.margin_properties.payment_type_name_value_margin
+    payment_type_name_value_margin = ApplicationPropertiesService.margin_properties.payment_type_name_value_margin
     index1, index2 = rect_xs_list[0][1], rect_xs_list[-1][0]
     index1, index2 = index1 - payment_type_name_value_margin, index2 - payment_type_name_value_margin
     names_part = payment_type_part[:,:index1]
     values_part = payment_type_part[:,index2:]
 
-    ocr_property = ApplicationProperties.ocr_properties.payment_type_part_names_ocr_property
+    ocr_property = ApplicationPropertiesService.ocr_properties.payment_type_part_names_ocr_property
     df_names = ReceiptUtil.perform_ocr(names_part, ocr_config = ocr_property.config, lang = ocr_property.lang)
 
-    payment_type_checking_text_similarity_threshold = ApplicationProperties.text_similarity_threshold_properties.payment_type_checking_text_similarity_threshold
+    payment_type_checking_text_similarity_threshold = ApplicationPropertiesService.text_similarity_threshold_properties.payment_type_checking_text_similarity_threshold
     is_paid_cash = ReceiptUtil.is_payment_cash(df_names.text.to_list(), similarity_thresh=payment_type_checking_text_similarity_threshold)
 
-    ocr_property = ApplicationProperties.ocr_properties.payment_type_part_numbers_ocr_property
+    ocr_property = ApplicationPropertiesService.ocr_properties.payment_type_part_numbers_ocr_property
     values, _ = ReceiptUtil.perform_ocr_obtain_values(values_part, ocr_config = ocr_property.config, return_type = float, lang = ocr_property.lang)
     cashless, cash, paid_cash, change, bonus, prepayment, credit = ReceiptUtil.distribute_values_in_payment_type(values, is_paid_cash)
     return cashless, cash, paid_cash, change, bonus, prepayment, credit

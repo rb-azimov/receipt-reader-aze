@@ -6,7 +6,7 @@ import requests
 import pandas as pd
 from rapidfuzz import fuzz, process
 
-from src.low_level_processors.application_properties import ApplicationProperties
+from src.low_level_processors.application_properties import ApplicationProperties, ApplicationPropertiesService
 
 
 class ReceiptUtil:
@@ -206,7 +206,7 @@ class ReceiptUtil:
       one_token_keywords = []
 
     # Extract text from the given image (image -> recognition df)
-    ocr_property = ApplicationProperties.ocr_properties.general_part_ocr_property
+    ocr_property = ApplicationPropertiesService.ocr_properties.general_part_ocr_property
     df_general = ReceiptUtil.perform_ocr(image, ocr_config = ocr_property.config , lang = ocr_property.lang).reset_index(drop=True)
 
     df_general['MergedStrings'] = df_general['text'] + ' ' + df_general['text'].shift(-1)
@@ -214,10 +214,10 @@ class ReceiptUtil:
     df = df_general.iloc[:-1]  # Drop the last row as it will contain NaN due to shifting
 
     # Focus on the rows searching keywords exist (recognition df -> selected rows)
-    multi_token_text_similarity_threshold = ApplicationProperties.text_similarity_threshold_properties.multi_token_text_similarity_threshold
+    multi_token_text_similarity_threshold = ApplicationPropertiesService.text_similarity_threshold_properties.multi_token_text_similarity_threshold
     selected_rows_multi_token, keyword_token_counts_multi_token = ReceiptUtil.select_keyword_existed_rows(df = df, searched_col_name = 'MergedStrings',
                                                                   keywords = multi_token_keywords, similiarity_thresh = multi_token_text_similarity_threshold)
-    one_token_text_similarity_threshold = ApplicationProperties.text_similarity_threshold_properties.one_token_text_similarity_threshold
+    one_token_text_similarity_threshold = ApplicationPropertiesService.text_similarity_threshold_properties.one_token_text_similarity_threshold
     selected_rows_one_token, keyword_token_counts_one_token = ReceiptUtil.select_keyword_existed_rows(df = df, searched_col_name = 'text',
                                                               keywords = one_token_keywords, similiarity_thresh = one_token_text_similarity_threshold)
     selected_rows = selected_rows_multi_token + selected_rows_one_token
