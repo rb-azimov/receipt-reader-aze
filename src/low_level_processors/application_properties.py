@@ -46,6 +46,31 @@ class SplittingProperties(Properties):
         self.payment_type_to_name_value_splitting_property = payment_type_to_name_value_splitting_property
         self.products_part_splitting_properties = products_part_splitting_properties
 
+class MarginProperties(Properties):
+    def __init__(self,
+                 product_line_margin,
+                 general_part_bottom_margin,
+                 payment_part_bottom_margin,
+                 cashier_date_time_top_margin,
+                 payment_amount_part_margin,
+                 payment_type_name_value_margin):
+        self.product_line_margin = product_line_margin
+        self.general_part_bottom_margin = general_part_bottom_margin
+        self.payment_part_bottom_margin = payment_part_bottom_margin
+        self.cashier_date_time_top_margin = cashier_date_time_top_margin
+        self.payment_amount_part_margin = payment_amount_part_margin
+        self.payment_type_name_value_margin = payment_type_name_value_margin
+
+class TextSimilarityThresholdProperties(Properties):
+    def __init__(self,
+                 payment_type_checking_text_similarity_threshold,
+                 multi_token_text_similarity_threshold,
+                 one_token_text_similarity_threshold):
+        self.payment_type_checking_text_similarity_threshold = payment_type_checking_text_similarity_threshold
+        self.multi_token_text_similarity_threshold = multi_token_text_similarity_threshold
+        self.one_token_text_similarity_threshold = one_token_text_similarity_threshold
+
+# class ApplicationPropertiesService:
 
 class ApplicationProperties:
     upper_letters = 'ABCÇDEƏFGĞHXIİJKQLMNOÖPRSŞTUÜVYZ'
@@ -82,3 +107,17 @@ class ApplicationProperties:
         products_part_splitting_properties = SplittingProperty(threshold_scale = 0.01, min_difference = 30)
     )
 
+    margin_properties = MarginProperties(
+        product_line_margin=3,
+        general_part_bottom_margin=50,
+        payment_part_bottom_margin=160,
+        cashier_date_time_top_margin=2,
+        payment_amount_part_margin=5,
+        payment_type_name_value_margin=50
+    )
+
+    text_similarity_threshold_properties = TextSimilarityThresholdProperties(
+        payment_type_checking_text_similarity_threshold=70,
+        one_token_text_similarity_threshold=80,
+        multi_token_text_similarity_threshold=80
+    )

@@ -148,8 +148,8 @@ class ReceiptUtil:
     keyword_token_counts = []
     for keyword in keywords:
       for index, value in df[searched_col_name].items():
-        similiarity = fuzz.ratio(keyword, value)
-        if similiarity >= similiarity_thresh:
+        similarity_score = fuzz.ratio(keyword, value)
+        if similarity_score >= similiarity_thresh:
             selected_rows.append((index, keyword, value))
             token_count = len(keyword.split(' '))
             keyword_token_counts.append(token_count)
@@ -214,10 +214,12 @@ class ReceiptUtil:
     df = df_general.iloc[:-1]  # Drop the last row as it will contain NaN due to shifting
 
     # Focus on the rows searching keywords exist (recognition df -> selected rows)
+    multi_token_text_similarity_threshold = ApplicationProperties.text_similarity_threshold_properties.multi_token_text_similarity_threshold
     selected_rows_multi_token, keyword_token_counts_multi_token = ReceiptUtil.select_keyword_existed_rows(df = df, searched_col_name = 'MergedStrings',
-                                                                                          keywords = multi_token_keywords, similiarity_thresh = 80)
+                                                                  keywords = multi_token_keywords, similiarity_thresh = multi_token_text_similarity_threshold)
+    one_token_text_similarity_threshold = ApplicationProperties.text_similarity_threshold_properties.one_token_text_similarity_threshold
     selected_rows_one_token, keyword_token_counts_one_token = ReceiptUtil.select_keyword_existed_rows(df = df, searched_col_name = 'text',
-                                                                                          keywords = one_token_keywords, similiarity_thresh = 80)
+                                                              keywords = one_token_keywords, similiarity_thresh = one_token_text_similarity_threshold)
     selected_rows = selected_rows_multi_token + selected_rows_one_token
     keyword_token_counts = keyword_token_counts_multi_token + keyword_token_counts_one_token
 
@@ -329,13 +331,13 @@ class ReceiptUtil:
     return rect_ys_list
 
   @staticmethod
-  def is_payment_cash(texts, similiarity_thresh = 70):
+  def is_payment_cash(texts, similarity_thresh = 70):
     """
     Checks whether {texts} include keywords of cash type payment.
 
     Args:
         texts: str[]
-        similiarity_thresh: int
+        similarity_thresh: int
         ...
 
     Returns:
@@ -345,9 +347,9 @@ class ReceiptUtil:
     is_keyword1_exist = False
     is_keyword2_exist = False
     for text in texts:
-      if fuzz.ratio(keyword1, text) >= similiarity_thresh:
+      if fuzz.ratio(keyword1, text) >= similarity_thresh:
         is_keyword1_exist = True
-      if fuzz.ratio(keyword2, text) >= similiarity_thresh:
+      if fuzz.ratio(keyword2, text) >= similarity_thresh:
         is_keyword2_exist = True
     if is_keyword1_exist and is_keyword2_exist:
       return True

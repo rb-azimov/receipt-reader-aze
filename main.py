@@ -3,6 +3,9 @@ from src.low_level_processors.receipt_service import ReceiptService
 import time, math
 import platform
 import psutil
+import matplotlib.pyplot as plt
+
+from src.low_level_processors.receipt_util import ReceiptUtil
 
 pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 
@@ -24,8 +27,9 @@ def main():
         '8ofcmJhYPcaZ',
         '4tFLVnqE1gbT',
         'ER9s8qbNzEsyVcj2vhRi7yJGxsUgKkVvE7fydNX2Mz7y',
+        '97mG868j3tAdNn1AWwemUtt93B4F9ycDHvmoMdqFcqWy'
     ]
-    fiscal_code = fiscal_codes[6]
+    fiscal_code = fiscal_codes[-1]
 
     receipt_service = ReceiptService(app_props=None)
     start_time = time.time()
@@ -33,6 +37,9 @@ def main():
     processing_time = time.time() - start_time
     print(receipt.__str__())
     print(f'\n\nProcessed in {math.ceil(processing_time)} seconds!')
+
+    plt.imshow(ReceiptUtil.read_image_from_ekassa(fiscal_code), cmap='gray')
+    plt.show()
 
 if __name__ == '__main__':
     main()

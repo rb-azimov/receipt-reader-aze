@@ -45,9 +45,11 @@ class ReceiptBuilder:
     rect_ys_prod = rect_ys_list[0]
     rect_ys_total = rect_ys_list[1]
 
-    image_general = image[:rect_ys_prod[0]-50, :] #[:-50,:]
+    general_part_bottom_margin = ApplicationProperties.margin_properties.general_part_bottom_margin
+    payment_part_bottom_margin = ApplicationProperties.margin_properties.payment_part_bottom_margin
+    image_general = image[:rect_ys_prod[0] - general_part_bottom_margin, :]
     image_products = image[rect_ys_prod[0]:rect_ys_prod[1], :]
-    image_total = image[rect_ys_total[0]:rect_ys_total[1]-160, :]
+    image_total = image[rect_ys_total[0]:rect_ys_total[1] - payment_part_bottom_margin, :]
 
     return image_general, image_products, image_total
 
@@ -73,7 +75,8 @@ class ReceiptBuilder:
     cashier_keyword = 'Cashier:' # Used to note the splitting location of the general part
     index, keyword, matched_string, keyword_token_count = selected_df[selected_df.Keyword == cashier_keyword].iloc[0]
 
-    y_start = df.iloc[index].top - 2
+    cashier_date_time_top_margin = ApplicationProperties.margin_properties.cashier_date_time_top_margin
+    y_start = df.iloc[index].top - cashier_date_time_top_margin
     cashier_part_image = image[y_start:,:image.shape[1] // 2]
     date_time_part_image = image[y_start:,image.shape[1] // 2:]
 
@@ -124,8 +127,9 @@ class ReceiptBuilder:
                    threshold_scale = splitting_property.threshold_scale, min_diff = splitting_property.min_difference) # WARNING! 0.3
 
     index1, index2 = rect_ys_list[0][:2]
-    payment_part = image_payment_details[:index1-5,:]
-    payment_type_part = image_payment_details[index1+5:index2,:]
+    payment_amount_part_margin = ApplicationProperties.margin_properties.payment_amount_part_margin
+    payment_part = image_payment_details[:index1 - payment_amount_part_margin,:]
+    payment_type_part = image_payment_details[index1 + payment_amount_part_margin:index2,:]
 
     return payment_part, payment_type_part
 
@@ -204,14 +208,17 @@ class ReceiptBuilder:
     rect_xs_list = ReceiptUtil.determine_horizontal_splitting_rectangles(payment_type_part, vertical_hist_normalized,
                    threshold_scale = splitting_property.threshold_scale, min_diff = splitting_property.min_difference)
 
+    payment_type_name_value_margin = ApplicationProperties.margin_properties.payment_type_name_value_margin
     index1, index2 = rect_xs_list[0][1], rect_xs_list[-1][0]
-    index1, index2 = index1 - 50, index2 - 50
+    index1, index2 = index1 - payment_type_name_value_margin, index2 - payment_type_name_value_margin
     names_part = payment_type_part[:,:index1]
     values_part = payment_type_part[:,index2:]
 
     ocr_property = ApplicationProperties.ocr_properties.payment_type_part_names_ocr_property
     df_names = ReceiptUtil.perform_ocr(names_part, ocr_config = ocr_property.config, lang = ocr_property.lang)
-    is_paid_cash = ReceiptUtil.is_payment_cash(df_names.text.to_list())
+
+    payment_type_checking_text_similarity_threshold = ApplicationProperties.text_similarity_threshold_properties.payment_type_checking_text_similarity_threshold
+    is_paid_cash = ReceiptUtil.is_payment_cash(df_names.text.to_list(), similarity_thresh=payment_type_checking_text_similarity_threshold)
 
     ocr_property = ApplicationProperties.ocr_properties.payment_type_part_numbers_ocr_property
     values, _ = ReceiptUtil.perform_ocr_obtain_values(values_part, ocr_config = ocr_property.config, return_type = float, lang = ocr_property.lang)

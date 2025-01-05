@@ -113,7 +113,9 @@ class ReceiptService:
     quantities, df_quantities = ReceiptUtil.perform_ocr_obtain_values(image=clear_quantities_part,
                 ocr_config=ocr_property.config, return_type = float, lang = ocr_property.lang)
 
-    product_images = ReceiptUtil.prepare_product_images(clear_products_part, df_quantities, quantities_image_height = clear_quantities_part.shape[0])
+    product_line_margin = ApplicationProperties.margin_properties.product_line_margin
+    product_images = ReceiptUtil.prepare_product_images(clear_products_part, df_quantities,
+                     quantities_image_height = clear_quantities_part.shape[0], product_line_margin = product_line_margin)
     product_names = ReceiptBuilder.extract_product_names(product_images)
 
     ocr_property = ApplicationProperties.ocr_properties.prices_ocr_property
@@ -121,8 +123,7 @@ class ReceiptService:
                 ocr_config=ocr_property.config, return_type = float, lang = ocr_property.lang)
     ocr_property = ApplicationProperties.ocr_properties.amounts_ocr_property
     amounts, _ = ReceiptUtil.perform_ocr_obtain_values(image=clear_amounts_part,
-                ocr_config=ocr_property.config,
-                                                      return_type = float, lang = ocr_property.lang)
+                ocr_config=ocr_property.config, return_type = float, lang = ocr_property.lang)
 
     products = [Product(product_names[i], quantities[i], prices[i], amounts[i]) for i in range(len(product_names))]
     return ReceiptProductList(products)
