@@ -7,26 +7,36 @@ class OCRProperty(Property):
         self.lang = lang
 
 class SplittingProperty(Property):
+    def __init__(self, threshold_scale, min_difference):
+        self.threshold_scale = threshold_scale
+        self.min_difference = min_difference
+
+class Properties:
     pass
 
-class OCRProperties:
+class OCRProperties(Properties):
     def __init__(self,
-                 general_part_ocr_properties,
-                 product_names_ocr_properties,
-                 quantities_ocr_properties,
-                 prices_ocr_properties,
-                 amounts_ocr_properties,
-                 payment_amount_part_ocr_properties,
-                 payment_type_part_names_ocr_properties,
-                 payment_type_part_numbers_ocr_properties):
-        self.general_part_ocr_properties = general_part_ocr_properties
-        self.product_names_ocr_properties = product_names_ocr_properties
-        self.quantities_ocr_properties = quantities_ocr_properties
-        self.prices_ocr_properties = prices_ocr_properties
-        self.amounts_ocr_properties = amounts_ocr_properties
-        self.payment_amount_part_ocr_properties = payment_amount_part_ocr_properties
-        self.payment_type_part_names_ocr_properties = payment_type_part_names_ocr_properties
-        self.payment_type_part_numbers_ocr_properties = payment_type_part_numbers_ocr_properties
+                 general_part_ocr_property,
+                 product_names_ocr_property,
+                 quantities_ocr_property,
+                 prices_ocr_property,
+                 amounts_ocr_property,
+                 payment_amount_part_ocr_property,
+                 payment_type_part_names_ocr_property,
+                 payment_type_part_numbers_ocr_property):
+        self.general_part_ocr_property = general_part_ocr_property
+        self.product_names_ocr_property = product_names_ocr_property
+        self.quantities_ocr_property = quantities_ocr_property
+        self.prices_ocr_property = prices_ocr_property
+        self.amounts_ocr_property = amounts_ocr_property
+        self.payment_amount_part_ocr_property = payment_amount_part_ocr_property
+        self.payment_type_part_names_ocr_property = payment_type_part_names_ocr_property
+        self.payment_type_part_numbers_ocr_property = payment_type_part_numbers_ocr_property
+
+class SplittingProperties(Properties):
+    def __init__(self,
+                 receipt_logical_splitting_properties):
+        pass
 
 class ApplicationProperties:
     upper_letters = 'ABCÇDEƏFGĞHXIİJKQLMNOÖPRSŞTUÜVYZ'
@@ -45,13 +55,13 @@ class ApplicationProperties:
     payment_type_part_names_config = f'--psm 4 -c tessedit_char_whitelist={charset}'
 
     ocr_properties = OCRProperties(
-        general_part_ocr_properties = OCRProperty(config = general_part_config, lang = 'eng+aze'),
-        product_names_ocr_properties = OCRProperty(config = product_names_config, lang = 'eng+aze'),
-        quantities_ocr_properties = OCRProperty(config = '--psm 6 -c tessedit_char_whitelist=.0123456789', lang = None),
-        prices_ocr_properties = OCRProperty(config = '--psm 6 -c tessedit_char_whitelist=.0123456789', lang = None),
-        amounts_ocr_properties = OCRProperty(config = '--psm 6 -c tessedit_char_whitelist=.0123456789', lang = None),
-        payment_amount_part_ocr_properties = OCRProperty(config = '--psm 6 -c tessedit_char_whitelist=.0123456789', lang = None),
-        payment_type_part_names_ocr_properties = OCRProperty(config = payment_type_part_names_config, lang = 'eng'),
-        payment_type_part_numbers_ocr_properties = OCRProperty(config = '--psm 6 -c tessedit_char_whitelist=.0123456789', lang = None)
+        general_part_ocr_property = OCRProperty(config = general_part_config, lang = 'eng+aze'),
+        product_names_ocr_property = OCRProperty(config = product_names_config, lang = 'eng+aze'),
+        quantities_ocr_property = OCRProperty(config = '--psm 6 -c tessedit_char_whitelist=.0123456789', lang = None),
+        prices_ocr_property = OCRProperty(config = '--psm 6 -c tessedit_char_whitelist=.0123456789', lang = None),
+        amounts_ocr_property = OCRProperty(config = '--psm 6 -c tessedit_char_whitelist=.0123456789', lang = None),
+        payment_amount_part_ocr_property = OCRProperty(config = '--psm 6 -c tessedit_char_whitelist=.0123456789', lang = None),
+        payment_type_part_names_ocr_property = OCRProperty(config = payment_type_part_names_config, lang = 'eng'),
+        payment_type_part_numbers_ocr_property = OCRProperty(config = '--psm 6 -c tessedit_char_whitelist=.0123456789', lang = None)
     )
 

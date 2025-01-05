@@ -147,7 +147,7 @@ class ReceiptBuilder:
     product_names = []
     for i in range(len(product_images)):
       product_image = product_images[i]
-      ocr_property = ApplicationProperties.ocr_properties.product_names_ocr_properties
+      ocr_property = ApplicationProperties.ocr_properties.product_names_ocr_property
       df_product = ReceiptUtil.perform_ocr(product_image, ocr_config = ocr_property.config, lang = ocr_property.lang)
       product_name = ' '.join(df_product.iloc[:-2].text.to_list())
 
@@ -176,7 +176,7 @@ class ReceiptBuilder:
     values_part = payment_part[:,index2:]
 
     # Perform OCR on values part of the payment amount details
-    ocr_property = ApplicationProperties.ocr_properties.payment_amount_part_ocr_properties
+    ocr_property = ApplicationProperties.ocr_properties.payment_amount_part_ocr_property
     df_values = ReceiptUtil.perform_ocr(values_part, ocr_config = ocr_property.config, lang = ocr_property.lang)
 
     # Extract the needed total payment numbers
@@ -208,12 +208,12 @@ class ReceiptBuilder:
 
     # charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxvz'
     # df_names = ReceiptUtil.perform_ocr(names_part, ocr_config = f'--psm 4 -c tessedit_char_whitelist={charset}', lang = 'eng')
-    ocr_property = ApplicationProperties.ocr_properties.payment_type_part_names_ocr_properties
+    ocr_property = ApplicationProperties.ocr_properties.payment_type_part_names_ocr_property
     df_names = ReceiptUtil.perform_ocr(names_part, ocr_config = ocr_property.config, lang = ocr_property.lang)
     is_paid_cash = ReceiptUtil.is_payment_cash(df_names.text.to_list())
 
     # values, _ = ReceiptUtil.perform_ocr_obtain_values(values_part, ocr_config = '--psm 6 -c tessedit_char_whitelist=.0123456789', return_type = float, lang = None)
-    ocr_property = ApplicationProperties.ocr_properties.payment_type_part_numbers_ocr_properties
+    ocr_property = ApplicationProperties.ocr_properties.payment_type_part_numbers_ocr_property
     values, _ = ReceiptUtil.perform_ocr_obtain_values(values_part, ocr_config = ocr_property.config, return_type = float, lang = ocr_property.lang)
     cashless, cash, paid_cash, change, bonus, prepayment, credit = ReceiptUtil.distribute_values_in_payment_type(values, is_paid_cash)
     return cashless, cash, paid_cash, change, bonus, prepayment, credit

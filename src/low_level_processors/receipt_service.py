@@ -104,20 +104,20 @@ class ReceiptService:
         return_type: ReceiptProductsList instance
     """
     vertical_hist_normalized, horizontal_hist_normalized = ReceiptUtil.calculate_histograms(image_products)
-    rect_xs_list = ReceiptUtil.determine_horizontal_splitting_rectangles(image_products, vertical_hist_normalized)
+    rect_xs_list = ReceiptUtil.determine_horizontal_splitting_rectangles(image_products, vertical_hist_normalized, threshold_scale = 0.01, min_diff = 30)
     clear_products_part, clear_quantities_part, clear_prices_part, clear_amounts_part = ReceiptBuilder.segment_products_part(image_products, rect_xs_list)
 
-    ocr_property = ApplicationProperties.ocr_properties.quantities_ocr_properties
+    ocr_property = ApplicationProperties.ocr_properties.quantities_ocr_property
     quantities, df_quantities = ReceiptUtil.perform_ocr_obtain_values(image=clear_quantities_part,
                 ocr_config=ocr_property.config, return_type = float, lang = ocr_property.lang)
 
     product_images = ReceiptUtil.prepare_product_images(clear_products_part, df_quantities, quantities_image_height = clear_quantities_part.shape[0])
     product_names = ReceiptBuilder.extract_product_names(product_images)
 
-    ocr_property = ApplicationProperties.ocr_properties.prices_ocr_properties
+    ocr_property = ApplicationProperties.ocr_properties.prices_ocr_property
     prices, _ = ReceiptUtil.perform_ocr_obtain_values(image=clear_prices_part,
                 ocr_config=ocr_property.config, return_type = float, lang = ocr_property.lang)
-    ocr_property = ApplicationProperties.ocr_properties.amounts_ocr_properties
+    ocr_property = ApplicationProperties.ocr_properties.amounts_ocr_property
     amounts, _ = ReceiptUtil.perform_ocr_obtain_values(image=clear_amounts_part,
                 ocr_config=ocr_property.config,
                                                       return_type = float, lang = ocr_property.lang)

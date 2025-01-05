@@ -95,7 +95,7 @@ class ReceiptUtil:
                 data frame of OCR results
 
     """
-    df = ReceiptUtil.perform_ocr(image, ocr_config, lang = None)
+    df = ReceiptUtil.perform_ocr(image, ocr_config, lang = lang)
     values = [return_type(item) for item in df.text.to_list()]
     return values, df
 
@@ -216,7 +216,7 @@ class ReceiptUtil:
     """
 
     # Extract text from the given image (image -> recognition df)
-    ocr_property = ApplicationProperties.ocr_properties.general_part_ocr_properties
+    ocr_property = ApplicationProperties.ocr_properties.general_part_ocr_property
     df_general = ReceiptUtil.perform_ocr(image, ocr_config = ocr_property.config , lang = ocr_property.lang).reset_index(drop=True)
 
     df_general['MergedStrings'] = df_general['text'] + ' ' + df_general['text'].shift(-1)
