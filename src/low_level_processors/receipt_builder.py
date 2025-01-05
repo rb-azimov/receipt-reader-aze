@@ -37,7 +37,9 @@ class ReceiptBuilder:
     """
 
     _, horizontal_hist_normalized = ReceiptUtil.calculate_histograms(image, is_cleaning_applied = False)
-    rect_ys_list = ReceiptUtil.determine_vertical_splitting_rectangles(image, horizontal_hist_normalized, threshold_scale = 0.3, min_diff = 30)
+    splitting_property = ApplicationProperties.splitting_properties.receipt_logical_splitting_property
+    rect_ys_list = ReceiptUtil.determine_vertical_splitting_rectangles(image, horizontal_hist_normalized,
+                    threshold_scale = splitting_property.threshold_scale, min_diff = splitting_property.min_difference)
 
     rect_ys_list = rect_ys_list[-2:] # Bypass useless, incorrect splits
     rect_ys_prod = rect_ys_list[0]
@@ -54,7 +56,7 @@ class ReceiptBuilder:
     """
     Since general (upper) part of a receipt image has some inconsistencies
     in terms of line counts of values would differ, lower part of the upper one
-    must be considered seperately.
+    must be considered separately.
 
 
     Args:
@@ -85,7 +87,7 @@ class ReceiptBuilder:
 
     Args:
         image (numpy array): image of the products (middle) part of a receipt
-        rects_xs_list: list of horizontal splitting rectangles
+        rect_xs_list: list of horizontal splitting rectangles
         ...
 
     Returns:
@@ -117,7 +119,9 @@ class ReceiptBuilder:
         return: payment_part, payment_type_part
     """
     vertical_hist_normalized, horizontal_hist_normalized = ReceiptUtil.calculate_histograms(image_payment_details)
-    rect_ys_list = ReceiptUtil.determine_vertical_splitting_rectangles(image_payment_details, horizontal_hist_normalized, threshold_scale = 0.5, min_diff = 30) # WARNING! 0.3
+    splitting_property = ApplicationProperties.splitting_properties.payment_to_amount_type_splitting_property
+    rect_ys_list = ReceiptUtil.determine_vertical_splitting_rectangles(image_payment_details, horizontal_hist_normalized,
+                   threshold_scale = splitting_property.threshold_scale, min_diff = splitting_property.min_difference) # WARNING! 0.3
 
     index1, index2 = rect_ys_list[0][:2]
     payment_part = image_payment_details[:index1-5,:]
@@ -138,11 +142,6 @@ class ReceiptBuilder:
     Returns:
         return: product_names
     """
-    # upper_letters = 'ABCÇDEƏFGĞHXIİJKQLMNOÖPRSŞTUÜVYZ'
-    # lower_letters = 'abcçdeəfgğhxıijkqlmnoöprsştuüvyz'
-    # azerbaijani_alphabet = upper_letters + lower_letters
-    # chartset = ' ' + '%_-' + azerbaijani_alphabet + '.0123456789'
-    # df_product = ReceiptUtil.perform_ocr(product_image, ocr_config = f'--psm 4 -c tessedit_char_whitelist={chartset}', lang = 'eng+aze')
 
     product_names = []
     for i in range(len(product_images)):
@@ -169,10 +168,12 @@ class ReceiptBuilder:
     """
     # Split {payment_part} into names and values images (totally 2)
     vertical_hist_normalized, horizontal_hist_normalized = ReceiptUtil.calculate_histograms(payment_part)
-    rect_xs_list = ReceiptUtil.determine_horizontal_splitting_rectangles(payment_part, vertical_hist_normalized, threshold_scale = 0.03, min_diff = 30)
+    splitting_property = ApplicationProperties.splitting_properties.payment_amount_to_name_value_splitting_property
+    rect_xs_list = ReceiptUtil.determine_horizontal_splitting_rectangles(payment_part, vertical_hist_normalized,
+                    threshold_scale = splitting_property.threshold_scale, min_diff = splitting_property.min_difference)
 
     index1, index2 = rect_xs_list[0][1], rect_xs_list[-1][0]
-    names_part = payment_part[:,:index1]
+    # Remained for possible need for usage: names_part = payment_part[:,:index1]
     values_part = payment_part[:,index2:]
 
     # Perform OCR on values part of the payment amount details
@@ -199,20 +200,19 @@ class ReceiptBuilder:
         return: cashless, cash, paid_cash, change, bonus, prepayment, credit
     """
     vertical_hist_normalized, horizontal_hist_normalized = ReceiptUtil.calculate_histograms(payment_type_part)
-    rect_xs_list = ReceiptUtil.determine_horizontal_splitting_rectangles(payment_type_part, vertical_hist_normalized, threshold_scale = 0.03, min_diff = 30)
+    splitting_property = ApplicationProperties.splitting_properties.payment_type_to_name_value_splitting_property
+    rect_xs_list = ReceiptUtil.determine_horizontal_splitting_rectangles(payment_type_part, vertical_hist_normalized,
+                   threshold_scale = splitting_property.threshold_scale, min_diff = splitting_property.min_difference)
 
     index1, index2 = rect_xs_list[0][1], rect_xs_list[-1][0]
     index1, index2 = index1 - 50, index2 - 50
     names_part = payment_type_part[:,:index1]
     values_part = payment_type_part[:,index2:]
 
-    # charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxvz'
-    # df_names = ReceiptUtil.perform_ocr(names_part, ocr_config = f'--psm 4 -c tessedit_char_whitelist={charset}', lang = 'eng')
     ocr_property = ApplicationProperties.ocr_properties.payment_type_part_names_ocr_property
     df_names = ReceiptUtil.perform_ocr(names_part, ocr_config = ocr_property.config, lang = ocr_property.lang)
     is_paid_cash = ReceiptUtil.is_payment_cash(df_names.text.to_list())
 
-    # values, _ = ReceiptUtil.perform_ocr_obtain_values(values_part, ocr_config = '--psm 6 -c tessedit_char_whitelist=.0123456789', return_type = float, lang = None)
     ocr_property = ApplicationProperties.ocr_properties.payment_type_part_numbers_ocr_property
     values, _ = ReceiptUtil.perform_ocr_obtain_values(values_part, ocr_config = ocr_property.config, return_type = float, lang = ocr_property.lang)
     cashless, cash, paid_cash, change, bonus, prepayment, credit = ReceiptUtil.distribute_values_in_payment_type(values, is_paid_cash)

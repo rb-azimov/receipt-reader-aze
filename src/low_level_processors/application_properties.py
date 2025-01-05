@@ -35,8 +35,17 @@ class OCRProperties(Properties):
 
 class SplittingProperties(Properties):
     def __init__(self,
-                 receipt_logical_splitting_properties):
-        pass
+                 receipt_logical_splitting_property,
+                 payment_to_amount_type_splitting_property,
+                 payment_amount_to_name_value_splitting_property,
+                 payment_type_to_name_value_splitting_property,
+                 products_part_splitting_properties):
+        self.receipt_logical_splitting_property = receipt_logical_splitting_property
+        self.payment_to_amount_type_splitting_property = payment_to_amount_type_splitting_property
+        self.payment_amount_to_name_value_splitting_property = payment_amount_to_name_value_splitting_property
+        self.payment_type_to_name_value_splitting_property = payment_type_to_name_value_splitting_property
+        self.products_part_splitting_properties = products_part_splitting_properties
+
 
 class ApplicationProperties:
     upper_letters = 'ABCÇDEƏFGĞHXIİJKQLMNOÖPRSŞTUÜVYZ'
@@ -63,5 +72,13 @@ class ApplicationProperties:
         payment_amount_part_ocr_property = OCRProperty(config = '--psm 6 -c tessedit_char_whitelist=.0123456789', lang = None),
         payment_type_part_names_ocr_property = OCRProperty(config = payment_type_part_names_config, lang = 'eng'),
         payment_type_part_numbers_ocr_property = OCRProperty(config = '--psm 6 -c tessedit_char_whitelist=.0123456789', lang = None)
+    )
+
+    splitting_properties = SplittingProperties(
+        receipt_logical_splitting_property = SplittingProperty(threshold_scale = 0.3, min_difference = 30),
+        payment_to_amount_type_splitting_property = SplittingProperty(threshold_scale = 0.5, min_difference = 30),
+        payment_amount_to_name_value_splitting_property = SplittingProperty(threshold_scale = 0.03, min_difference = 30),
+        payment_type_to_name_value_splitting_property = SplittingProperty(threshold_scale = 0.03, min_difference = 30),
+        products_part_splitting_properties = SplittingProperty(threshold_scale = 0.01, min_difference = 30)
     )
 

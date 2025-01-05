@@ -104,7 +104,9 @@ class ReceiptService:
         return_type: ReceiptProductsList instance
     """
     vertical_hist_normalized, horizontal_hist_normalized = ReceiptUtil.calculate_histograms(image_products)
-    rect_xs_list = ReceiptUtil.determine_horizontal_splitting_rectangles(image_products, vertical_hist_normalized, threshold_scale = 0.01, min_diff = 30)
+    splitting_property = ApplicationProperties.splitting_properties.products_part_splitting_properties
+    rect_xs_list = ReceiptUtil.determine_horizontal_splitting_rectangles(image_products, vertical_hist_normalized,
+                   threshold_scale = splitting_property.threshold_scale, min_diff = splitting_property.min_difference)
     clear_products_part, clear_quantities_part, clear_prices_part, clear_amounts_part = ReceiptBuilder.segment_products_part(image_products, rect_xs_list)
 
     ocr_property = ApplicationProperties.ocr_properties.quantities_ocr_property

@@ -204,16 +204,6 @@ class ReceiptUtil:
       multi_token_keywords = []
     if one_token_keywords is None:
       one_token_keywords = []
-    """
-    # Basic characteristics for OCR
-    upper_letters = 'ABCÇDEƏFGĞHXIİJKQLMNOÖPRSŞTUÜVYZ'
-    lower_letters = 'abcçdeəfgğhxıijkqlmnoöprsştuüvyz'
-    azerbaijani_alphabet = upper_letters + lower_letters
-    chartset = ' ' + '%_-№' + azerbaijani_alphabet + '.0123456789'
-
-    # Extract text from the given image (image -> recognition df)
-    df_general = ReceiptUtil.perform_ocr(image, ocr_config = f'--psm 6 -c tessedit_char_whitelist={chartset}', lang = 'eng+aze').reset_index(drop=True)
-    """
 
     # Extract text from the given image (image -> recognition df)
     ocr_property = ApplicationProperties.ocr_properties.general_part_ocr_property
