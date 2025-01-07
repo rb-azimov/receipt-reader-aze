@@ -125,6 +125,7 @@ class ReceiptUtil:
     product_lines_ys.append((y1-product_line_margin,y2))
     # print('Num lines:', len(product_lines_ys))
     product_images = []
+
     for i in range(len(product_lines_ys)):
       product_line_ys = product_lines_ys[i]
       y1, y2 = product_line_ys
@@ -357,6 +358,13 @@ class ReceiptUtil:
     """
     threshold = threshold_scale * image.shape[0]
     indices = np.where((image.shape[0] - vertical_hist_normalized) < threshold)[0]
+
+    # IS_TO_BE_DELETED!
+    # print('Threshold scale:', threshold_scale)
+    # print('image.shape[0]:', image.shape[0])
+    # print('Threshold:', threshold)
+    # print('Vertical histogram (normalized):', vertical_hist_normalized)
+    # print('Indices:', indices)
 
     result = [indices[i] for i in range(len(indices) - 1) if indices[i + 1] != indices[i] + 1]
     result.append(indices[-1])  # Add the last element since it always ends a sequence

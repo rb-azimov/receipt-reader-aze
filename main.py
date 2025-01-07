@@ -1,4 +1,5 @@
 import os
+import traceback
 
 import cv2
 import pytesseract
@@ -73,8 +74,68 @@ def prepare_application_properties_v1(is_debug_on = False):
         is_debug_on
     )
 
+def prepare_application_properties_v2(is_debug_on=False):
+    upper_letters = 'ABCÇDEƏFGĞHXIİJKQLMNOÖPRSŞTUÜVYZ'
+    lower_letters = 'abcçdeəfgğhxıijkqlmnoöprsştuüvyz'
+    azerbaijani_alphabet = upper_letters + lower_letters
+    chartset = ' ' + '%_-№' + azerbaijani_alphabet + '.0123456789'
+    general_part_config = f'--psm 6 -c tessedit_char_whitelist={chartset}'
+
+    upper_letters = 'ABCÇDEƏFGĞHXIİJKQLMNOÖPRSŞTUÜVYZ'
+    lower_letters = 'abcçdeəfgğhxıijkqlmnoöprsştuüvyz'
+    azerbaijani_alphabet = upper_letters + lower_letters
+    chartset = ' ' + '%_-' + azerbaijani_alphabet + '.0123456789'
+    product_names_config = f'--psm 4 -c tessedit_char_whitelist={chartset}'
+
+    charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxvz'
+    payment_type_part_names_config = f'--psm 4 -c tessedit_char_whitelist={charset}'
+
+    ocr_properties = OCRProperties(
+        general_part_ocr_property=OCRProperty(config=general_part_config, lang='eng+aze'),
+        product_names_ocr_property=OCRProperty(config=product_names_config, lang='eng+aze'),
+        quantities_ocr_property=OCRProperty(config='--psm 6 -c tessedit_char_whitelist=.0123456789', lang=None),
+        prices_ocr_property=OCRProperty(config='--psm 6 -c tessedit_char_whitelist=.0123456789', lang=None),
+        amounts_ocr_property=OCRProperty(config='--psm 6 -c tessedit_char_whitelist=.0123456789', lang=None),
+        payment_amount_part_ocr_property=OCRProperty(config='--psm 6 -c tessedit_char_whitelist=.0123456789',
+                                                     lang=None),
+        payment_type_part_names_ocr_property=OCRProperty(config=payment_type_part_names_config, lang='eng'),
+        payment_type_part_numbers_ocr_property=OCRProperty(config='--psm 6 -c tessedit_char_whitelist=.0123456789',
+                                                           lang=None)
+    )
+
+    splitting_properties = SplittingProperties(
+        receipt_logical_splitting_property=SplittingProperty(threshold_scale=0.3, min_difference=30),
+        payment_to_amount_type_splitting_property=SplittingProperty(threshold_scale=0.5, min_difference=30),
+        payment_amount_to_name_value_splitting_property=SplittingProperty(threshold_scale=0.03, min_difference=30),
+        payment_type_to_name_value_splitting_property=SplittingProperty(threshold_scale=0.03, min_difference=30),
+        products_part_splitting_properties=SplittingProperty(threshold_scale=0.015, min_difference=30) # th_scale changed!
+    )
+
+    margin_properties = MarginProperties(
+        product_line_margin=3,
+        general_part_bottom_margin=50,
+        payment_part_bottom_margin=160,
+        cashier_date_time_top_margin=2,
+        payment_amount_part_margin=5,
+        payment_type_name_value_margin=50
+    )
+
+    text_similarity_threshold_properties = TextSimilarityThresholdProperties(
+        payment_type_checking_text_similarity_threshold=70,
+        one_token_text_similarity_threshold=80,
+        multi_token_text_similarity_threshold=80
+    )
+
+    return ApplicationProperties(
+        ocr_properties,
+        splitting_properties,
+        margin_properties,
+        text_similarity_threshold_properties,
+        is_debug_on
+    )
+
 def main():
-    application_properties = prepare_application_properties_v1(is_debug_on = True)
+    application_properties = prepare_application_properties_v2(is_debug_on = True)
     ApplicationPropertiesService.load_properties(application_properties)
     receipt_service = ReceiptService()
 
@@ -91,14 +152,20 @@ def main():
         # 'Gh435awX2mqvPi4AYXzeAmrHEVkBrNYAHKNj4Q2t6Mjq',
     ]
     """
-    error_fiscal_code_list = ['2Avo4fThx8TH4hhd2TDW8anU5zKmvd7ep9t42F2EFDPr',
-                              '9k7zRXSwsnUYph17upSsxA2EY7m2Rf64cUNQaY8ekwDt',
-                              'EWvtdGBGWzFpFmBNiGAZpqgtL77saVEbanLeZ8SK8ox7',
-                              'Gh435awX2mqvPi4AYXzeAmrHEVkBrNYAHKNj4Q2t6Mjq',
-                              '8J3jwJr94LKa62SLaeuUtH9K8LnyfmWrpm8RrDotdaTk']
+    error_fiscal_code_list = [
+        '2Avo4fThx8TH4hhd2TDW8anU5zKmvd7ep9t42F2EFDPr',
+        '9k7zRXSwsnUYph17upSsxA2EY7m2Rf64cUNQaY8ekwDt',
+        'EWvtdGBGWzFpFmBNiGAZpqgtL77saVEbanLeZ8SK8ox7',
+        'Gh435awX2mqvPi4AYXzeAmrHEVkBrNYAHKNj4Q2t6Mjq',
+        '8J3jwJr94LKa62SLaeuUtH9K8LnyfmWrpm8RrDotdaTk'
+    ]
 
     with open(os.path.join('src','fiscal_codes_for_testing', 'ekassa_fiscal_codes.txt'), mode = 'r') as file:
         fiscal_codes = file.readlines()
+
+    # fiscal_codes = error_fiscal_code_list
+    error_fiscal_code_list = []
+
     fiscal_codes = [fiscal_code.strip() for fiscal_code in fiscal_codes]
     fiscal_codes = list(set(fiscal_codes))
     fiscal_codes.sort()
@@ -123,9 +190,15 @@ def main():
             image_file = os.path.join(receipt_images_folder, image_name)
             cv2.imwrite(image_file, image_ekassa_gray)
         image_ekassa_gray = cv2.imread(os.path.join(receipt_images_folder, image_name), cv2.IMREAD_GRAYSCALE)
-        receipt = receipt_service.mine_receipt(image_ekassa_gray=image_ekassa_gray,
-                                               fiscal_code=fiscal_code)
-        receipts[fiscal_code] = receipt
+
+        try:
+            receipt = receipt_service.mine_receipt(image_ekassa_gray=image_ekassa_gray,
+                                                   fiscal_code=fiscal_code)
+        except Exception as e:
+            print(f"An error occurred (on {fiscal_code}): {e}")
+            traceback.print_exc()
+        else:
+            receipts[fiscal_code] = receipt
 
     print()
     print('<< Receipts >>')

@@ -1,0 +1,2467 @@
+C:\Users\user\PycharmProjects\ReceiptReader\.venv\Scripts\python.exe C:\Users\user\PycharmProjects\ReceiptReader\main.py 
+1. 215TSdeLzKxitDwWyJShtZf8o5XHNDKCSsT1tHfW7CqR
+2. 2Avo4fThx8TH4hhd2TDW8anU5zKmvd7ep9t42F2EFDPr
+3. 2FGhG4yH64QBrMqvEHckCrtXqHM5ADmDh5zxzQVQ85Uv
+4. 2tAay38MNKvf1eu5NhAHzmDyNqG1cBwX3a4kQcCvuJjf
+5. 3H4w5zunyxUFW5bsHKYwGVx2q7fauCx6mu4V18fjYha1
+6. 3bccagRjFrTVmVgnTyfSuv5ACs1YAn5qXraTnKwmJUU8
+7. 3dGYQLxGNzvkSQrKBUq5vHDbArpJ15JkGguto3AAnLsC
+8. 3rFyigVXEejxeSJKTup4vZ6SJLf98GGL2BMAMDPQeuko
+9. 4KPYbUnopqhk7QHu5pMtkxqXKMvFnoVhdnTdzu7fMHcU
+10. 4LsQxjbXecdZt99BNXYTEPmrfMJnrvEK3Z3Mc41qUbEQ
+11. 4tFLVnqE1gbT
+12. 4tFLVnqE1gbTmMWyK87zJSwi9eDotpTYho9P5sZjSNvD
+13. 5L95LUUKBBneYRZMAujy7Ro2KYQaCzz99VyiqCcunrPr
+14. 5Q3XXMhPHKDqqQy3j4ZgaxjNxv3Svy59XYqLxHVYUhFL
+15. 5Qqbyqm1WNqUt2uahojwzrZni4A4SDSpcx8PMwxDv2iV
+16. 5T8qarffjc429N9GZYUAut6JFRj7yasCuSZmSxneBqAU
+17. 5bpzCDZCngkJzz7Xa2HkMRLsSS9V5Affx8vaYjBApbFw
+18. 5zREhnapFAvbVB9fciWyPc6bXbhRVVJbG7vSDD38znd2
+19. 65XpnQziuianzawf45nAC6V9TvMidVniJ65DbGTeJQs4
+20. 6Gt4J4XHQEjGrWJPMEvNUcVGpeLK3VfmXZ6EsWrm3bso
+21. 6S99n1goWymAPCitbEpJkxTgihay7YDuAH17JLW5kmSK
+22. 6SjKdCHygaozsnG9dDoYecpEBBi3h59XnmVCfwpxsR8X
+23. 6emsi4URQaPwtS4D5cCJJT1cgUMsgyepFSFApmukWvuT
+24. 7qMBFjj9rM27Cz9brWZuAWAaYHgrVeaRaQ44p1NokHj2
+25. 82cZtqjCv2SkoEfFUv9thnURMv9ZN4sCU51MSvW5vnLC
+26. 8J3jwJr94LKa62SLaeuUtH9K8LnyfmWrpm8RrDotdaTk
+27. 8JW3YHuksmvgduuFUXMo3YdPzqZZiKiGBFQGeWiMqMxJ
+28. 8ofcmJhYPcaZ
+29. 97mG868j3tAdNn1AWwemUtt93B4F9ycDHvmoMdqFcqWy
+30. 9C7eVgGZfZYe583UF3khx18jbjGse3QhfCKN1Ugg3HEt
+31. 9XiWjUNg61GL8x5BLMz4BHNozbFSsqmn9BkbPtSi4Dg8
+32. 9k7zRXSwsnUYph17upSsxA2EY7m2Rf64cUNQaY8ekwDt
+33. 9y7QKhsGuK9zB2ftxWxMZoW64DcgeJEh8VRVrxFwchQy
+34. 9zHALuYfqtNLFYWFooB8QpMNUzrDU1YJwUB29DVSouqn
+35. A3S3ozruypPLxd2CruLJeFZdoDrpifzUDvgcBTjSixYW
+36. AqHwS8nVawzQoG54SjVxUeKHKFpXz7s84ajWLbtis7j
+37. B3EbnnTUiBg572DLtYwCRcU1K5ytj5P7aXs7Hi8zzwaL
+38. BHy5FofMMHS5JioA17ycNMgHGoj5bxSmBzf7sKtsLFfV
+39. BaLH4264TYtf
+40. C5rDXqVkZdtiUZnc5zTWKPBm4ypVa8vphwKX4ZnYYF5P
+41. CDu193NGGZ9iezsfXYhNRgeDYLe4XXtafsCSgeJYtMz4
+42. D5EW1fsHMhq8kv2NoMoB81ZJbUQ8c4u9Da3jJ7kwmko
+43. DFMbWAtHcQQM2UpTaZpemgxyq5zjrYf4D1Np72XZ1hKn
+44. Dh8hsAoFVGFcyEzwYdmmykoZZZPhm5LeVe9r9VZQy9AH
+45. DnE711ghyQHjGtkCQXt5k4VS2FLbobpn93mJ6WGKotDZ
+46. E7jGXVfpcKZWFiu41GTejVURj2SK39JMN2VDRroH5dBT
+47. EPszcWAvJNCGw3HwEYb8PE9Ap3ewAj2TxLN92cdTmLSo
+48. ER9s8qbNzEsyVcj2vhRi7yJGxsUgKkVvE7fydNX2Mz7y
+49. EWvtdGBGWzFpFmBNiGAZpqgtL77saVEbanLeZ8SK8ox7
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\ReceiptReader\main.py", line 195, in main
+    receipt = receipt_service.mine_receipt(image_ekassa_gray=image_ekassa_gray,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\PycharmProjects\ReceiptReader\src\low_level_processors\receipt_service.py", line 63, in mine_receipt
+    products = self.perform_ner_on_products_part(image_products)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\PycharmProjects\ReceiptReader\src\low_level_processors\receipt_service.py", line 163, in perform_ner_on_products_part
+    product_images = ReceiptUtil.prepare_product_images(clear_products_part, df_quantities,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\PycharmProjects\ReceiptReader\src\low_level_processors\receipt_util.py", line 123, in prepare_product_images
+    y1, y2 = df_quantities.iloc[-1].top, quantities_image_height
+             ~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\user\PycharmProjects\ReceiptReader\.venv\Lib\site-packages\pandas\core\indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\PycharmProjects\ReceiptReader\.venv\Lib\site-packages\pandas\core\indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "C:\Users\user\PycharmProjects\ReceiptReader\.venv\Lib\site-packages\pandas\core\indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+An error occurred: single positional indexer is out-of-bounds
+50. EkwZnbpgUA5aR5mpT2PMKMF7r4aDcMMb5pb5UGLkX8YR
+51. F7kDmJ7BXrDU3CJ8YAVhR4z9RjCcCNGSsA2QDhKDmJ4b
+52. FKUTcf4zKYYf918jz5ur5DH8SbSeEkPugFZt96fbU86U
+53. G1fSXKgnBVqXEWQBpEUFRdhoia3252EHeYLG7HGbgMJK
+54. G5Wj3G81a5MCa7rZvq9Gqy2pAyUAQx9TrT5YVr2YiUTY
+55. G8926FUnuaTySCLFqsdUeqyMfdheynJN5tjmynAXJZcj
+56. Gh435awX2mqvPi4AYXzeAmrHEVkBrNYAHKNj4Q2t6Mjq
+An error occurred: OpenCV(4.10.0) D:\a\opencv-python\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:798: error: (-215:Assertion failed) !_img.empty() in function 'cv::imwrite'
+
+57. GpEqeV9sg1rHHbdQ4amwdNco4VRoLhVhM2rwEG6kJHya
+Traceback (most recent call last):
+  File "C:\Users\user\PycharmProjects\ReceiptReader\main.py", line 195, in main
+    receipt = receipt_service.mine_receipt(image_ekassa_gray=image_ekassa_gray,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\PycharmProjects\ReceiptReader\src\low_level_processors\receipt_service.py", line 63, in mine_receipt
+    products = self.perform_ner_on_products_part(image_products)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\PycharmProjects\ReceiptReader\src\low_level_processors\receipt_service.py", line 163, in perform_ner_on_products_part
+    product_images = ReceiptUtil.prepare_product_images(clear_products_part, df_quantities,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\PycharmProjects\ReceiptReader\src\low_level_processors\receipt_util.py", line 135, in prepare_product_images
+    ApplicationPropertiesService.logger.log_image(f'Product-{i + 1}', product_image)
+  File "C:\Users\user\PycharmProjects\ReceiptReader\src\logger.py", line 61, in log_image
+    cv2.imwrite(image_file, image)
+cv2.error: OpenCV(4.10.0) D:\a\opencv-python\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:798: error: (-215:Assertion failed) !_img.empty() in function 'cv::imwrite'
+
+58. GqNbW98WMcVSm4i1cASGJoqgztLPqgzFE1JQhbaE4EGf
+59. GyAYSVbPiUDZdXkHv8HPEc8Hh48eQLfudeAcGPagvpn1
+60. H4WVZuSFXuiW6qDHizhkWRjEQC2YZHQpD5tL1UtYzuXZ
+61. HeyZR3LzAZ4WzCFoyDGLnoPJffLjyK2iGMxKxK2ohZ7
+62. HmLFKUfVkUqED4TngAgQGFRLZScdRaUh8JeqrWDkejd4
+63. HpshbdwSQtg4RjBNNTdFvC4DoMyPUat4LSqxQFvwsvYC
+64. JBAQkDC2NBkwwi97pAC2qFn8uds7dfLia6QzzoAzR9jn
+65. JDbiy1aCSKJn
+66. KBiXeuAGnE2TsN1A45sbXP9qTXXfDaZTqh5GT6KiU7Y
+67. qJa6ZdoJ254kBKMLmbrUgKJWsipV21nNKcmMVtKyeXF
+68. smCRKc7ECvCDtpvqCDAWnZz1NZGvLfdeGgPZXQxbQj3
+69. wPeLM3wvuBUCQn4TMN5ZQZvheV7XuQg97meruVsqRVT
+70. zkzC4ojjonxmK41uBS3xJp38JbUCWEFtyvMbBzip7my
+
+<< Receipts >>
+FISCAL CODE: 215TSdeLzKxitDwWyJShtZf8o5XHNDKCSsT1tHfW7CqR
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : APTEK
+Address             : AZ1149 BAKI ŞƏHƏRİ XƏTAİ RAYONU MƏHƏMMƏD HADI ev.41V 2 MƏRTƏBƏLİ QEYRİ YAŞAYIŞ BİNASI
+Code                : 1700125511-20001
+Tax Payer           : "MAYMED-AVİS" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1700125511
+Receipt #           : 87706
+Cashier             : XUMAR ELIYEVA
+Date                : 11.12.2024
+Time                : 16:09:54
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+AZITROMISIN          1.0      21.80      21.80     
+__________________________________________________
+Total Amount        : 21.80
+Tax Amount          : 21.80
+Non-Tax Amount      : 0.00
+Cashless Payment    : 0.00
+Cash Payment        : 21.80
+Paid Cash           : 1100.00
+Change              : 78.20
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 2Avo4fThx8TH4hhd2TDW8anU5zKmvd7ep9t42F2EFDPr
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : SPAR MARKET
+Address             : AZ1141 BAKI ŞƏHƏRİ YASAMAL RAYONU FİRUDİN AĞAYEV ev.9
+Code                : 1001994141-13007
+Tax Payer           : "ARAZ SUPERMARKET" MƏHDUD MƏSULİYYƏTLİ CəMİYYƏTİ
+TIN                 : 1001994141
+Receipt #           : 890847
+Cashier             : Gulnur Muradxanova
+Date                : 15.10.2024
+Time                : 16:51:10
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+XONCA TOYUQ DONERI   1.0      1.90       1.90      
+__________________________________________________
+Total Amount        : 1.90
+Tax Amount          : 1.90
+Non-Tax Amount      : 0.00
+Cashless Payment    : 0.00
+Cash Payment        : 1.90
+Paid Cash           : 1.90
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 2FGhG4yH64QBrMqvEHckCrtXqHM5ADmDh5zxzQVQ85Uv
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : GLORIA JEANS COFFEE
+Address             : AZ1001 BAKI ŞƏHƏRİ ‘S@BAIL RAYONU İSTİQLALİYYƏT ev.51/H.HACIYEV 1
+Code                : 1701332401-17004
+Tax Payer           : "FBCO" M@HDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1701332401
+Receipt #           : 184292
+Cashier             : Mammadov Namik
+Date                : 24.12.2024
+Time                : 13:00:32
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Double Espresso *Simplified tax 1.0      4.70       4.70      
+__________________________________________________
+Total Amount        : 4.70
+Tax Amount          : 4.70
+Non-Tax Amount      : 0.00
+Cashless Payment    : 4.70
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 2tAay38MNKvf1eu5NhAHzmDyNqG1cBwX3a4kQcCvuJjf
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : GRANDMART BESTMART
+Address             : AZ1060 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.126 m-
+Code                : 1401395111-16004
+Tax Payer           : "GRAND-MART" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1401395111
+Receipt #           : 948955
+Cashier             : Salmanova Gunel
+Date                : 22.12.2024
+Time                : 22:10:16
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+SOK FRUMBA TL MULTIVI TAMIN TP 1.0      1.65       1.65      
+AZCAKE BULKA MEKTEBLI 1.0      0.53       0.53      
+AZCAKE BULKA MEKTEBLI 1.0      0.53       0.53      
+COREK N1 400QR EXTRA 1.0      0.69       0.69      
+QARABAG KETESİ NUSH 1 70QR 1.0      0.59       0.59      
+MVT.GM MANDARIN UCU Z KG “Trade 1.06     2.00       2.12      
+MAGAZA PAKETI BOYUK  1.0      0.05       0.05      
+__________________________________________________
+Total Amount        : 6.16
+Tax Amount          : 3.52
+Non-Tax Amount      : 2.64
+Cashless Payment    : 6.16
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 3H4w5zunyxUFW5bsHKYwGVx2q7fauCx6mu4V18fjYha1
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : KÖHNƏ PALTARLAR MAGAZASI
+Address             : AZ1118 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.102 OKEAN YEMƏKXANASI
+Code                : 1504479291-16003
+Tax Payer           : "MAZRA-Z" Məhdud Məsuliyyətli Cəmiyyəti
+TIN                 : 1504479291
+Receipt #           : 16686
+Cashier             : Default Clerk
+Date                : 29.12.2024
+Time                : 11:40:57
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Geyim                1.0      2.40       2.40      
+__________________________________________________
+Total Amount        : 2.40
+Tax Amount          : 2.40
+Non-Tax Amount      : 0.00
+Cashless Payment    : 0.00
+Cash Payment        : 2.40
+Paid Cash           : 2.40
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 3bccagRjFrTVmVgnTyfSuv5ACs1YAn5qXraTnKwmJUU8
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : ANBAR
+Address             : AZ1117 BAKI ŞƏHƏRİ BİNƏQƏDİ RAYONU SUMQAYIT ŞOSSESİ (BİLƏCƏRİ QƏS.) ev.3 m.-
+Code                : 1504479291-10004
+Tax Payer           : "MAZRA-Z" Məhdud Məsuliyyətli Cəmiyyəti
+TIN                 : 1504479291
+Receipt #           : 56141
+Cashier             : Default Clerk
+Date                : 30.12.2024
+Time                : 11:47:47
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Kostyum              1.0      41.40      41.40     
+__________________________________________________
+Total Amount        : 41.40
+Tax Amount          : 41.40
+Non-Tax Amount      : 0.00
+Cashless Payment    : 41.40
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 3dGYQLxGNzvkSQrKBUq5vHDbArpJ15JkGguto3AAnLsC
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : DƏFTƏRXANA MALLARI MAGAZASI
+Address             : AZ1141 BAKI ŞƏHƏRİ YASAMAL RAYONU ZAHID XƏLİLOV ev.B.VAHABZADƏ KÜÇƏLƏRİNİN KƏSİŞMƏSİ m-
+Code                : 1902072481-13001
+Tax Payer           : "OFFICE PAGE" MƏHDUD. MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1902072481
+Receipt #           : 22043
+Cashier             : BDU/Satanl
+Date                : 06.01.2025
+Time                : 12:39:31
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+2/ H?DİYY? PAKETİ CRAF 705-2 27X21X11 (4817) 112/840 -B 1.0      0.80       0.80      
+‘SU QABI 611-5 D?R?C?Lİ 450ML AG 1/50 1.0      9.90       9.90      
+__________________________________________________
+Total Amount        : 10.70
+Tax Amount          : 10.70
+Non-Tax Amount      : 0.00
+Cashless Payment    : 10.70
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 3rFyigVXEejxeSJKTup4vZ6SJLf98GGL2BMAMDPQeuko
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : ƏRZAQ MAGAZASI
+Address             : AZ1049 BAKI ŞƏHƏRİ SURAXANI RAYONU ƏMİRCAN STQ M.MUSTAFAYEV ev.21
+Code                : 2001177702-19002
+Tax Payer           : ŞAMXALOV MÜŞFİQ. TƏMRAZ OGLU
+TIN                 : 2001177702
+Receipt #           : 669250
+Cashier             : Kassa2
+Date                : 02.01.2025
+Time                : 13:53:51
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+ULKER ALBENI 52 GR ad. 5.0      0.97       4.85      
+PROTEX BS MOIST LOCK NOU 150 GR ad. 1.0      7.00       17.00     
+PROTEX BS MOIST LOCK SEN 150 GR ad. 1.0      17.00      17.00     
+SUN QU SALFET 30*30C M 80"40 QAZ ad. 2.0      0.87       174.00    
+Bakixanov Zavod Coreyi Boyuk 1.0      0.55       0.55      
+BALLI KULOK STS BOYUK 0.05 2.0      0.05       0.10      
+__________________________________________________
+Total Amount        : 10.78
+Tax Amount          : 10.13
+Non-Tax Amount      : 0.65
+Cashless Payment    : 0.00
+Cash Payment        : 10.78
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 4KPYbUnopqhk7QHu5pMtkxqXKMvFnoVhdnTdzu7fMHcU
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : BAZARSTORE ( XALQLAR DOSTLUĞU )
+Address             : AZ1060 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.124 mə
+Code                : 2000102651-16019
+Tax Payer           : "BAZARSTORE" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 2000102651
+Receipt #           : 449379
+Cashier             : Əfsanə Salimova Azar
+Date                : 31.10.2024
+Time                : 22:42:52
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+PALMOLIVE NAR        1.0      0.99       0.99      
+PALMOLIVE ZEYTUN     1.0      0.99       0.99      
+__________________________________________________
+Total Amount        : 1.98
+Tax Amount          : 1.98
+Non-Tax Amount      : 0.00
+Cashless Payment    : 1.98
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 4LsQxjbXecdZt99BNXYTEPmrfMJnrvEK3Z3Mc41qUbEQ
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : ƏRZAQ MAGAZASI
+Address             : AZ1049 BAKI ŞƏHƏRİ SURAXANI RAYONU ƏMİRCAN STQ M.MUSTAFAYEV ev.21
+Code                : 2001177702-19002
+Tax Payer           : ŞAMXALOV MÜŞFİQ. TƏMRAZ OGLU
+TIN                 : 2001177702
+Receipt #           : 254829
+Cashier             : Kassa3
+Date                : 30.12.2024
+Time                : 11:07:19
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+CAR DOKTOR QOST BISM IS KQ (4187/7845) kq. 320.0    26.40      34.90     
+BOSTAN XIYAR TURSU 70 0 GRəd. 2.0      7.00       4.00      
+BOSTAN QIRMIZI POMIDO- RTRS 700 GR ad. 1.0      1.98       3.96      
+SMETANOVNA XAMA 20% 375 GR (12) ad. 2.0      2.00       2.00      
+Sutas qaymaq 200gr (27 Jad. 3.0      3.59       7.18      
+KOK                  360.0    2.78       8.34      
+BALLI KULOK STS BOYUK 0.05 4.0      1.07       1.45      
+MECTA XOZAYKI MOYANE Z KLASSİK 50.5% 670GR. ad 2.0      0.05       0.20      
+BONDUELLE QARGIDALI 500 ML ad, 2.0      5.27       10.50     
+BONDUELLE YASIL NOXU D SUSE 720 ML ad 2.0      3.17       4.00      
+SUN QU SALFET 30*30C M 80"40 QAZ ad. 2.0      3.99       6.34      
+R.SERINOVA DIBCEK 101 402 ad, 2.0      0.87       7.98      
+PIVE HEINEKEN BANKA 0. 5 iad 4.0      5.40       174.00    
+__________________________________________________
+Total Amount        : 113.36
+Tax Amount          : 111.70
+Non-Tax Amount      : 1.66
+Cashless Payment    : 0.00
+Cash Payment        : 113.36
+Paid Cash           : 120.00
+Change              : 6.64
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 4tFLVnqE1gbT
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : APTEK
+Address             : AZ1141 BAKI ŞƏHƏRİ YASAMAL RAYONU FİRUDİN AĞAYEV ev.5
+Code                : 1500072561-13006
+Tax Payer           : "AZƏRİ MED" QAPALI SƏHMDAR CƏMİYYƏTİ
+TIN                 : 1500072561
+Receipt #           : 176072
+Cashier             : Kassir
+Date                : 02.01.2025
+Time                : 17:19:57
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+OPTIKA ACC R         1.0      6.00       6.00      
+__________________________________________________
+Total Amount        : 6.00
+Tax Amount          : 6.00
+Non-Tax Amount      : 0.00
+Cashless Payment    : 6.00
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 4tFLVnqE1gbTmMWyK87zJSwi9eDotpTYho9P5sZjSNvD
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : APTEK
+Address             : AZ1141 BAKI ŞƏHƏRİ YASAMAL RAYONU FİRUDİN AĞAYEV ev.5
+Code                : 1500072561-13006
+Tax Payer           : "AZƏRİ MED" QAPALI SƏHMDAR CƏMİYYƏTİ
+TIN                 : 1500072561
+Receipt #           : 176072
+Cashier             : Kassir
+Date                : 02.01.2025
+Time                : 17:19:57
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+OPTIKA ACC R         1.0      6.00       6.00      
+__________________________________________________
+Total Amount        : 6.00
+Tax Amount          : 6.00
+Non-Tax Amount      : 0.00
+Cashless Payment    : 6.00
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 5L95LUUKBBneYRZMAujy7Ro2KYQaCzz99VyiqCcunrPr
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : ARAZ MARKET
+Address             : AZ1060 BAKI ŞƏHƏRİ NİZAMİ RAYONU MEHDİ ABBASOV ev/iLƏ ŞİRİN MİRZƏYEV KÜÇƏLƏRİNİN KƏSİŞMƏSİ
+Code                : 1001994141-16013
+Tax Payer           : "ARAZ SUPERMARKET" MƏHDUD MƏSULİYYƏTLİ CəMİYYƏTİ
+TIN                 : 1001994141
+Receipt #           : 707567
+Cashier             : Turac Məmmədliyeva
+Date                : 31.12.2024
+Time                : 08:56:30
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+SLAVYANKA LIMONAD TE 1.0      1.00       1.00      
+ISTISU MINERAL SU 1L 1.0      1.40       1.40      
+BERDE TEZE FILE      17.0     7.55       11.13     
+DC BATON KEPEKLI     2.0      0.95       1.90      
+MANDARIN KG “Trade   1.96     1.59       3.12      
+KOK KG “Trade        0.75     1.09       0.82      
+XIYAR MELIT KG “Trade 0.7      3.59       2.51      
+Paket Araz 31*60 5KG 2.0      0.05       0.10      
+__________________________________________________
+Total Amount        : 21.98
+Tax Amount          : 2.79
+Non-Tax Amount      : 19.19
+Cashless Payment    : 21.98
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 5Q3XXMhPHKDqqQy3j4ZgaxjNxv3Svy59XYqLxHVYUhFL
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : MUZEY
+Address             : AZ1025 BAKI ŞƏHƏRİ XƏTAİ RAYONU ƏHMƏDLİ ŞTQ YUSİF SƏFƏROV ev.5
+Code                : 1701024071-20001
+Tax Payer           : MÜASİR İNCƏSƏNƏT FONDU
+TIN                 : 1701024071
+Receipt #           : 26937
+Cashier             : Admin
+Date                : 04.01.2025
+Time                : 17:28:50
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Standart             3.0      5.00       15.00     
+__________________________________________________
+Total Amount        : 15.00
+Tax Amount          : 15.00
+Non-Tax Amount      : 0.00
+Cashless Payment    : 0.00
+Cash Payment        : 15.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 5Qqbyqm1WNqUt2uahojwzrZni4A4SDSpcx8PMwxDv2iV
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : KÖHNƏ PALTARLAR MAGAZASI
+Address             : AZ1111 BAKI ŞƏHƏRİ NƏSİMİ RAYONU ASIF MƏHƏRRƏMOV ev.24A
+Code                : 1503244972-14003
+Tax Payer           : İSMAYILOV ZƏRBALI IDRIS OĞLU
+TIN                 : 1503244972
+Receipt #           : 15737
+Cashier             : Default Clerk
+Date                : 30.12.2024
+Time                : 13:54:55
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Geyim                1.0      72.36      72.36     
+__________________________________________________
+Total Amount        : 72.36
+Tax Amount          : 72.36
+Non-Tax Amount      : 0.00
+Cashless Payment    : 72.36
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 5T8qarffjc429N9GZYUAut6JFRj7yasCuSZmSxneBqAU
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : BAZARSTORE ( XALQLAR DOSTLUĞU )
+Address             : AZ1060 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.124 mə
+Code                : 2000102651-16019
+Tax Payer           : "BAZARSTORE" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 2000102651
+Receipt #           : 378977
+Cashier             : Zeynəb Cahangirzada ş.
+Date                : 02.01.2025
+Time                : 22:13:06
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+BAZARSTORE MARKET T ORBASI 28X50 SM 1.0      0.03       0.03      
+MILLA SUD 11 3,2% YAG u 1.0      1.99       1.99      
+PATRON GUNEBAXAN TU MU QARA 120 Q PANTER A 1.0      0.80       0.80      
+SLADYONA BOROW PECE NYE 250 Q SOKOLADLI 1.0      1.54       1.54      
+START SOKOLADLI TOP 0. 75Q 1.0      0.99       0.99      
+__________________________________________________
+Total Amount        : 5.35
+Tax Amount          : 5.35
+Non-Tax Amount      : 0.00
+Cashless Payment    : 5.35
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 5bpzCDZCngkJzz7Xa2HkMRLsSS9V5Affx8vaYjBApbFw
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : GRANDMART
+Address             : AZ1118 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.46
+Code                : 1401395111-16002
+Tax Payer           : "GRAND-MART" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1401395111
+Receipt #           : 970822
+Cashier             : Valiyeva Aybaniz
+Date                : 03.01.2025
+Time                : ibolll
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+COREK COREKCI BATON  1.0      0.95       0.95      
+__________________________________________________
+Total Amount        : 0.95
+Tax Amount          : 0.95
+Non-Tax Amount      : 0.00
+Cashless Payment    : 0.00
+Cash Payment        : 0.95
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 5zREhnapFAvbVB9fciWyPc6bXbhRVVJbG7vSDD38znd2
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : ƏRZAQ MAGAZASI
+Address             : AZ1049 BAKI ŞƏHƏRİ SURAXANI RAYONU ƏMİRCAN STQ M.MUSTAFAYEV ev.21
+Code                : 2001177702-19002
+Tax Payer           : ŞAMXALOV MÜŞFİQ. TƏMRAZ OGLU
+TIN                 : 2001177702
+Receipt #           : 665623
+Cashier             : Kassa2
+Date                : 25.12.2024
+Time                : 14:40:48
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Azerseker Kelle Qend 80 0GRad. 2.0      2.64       5.28      
+SVALYA PENDIR LITOVSKI ¥ 45% 3 KQ ka, 515.0    18.90      28.70     
+Champion Pekoe 250 GR ad. 1.0      7.00       4.00      
+BERQA E.GREY 225GR ə d 1.0      5.77       5.77      
+Ashrafi Premium Basmati Sella Uzun Duyu 1 KG Qa bad 1.0      5.49       5.49      
+PATRON TUM PATRON BI G 4D 150 GR ad. 1.0      5.47       5.47      
+PATRON TUM YAQUAR 11 0 GRəd. 1.0      1.28       1.28      
+COLGATE D.M TOTAL CLE AR MINT 125 ML ad, 1.0      1.40       1.40      
+ROTFRONT SOKOLAD QRI LYA] 6 KQ 8217 ka, 780.0    7.26       7.26      
+FAIRY QAB MAYE ALMA 1 Lad. 1.0      15.60      12.20     
+SUN QU SALFET 30*30C M 80*40 QAZ ad. 3.0      6.00       1.00      
+RAFAELLO 240 GR ad.  1.0      4.57       4.57      
+VALIO YAG 5 KQ kq.   200.0    0.87       2.61      
+PATRON QARA TUM PANT ERA 1OOGR ad. 1.0      13.20      13.20     
+PROTEX SABUN CREAM 1 SOGR ad. 1.0      8.00       8.00      
+ROTFRONT KARAMEL MO- SKVICKA 5 KQ kq 565.0    22.40      26.90     
+XTREME3 ULTIMATE 12 LI LIST 3 ULGUCLU ad. 2.0      8.00       7.00      
+Final Cay New Earl Grey 225 GR ad. 1.0      1.20       1.20      
+PROTEX BS MOIST LOCK NOU 150 GR ad. 1.0      7.00       7.00      
+Final Qargidali Yagi 1 LT ə d 1.0      7.70       4.22      
+BONDUELLE CERN.OLIVKI S KOST 300 ML ad. 1.0      178.00     3.56      
+BONDUELLE ZEL.OLIVKI BEZ KOST. 300 ML ad. 1.0      4.99       4.99      
+QLAVPRODKUT QATL.SU D EKSTRA 380 GR ad. 1.0      7.00       17.00     
+BALLI KULOK STS BOYUK 0.05 3.0      5.84       5.84      
+__________________________________________________
+Total Amount        : 153.94
+Tax Amount          : 153.79
+Non-Tax Amount      : 0.15
+Cashless Payment    : 0.00
+Cash Payment        : 153.94
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 65XpnQziuianzawf45nAC6V9TvMidVniJ65DbGTeJQs4
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : RAHAT MARKET CRESCENT
+Address             : AZ1095 BAKI ŞƏHƏRİ NƏSİMİ RAYONU NEFTÇİLƏR PR. ev.64-72.
+Code                : 1701102351-14014
+Tax Payer           : "ANC GROUP" MƏHDUD. MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1701102351
+Receipt #           : 92785
+Cashier             : Ülvüyyə Hacıyeva Mühü...
+Date                : 04.01.2025
+Time                : 20:05:03
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+SU SLAVYANKA ZSIZ PL.0059 1.0      0.55       0.55      
+__________________________________________________
+Total Amount        : 0.55
+Tax Amount          : 0.55
+Non-Tax Amount      : 0.00
+Cashless Payment    : 0.00
+Cash Payment        : 0.55
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 6Gt4J4XHQEjGrWJPMEvNUcVGpeLK3VfmXZ6EsWrm3bso
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : GRANDMART BESTMART
+Address             : AZ1060 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.126 m-
+Code                : 1401395111-16004
+Tax Payer           : "GRAND-MART" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1401395111
+Receipt #           : 480723
+Cashier             : Abdiyev Tamkin
+Date                : 30.12.2024
+Time                : 14:12:49
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+SU SIRAB 1.5L QAZLI PL 1.0      1.00       1.00      
+SU ISTISU IL QAZLI PL 1.0      1.40       1.40      
+COREK N1 400QR KEPEK LI 1.0      0.95       0.95      
+SUD AZERSUD 1.5% 1L  1.0      1.99       1.99      
+MAGAZA PAKETI BOYUK  1.0      0.05       0.05      
+__________________________________________________
+Total Amount        : 5.39
+Tax Amount          : 4.44
+Non-Tax Amount      : 0.95
+Cashless Payment    : 5.39
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 6S99n1goWymAPCitbEpJkxTgihay7YDuAH17JLW5kmSK
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : AZZA MAGAZASI
+Address             : AZ1142 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.10 m2
+Code                : 1700348101-16002
+Tax Payer           : "AZZA" QAPALI SSHMDAR CƏMİYYƏTİ
+TIN                 : 1700348101
+Receipt #           : 195322
+Cashier             : Pastry28
+Date                : 29.12.2024
+Time                : 12:29:21
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Moka 10 person       1.0      19.50      19.50     
+kopo6ka Large        1.0      0.00       0.00      
+Selofan paket satis Medium, 1.0      0.00       0.00      
+__________________________________________________
+Total Amount        : 19.70
+Tax Amount          : 19.70
+Non-Tax Amount      : 0.00
+Cashless Payment    : 19.70
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 6SjKdCHygaozsnG9dDoYecpEBBi3h59XnmVCfwpxsR8X
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : ARAZ MARKET
+Address             : AZ1060 BAKI ŞƏHƏRİ NİZAMİ RAYONU MEHDİ ABBASOV ev/iLƏ ŞİRİN MİRZƏYEV KÜÇƏLƏRİNİN KƏSİŞMƏSİ
+Code                : 1001994141-16013
+Tax Payer           : "ARAZ SUPERMARKET" MƏHDUD MƏSULİYYƏTLİ CəMİYYƏTİ
+TIN                 : 1001994141
+Receipt #           : 711534
+Cashier             : Pervane Eskerova
+Date                : 04.01.2025
+Time                : 22:19:03
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+MOL.MIR QORODEN KER E 1.0      20.95      20.95     
+XONCA KOKOSLU PECEN Y 0.27     10.00      2.72      
+ISANA SERIM 30 ML HA 1.0      9.99       9.99      
+KDV DIVNAYA DAR.KON  0.11     11.98      1.27      
+AKKOND MINI-RULET RU 0.18     15.00      2.73      
+Paket Araz 27*50 3KG 1.0      0.03       0.03      
+__________________________________________________
+Total Amount        : 37.69
+Tax Amount          : 37.69
+Non-Tax Amount      : 0.00
+Cashless Payment    : 37.69
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 6emsi4URQaPwtS4D5cCJJT1cgUMsgyepFSFApmukWvuT
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : GRANDMART
+Address             : AZ1118 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.46
+Code                : 1401395111-16002
+Tax Payer           : "GRAND-MART" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1401395111
+Receipt #           : 963828
+Cashier             : Akbarova Aydan
+Date                : 22.12.2024
+Time                : 18:34:15
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+SUD AZERSUD 1.5% 1L  1.0      2.55       2.55      
+MAYONEZ PROV.SLOBOD A 67% ZEYTUN 200 ML 1.0      1.69       1.69      
+MAGAZA PAKETI KICIK  1.0      0.03       0.03      
+__________________________________________________
+Total Amount        : 4.27
+Tax Amount          : 4.27
+Non-Tax Amount      : 0.00
+Cashless Payment    : 0.00
+Cash Payment        : 4.27
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 7qMBFjj9rM27Cz9brWZuAWAaYHgrVeaRaQ44p1NokHj2
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : RAHAT AİLƏ MARKET NEFTÇİLƏR 4
+Address             : AZ1118 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.62 m-
+Code                : 1701102351-16005
+Tax Payer           : "ANC GROUP" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1701102351
+Receipt #           : 357721
+Cashier             : Gülər Cəfərova Ceyhun
+Date                : 16.12.2024
+Time                : 20:48:15
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+BADAM KQ “Trade      0.41     4.50       1.84      
+SHEKER TOZU RICHMON D 800GR 1.0      7.00       71.00     
+YAG FINAL 0,5LT AYCICEK 0085 1.0      2.42       2.42      
+MUSTERI PAKETİ BOYUK 1.0      0.05       0.05      
+__________________________________________________
+Total Amount        : 6.02
+Tax Amount          : 4.35
+Non-Tax Amount      : 1.67
+Cashless Payment    : 0.00
+Cash Payment        : 6.02
+Paid Cash           : 6.02
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 82cZtqjCv2SkoEfFUv9thnURMv9ZN4sCU51MSvW5vnLC
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : BAZARSTORE ( XALQLAR DOSTLUĞU )
+Address             : AZ1060 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.124 mə
+Code                : 2000102651-16019
+Tax Payer           : "BAZARSTORE" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 2000102651
+Receipt #           : 55259
+Cashier             : Safura Eynullayeva Fikrat
+Date                : 29.12.2024
+Time                : 13:28:32
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+AZERSUD SUD 1 L 3.2% TETRA PAK 1.0      1.95       1.95      
+BAZARSTORE MARKET T ORBASI 33X60 SM 2.0      0.05       0.10      
+BIZIM TARLA XIYAR TURS USU 680 Q 1.0      2.69       2.69      
+BONDUELLE YASIL NOXU D 400 ML TNK 1.0      2.29       2.29      
+COREKCI ZAVOD COREY! 600 1.0      0.65       0.65      
+GILEZI YUMURTA SARI QA BLASDIRMA 10 1.0      2.20       2.20      
+NEWLAND KERE YAGI! 1 K Q 1.0      17.90      17.90     
+ROMASKA XAMA 320 Q 2 5% 1.0      9.00       9.00      
+SIYEZEN D.T TOYUQ ACI Q TEZE 490.0    3.79       3.79      
+SLOBODA MAYONEZ 375 ML XAMALI 67% 1.0      4.89       121.00    
+TESS THYME CAY 100 Q KEKLIKOTU LIMON 1.0      3.10       8.00      
+__________________________________________________
+Total Amount        : 49.24
+Tax Amount          : 34.21
+Non-Tax Amount      : 15.03
+Cashless Payment    : 0.00
+Cash Payment        : 49.24
+Paid Cash           : 1100.00
+Change              : 50.76
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 8J3jwJr94LKa62SLaeuUtH9K8LnyfmWrpm8RrDotdaTk
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : BAZARSTORE ( XALQLAR DOSTLUĞU )
+Address             : AZ1060 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.124 mə
+Code                : 2000102651-16019
+Tax Payer           : "BAZARSTORE" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 2000102651
+Receipt #           : 128376
+Cashier             : Safura Eynullayeva Fikrat
+Date                : 20.12.2024
+Time                : 14:33:47
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+BAZARSTORE MARKET T ORBASI 33X60 SM 3.0      0.05       0.15      
+CALGON SU YUMUSALDI CI TOZ 750 Q 1.0      9.99       9.99      
+COREKCI ZAVOD COREY! 600 1.0      0.65       0.65      
+DOMESTOS TEMIZLEYICI GEL 750 ML DAG MEHI 1.0      2.69       2.69      
+FAVELLİ MAKARON 500 Q SPAGETTI LONG 1.0      115.00     115.00    
+GALINA BLANCA UNIVER SAL EDVİYYAT 75 Q 1.0      1.20       1.20      
+GARNIER COLOR NAT SA C BOYASI 112 ML 4.15, 1.0      3.85       3.85      
+ILGIM SARICICEK 15 Q 1.0      2.09       2.09      
+ISTISU MINERAL SU 1 L P ET 1.0      1.40       1.40      
+KIRLANGIC QARGIDALI Y AGI LL 1.0      4.99       4.99      
+MINGECEVIR KEND COLP ASI BOYUK 1.0      7.50       7.50      
+NEWLAND KERE YAGI! 1 K Q 1.0      17.90      17.90     
+PRAXI AGARDICI GEL 750 ML CITRUS 1.0      9.00       9.00      
+SIYEZEN D.T TOYUQ ACI Q TEZE 364.0    2.35       2.35      
+VENDS PINQVIN PAKET 4 ou 1.0      4.89       6.67      
+__________________________________________________
+Total Amount        : 63.47
+Tax Amount          : 48.65
+Non-Tax Amount      : 14.82
+Cashless Payment    : 63.47
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 8JW3YHuksmvgduuFUXMo3YdPzqZZiKiGBFQGeWiMqMxJ
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : LEYLA MEDICAL CENTER
+Address             : AZ1025 BAKI ŞƏHƏRİ XƏTAİ RAYONU YUSİF SƏFƏROV ev.19:
+Code                : 1700112491-20001
+Tax Payer           : "LEYLA MEDICAL CENTER" MƏHDUD MƏSULİYYƏTLİ CəMİYYƏTİ
+TIN                 : 1700112491
+Receipt #           : 16245
+Cashier             : Günel Qarayeva
+Date                : 07.12.2024
+Time                : 10:20:14
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Pediatrın ilkin )    1.0      60.00      60.00     
+__________________________________________________
+Total Amount        : 60.00
+Tax Amount          : 60.00
+Non-Tax Amount      : 0.00
+Cashless Payment    : 60.00
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 8ofcmJhYPcaZ
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : KONTAKT HOME MEBEL VƏ MƏİŞƏT TEXNİKASI MAGAZASI
+Address             : AZ1119 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.125 B
+Code                : 1401005061-16008
+Tax Payer           : "ABC-TELECOM" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1401005061
+Receipt #           : 76667
+Cashier             : Arzu Hasanzada
+Date                : 30.11.2024
+Time                : 20:26:27
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Aksesuar             1.0      8.99       8.99      
+__________________________________________________
+Total Amount        : 8.99
+Tax Amount          : 8.99
+Non-Tax Amount      : 0.00
+Cashless Payment    : 8.99
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 97mG868j3tAdNn1AWwemUtt93B4F9ycDHvmoMdqFcqWy
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : ƏRZAQ MAGAZASI
+Address             : AZ1049 BAKI ŞƏHƏRİ SURAXANI RAYONU ƏMİRCAN STQ M.MUSTAFAYEV ev.21
+Code                : 2001177702-19002
+Tax Payer           : ŞAMXALOV MÜŞFİQ. TƏMRAZ OGLU
+TIN                 : 2001177702
+Receipt #           : 230834
+Cashier             : Kassa5
+Date                : 04.01.2025
+Time                : 12:57:11
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+FAIRY QAB MAYE PLATINI UM LT ad 1.0      9.47       9.47      
+Anchor Yag (Ceki) kq. 105.0    22.50      24.90     
+AZERI PRYANIK 500 GR ə d. 2.0      9.00       6.00      
+B.NORMAL BATON       2.0      214.00     4.28      
+GUNESLI ZAVOD COREK ad. 1.0      0.70       1.40      
+BALLI KULOK STS BOYUK 0.05 3.0      0.55       0.55      
+__________________________________________________
+Total Amount        : 40.81
+Tax Amount          : 39.26
+Non-Tax Amount      : 1.55
+Cashless Payment    : 0.00
+Cash Payment        : 40.81
+Paid Cash           : 100.00
+Change              : 59.19
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 9C7eVgGZfZYe583UF3khx18jbjGse3QhfCKN1Ugg3HEt
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : APTEK
+Address             : AZ1119 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.1198
+Code                : 1401383441-16019
+Tax Payer           : "BUTA FARM" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1401383441
+Receipt #           : 448424
+Cashier             : Raide Meherremova
+Date                : 24.12.2024
+Time                : 12:52:39
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Probiotik Gold N 20  0.5      19.40      9.70      
+Pantek DSR caps N30  0.33     15.30      5.09      
+DklerlN14 14         0.5      8.08       4.04      
+__________________________________________________
+Total Amount        : 18.83
+Tax Amount          : 18.83
+Non-Tax Amount      : 0.00
+Cashless Payment    : 0.00
+Cash Payment        : 18.83
+Paid Cash           : 20.00
+Change              : 117.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 9XiWjUNg61GL8x5BLMz4BHNozbFSsqmn9BkbPtSi4Dg8
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : GO SPORT - GƏNCLİK
+Address             : AZ1072 BAKI ŞƏHƏRİ NƏRİMANOV RAYONU FƏTƏLİXAN XOYSKİ PR, ev.830-835-Cİ MƏHƏLLƏ
+Code                : 1402773251-15002
+Tax Payer           : "BLUE PLANET DISTRIBUTION” MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1402773251
+Receipt #           : 21032
+Cashier             : Cavad Muxtarov
+Date                : 02.01.2025
+Time                : 11:29:39
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+1909852-1010 FF BEANIE 1.0      45.00      45.00     
+__________________________________________________
+Total Amount        : 45.00
+Tax Amount          : 45.00
+Non-Tax Amount      : 0.00
+Cashless Payment    : 0.00
+Cash Payment        : 45.00
+Paid Cash           : 45.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 9k7zRXSwsnUYph17upSsxA2EY7m2Rf64cUNQaY8ekwDt
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : SPAR MARKET
+Address             : AZ1141 BAKI ŞƏHƏRİ YASAMAL RAYONU FİRUDİN AĞAYEV ev.9
+Code                : 1001994141-13007
+Tax Payer           : "ARAZ SUPERMARKET" MƏHDUD MƏSULİYYƏTLİ CəMİYYƏTİ
+TIN                 : 1001994141
+Receipt #           : 904480
+Cashier             : Aysun Nesibova
+Date                : 31.10.2024
+Time                : 15:50:24
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+XONCA TOYUQ DONERI   1.0      1.90       1.90      
+__________________________________________________
+Total Amount        : 1.90
+Tax Amount          : 1.90
+Non-Tax Amount      : 0.00
+Cashless Payment    : 1.90
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 9y7QKhsGuK9zB2ftxWxMZoW64DcgeJEh8VRVrxFwchQy
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : LEYLA MEDICAL CENTER
+Address             : AZ1025 BAKI ŞƏHƏRİ XƏTAİ RAYONU YUSİF SƏFƏROV ev.19:
+Code                : 1700112491-20001
+Tax Payer           : "LEYLA MEDICAL CENTER" MƏHDUD MƏSULİYYƏTLİ CəMİYYƏTİ
+TIN                 : 1700112491
+Receipt #           : 16265
+Cashier             : Günel Qarayeva
+Date                : 07.12.2024
+Time                : 11:10:06
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+C-reaktiv protein (CRP) 1.0      12.00      12.00     
+Hemoqram ( 29 paramet r) 1.0      0.00       0.00      
+Ağ ciyərlərin R-skopiyast və düz proyeksiyada R-qr afiyast 1.0      12.00      12.00     
+Pediatriyada müşahidə (2 saata qədər) 1.0      0.00       0.00      
+Pediatriya tibb bacısı xid mati ( ambulator ) 1.0      35.00      35.00     
+A qrup streptokokk (kart test) 1.0      0.00       0.00      
+__________________________________________________
+Total Amount        : 117.00
+Tax Amount          : 117.00
+Non-Tax Amount      : 0.00
+Cashless Payment    : 117.00
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: 9zHALuYfqtNLFYWFooB8QpMNUzrDU1YJwUB29DVSouqn
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : BRAVO-KAFE KOROĞLU
+Address             : AZ1029 BAKI ŞƏHƏRİ NİZAMİ RAYONU HEYDƏR ƏLİYEV: PROSPEKTİ ev.172 SAYLI SAHƏ
+Code                : 4101872942-16001
+Tax Payer           : HÜMMƏTOV AQIL HABIL OĞLU
+TIN                 : 4101872942
+Receipt #           : 233790
+Cashier             : Kaccup NGA 1
+Date                : 30.12.2024
+Time                : 15:26:36
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Toyug Corekde *Simplified tax Et Corekde 1.0      3.40       3.40      
+__________________________________________________
+Total Amount        : 7.20
+Tax Amount          : 7.20
+Non-Tax Amount      : 0.00
+Cashless Payment    : 7.20
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: A3S3ozruypPLxd2CruLJeFZdoDrpifzUDvgcBTjSixYW
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : APTEK
+Address             : AZ1119 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.1198
+Code                : 1401383441-16019
+Tax Payer           : "BUTA FARM" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1401383441
+Receipt #           : 450648
+Cashier             : Raide Meherremova
+Date                : 30.12.2024
+Time                : 13:55:32
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Farmi D3             1.0      11.60      11.60     
+Strepsils limon      0.5      5.57       2.79      
+__________________________________________________
+Total Amount        : 14.39
+Tax Amount          : 14.39
+Non-Tax Amount      : 0.00
+Cashless Payment    : 14.39
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: AqHwS8nVawzQoG54SjVxUeKHKFpXz7s84ajWLbtis7j
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : APTEK
+Address             : AZ1073 BAKI ŞƏHƏRİ YASAMAL RAYONU HUSEYN CAVID ev.556/557A
+Code                : 1405445821-13004
+Tax Payer           : "NOVO PHARM" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1405445821
+Receipt #           : 19887
+Cashier             : Kerimov Ramil
+Date                : 02.01.2025
+Time                : 20:58:51
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Allopurinol          0.6      3.59       2.15      
+__________________________________________________
+Total Amount        : 2.15
+Tax Amount          : 2.15
+Non-Tax Amount      : 0.00
+Cashless Payment    : 2.15
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: B3EbnnTUiBg572DLtYwCRcU1K5ytj5P7aXs7Hi8zzwaL
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : GRANDMART BESTMART
+Address             : AZ1060 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.126 m-
+Code                : 1401395111-16004
+Tax Payer           : "GRAND-MART" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1401395111
+Receipt #           : 953932
+Cashier             : Zayidova Haqiqat
+Date                : 28.12.2024
+Time                : 12:46:39
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+AZCAKE COREK GENCE   1.0      0.65       0.65      
+GY.GM GOYERTİ EDED. “Trade 2.0      0.23       0.46      
+MVT.GM KELEM KG “Trade 0.8      0.78       0.62      
+AZCAKE QUTAB GOY KER E YAGLI 1.0      0.90       0.90      
+AZCAKE QUTAB QARIN K ERE YAGLI 1.0      0.90       0.90      
+AZCAKE COREK BATON M IN 1.0      0.45       0.45      
+MVT.GM MANDARIN UCU Z KG “Trade 0.76     2.00       1.52      
+NH GOLDEX SEBET N1 27 1469 1.0      0.49       0.49      
+YAG KERE BELAYA KOROV A 1600R 82.5% 1.0      3.86       3.86      
+BULGUR RICHMOND 800 QR 1.0      1.99       1.99      
+MAGAZA PAKETI BOYUK  1.0      0.05       0.05      
+__________________________________________________
+Total Amount        : 11.89
+Tax Amount          : 9.05
+Non-Tax Amount      : 2.84
+Cashless Payment    : 0.00
+Cash Payment        : 11.89
+Paid Cash           : 50.00
+Change              : 38.11
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: BHy5FofMMHS5JioA17ycNMgHGoj5bxSmBzf7sKtsLFfV
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : APTEK
+Address             : AZ1119 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.1198
+Code                : 1401383441-16019
+Tax Payer           : "BUTA FARM" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1401383441
+Receipt #           : 448135
+Cashier             : Raide Meherremova
+Date                : 23.12.2024
+Time                : 17:57:32
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Sevpram              0.5      11.22      5.61      
+__________________________________________________
+Total Amount        : 5.61
+Tax Amount          : 5.61
+Non-Tax Amount      : 0.00
+Cashless Payment    : 0.00
+Cash Payment        : 5.61
+Paid Cash           : 21.00
+Change              : 15.39
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: BaLH4264TYtf
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : ARAZ MARKET
+Address             : AZ0100 ABŞERON RAYONU XIRDALAN ŞƏHƏRİ MEHDİ HÜSEYNZADƏ (XIRDALAN QƏS.) ev.313
+Code                : 1001994141-31103
+Tax Payer           : "ARAZ SUPERMARKET" MƏHDUD MƏSULİYYƏTLİ CəMİYYƏTİ
+TIN                 : 1001994141
+Receipt #           : 11647
+Cashier             : Nəzrin Qurbanlı
+Date                : 15.12.2024
+Time                : 10:24:40
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+POMIDOR MUCO KG “Trade 0.66     2.89       1.91      
+AURA METBEX DESMALI  1.0      7.84       7.84      
+__________________________________________________
+Total Amount        : 9.75
+Tax Amount          : 7.93
+Non-Tax Amount      : 1.82
+Cashless Payment    : 9.75
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: C5rDXqVkZdtiUZnc5zTWKPBm4ypVa8vphwKX4ZnYYF5P
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : ROTANTE
+Address             : AZ1006 BAKI ŞƏHƏRİ YASAMAL RAYONU HUSEYN CAVID PR. ev.39
+Code                : 1703833581-13001
+Tax Payer           : "POLLO FRİTO" Məhdud Məsuliyyətli Cəmiyyəti
+TIN                 : 1703833581
+Receipt #           : 3145
+Cashier             : Heydereli
+Date                : 01.01.2025,
+Time                : 19:25:09
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+ROTANTE BLUE URGER   1.0      8.50       8.50      
+__________________________________________________
+Total Amount        : 8.50
+Tax Amount          : 8.50
+Non-Tax Amount      : 0.00
+Cashless Payment    : 8.50
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: CDu193NGGZ9iezsfXYhNRgeDYLe4XXtafsCSgeJYtMz4
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : LİBRAFF
+Address             : AZ1073 BAKI ŞƏHƏRİ YASAMAL RAYONU HUSEYN CAVID PR. ev.100 102 104 106 106A 1068 m...
+Code                : 1702192791-13002
+Tax Payer           : "LİBRAFF" MƏHDUD. MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1702192791
+Receipt #           : 66873
+Cashier             : PA Qonche Memishova (...
+Date                : 01.01.2025
+Time                : 20:10:24
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+                     1.0      13.90      13.90     
+__________________________________________________
+Total Amount        : 13.90
+Tax Amount          : 13.90
+Non-Tax Amount      : 0.00
+Cashless Payment    : 13.90
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: D5EW1fsHMhq8kv2NoMoB81ZJbUQ8c4u9Da3jJ7kwmko
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : BAZARSTORE ( XALQLAR DOSTLUĞU )
+Address             : AZ1060 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.124 mə
+Code                : 2000102651-16019
+Tax Payer           : "BAZARSTORE" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 2000102651
+Receipt #           : 378978
+Cashier             : Zeynəb Cahangirzada ş.
+Date                : 02.01.2025
+Time                : 22:16:37
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+POLO SEKER u         1.0      1.49       1.49      
+__________________________________________________
+Total Amount        : 1.49
+Tax Amount          : 1.49
+Non-Tax Amount      : 0.00
+Cashless Payment    : 1.49
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: DFMbWAtHcQQM2UpTaZpemgxyq5zjrYf4D1Np72XZ1hKn
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : KÖHNƏ PALTARLAR MAGAZASI
+Address             : AZ1142 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.108F m.0
+Code                : 1201543122-16001
+Tax Payer           : NIFTALIYEV EMIL
+TIN                 : 1201543122
+Receipt #           : 45800
+Cashier             : Default Clerk
+Date                : 29.12.2024
+Time                : 12:54:11
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Geyim                1.0      12.75      12.75     
+__________________________________________________
+Total Amount        : 12.75
+Tax Amount          : 12.75
+Non-Tax Amount      : 0.00
+Cashless Payment    : 0.00
+Cash Payment        : 12.75
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: Dh8hsAoFVGFcyEzwYdmmykoZZZPhm5LeVe9r9VZQy9AH
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : APTEK
+Address             : AZ1141 BAKI ŞƏHƏRİ YASAMAL RAYONU FİRUDİN AĞAYEV ev.5
+Code                : 1500072561-13006
+Tax Payer           : "AZƏRİ MED" QAPALI SƏHMDAR CƏMİYYƏTİ
+TIN                 : 1500072561
+Receipt #           : 174096
+Cashier             : Kassir
+Date                : 23.12.2024
+Time                : 19:14:55
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+INGALIPT-N 30 ml     1.0      2.35       2.35      
+GEMATOGEN 30gr (Gem atogesha) 2.0      0.60       1.20      
+KLOK ZEFERAN 22x25 LD PE (1kq=145) (EDED) 1.0      0.03       0.03      
+__________________________________________________
+Total Amount        : 3.58
+Tax Amount          : 3.58
+Non-Tax Amount      : 0.00
+Cashless Payment    : 3.58
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: DnE711ghyQHjGtkCQXt5k4VS2FLbobpn93mJ6WGKotDZ
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : GRANDMART BESTMART
+Address             : AZ1060 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.126 m-
+Code                : 1401395111-16004
+Tax Payer           : "GRAND-MART" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1401395111
+Receipt #           : 961200
+Cashier             : Agakisiyeva Xayala
+Date                : 06.01.2025
+Time                : 18:44:25
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+MVT.GM MANDARIN UCU Z KG “Trade 0.72     1.97       1.42      
+MAGAZA PAKETI BOYUK  1.0      0.05       0.05      
+__________________________________________________
+Total Amount        : 1.47
+Tax Amount          : 0.16
+Non-Tax Amount      : 1.31
+Cashless Payment    : 1.47
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: E7jGXVfpcKZWFiu41GTejVURj2SK39JMN2VDRroH5dBT
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : GRANDMART
+Address             : AZ1118 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.46
+Code                : 1401395111-16002
+Tax Payer           : "GRAND-MART" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1401395111
+Receipt #           : 966445
+Cashier             : Cafarova Narmina
+Date                : 27.12.2024
+Time                : 07:54:54
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+AZCAKE BULKA SADE ED 2.0      0.63       1.26      
+AZCAKE SIMIT DUZLU   1.0      0.82       0.82      
+ZEFIR HARIBO 70QR CHA MALLOWS 1.0      1.85       1.85      
+__________________________________________________
+Total Amount        : 3.93
+Tax Amount          : 3.93
+Non-Tax Amount      : 0.00
+Cashless Payment    : 0.00
+Cash Payment        : 3.93
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: EPszcWAvJNCGw3HwEYb8PE9Ap3ewAj2TxLN92cdTmLSo
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : "BELARUSKI" ƏRZAQ MAGAZASI
+Address             : AZ1096 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.61C
+Code                : 1300557531-16001
+Tax Payer           : "AZNUR" M@HDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1300557531
+Receipt #           : 319565
+Cashier             : KASSIR NEFTCILER 1
+Date                : 22.12.2024
+Time                : 18:26:40
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Donuz piyi mehsullar Qr udinka po Volkovisski lyu ks düzlü VMK kq 0.33     16.70      5.51      
+Vafli Tradisionnie shokola dniy vkus 100 qr Slodich 1.0      0.00       0.95      
+Kesmik Myaqkiy 4 Slavy anskie tradisii MMZ1 400 qr 1.0      0.95       3.20      
+Paket kichik sellofan Bela ruski ed 1.0      3.20       0.03      
+__________________________________________________
+Total Amount        : 9.69
+Tax Amount          : 9.69
+Non-Tax Amount      : 0.00
+Cashless Payment    : 9.69
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: ER9s8qbNzEsyVcj2vhRi7yJGxsUgKkVvE7fydNX2Mz7y
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : Friends Central Perk
+Address             : AZ1006 BAKI ŞƏHƏRİ YASAMAL RAYONU HUSEYN CAVİD PR. ev.26
+Code                : 1605603422-13001
+Tax Payer           : SAHİBZADƏ ƏKBƏR ZAKIR OĞLU
+TIN                 : 1605603422
+Receipt #           : 1823
+Cashier             : Fira
+Date                : 03.01.2025
+Time                : 19:43:41
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Ginger Tea Hot       1.0      8.90       8.90      
+__________________________________________________
+Total Amount        : 8.90
+Tax Amount          : 8.90
+Non-Tax Amount      : 0.00
+Cashless Payment    : 8.90
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: EkwZnbpgUA5aR5mpT2PMKMF7r4aDcMMb5pb5UGLkX8YR
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : GRANDMART BESTMART
+Address             : AZ1060 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.126 m-
+Code                : 1401395111-16004
+Tax Payer           : "GRAND-MART" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1401395111
+Receipt #           : 693663
+Cashier             : Zayidova Haqiqat
+Date                : 31.12.2024
+Time                : 13:07:56
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+COREK COREKC! 400QR BATON 1.0      0.95       0.95      
+AZCAKE COREK KERPIC 4 1.0      0.70       0.70      
+AZCAKE COREK BATON B OYUK 1.0      0.95       0.95      
+MAGAZA PAKETI KICIK  1.0      0.03       0.03      
+MVT.GM BANAN KG “Trade 0.97     1.98       1.92      
+MVT.GM PORTAGAL TURK KG “Trade 0.9      1.99       1.79      
+MVT.GM MANDARIN UCU Z KG “Trade 0.98     2.00       1.96      
+MAGAZA PAKETI KICIK  1.0      0.03       0.03      
+SOK FRUMBA TL MULTIVI TAMIN TP 1.0      1.65       1.65      
+DUZ BIZIM DUZ 850QR X OREK P, 1.0      0.49       0.49      
+SU ISTISU 1L QAZLI PL 1.0      1.40       1.40      
+SHEKER TOZU RICHMON D800 QR 1.0      1.78       1.78      
+SOK FRUTIK ERIK 950ML TP 1.0      1.59       1.59      
+MAGAZA PAKETI BOYUK  1.0      0.05       0.05      
+MAGAZA PAKETI BOYUK  1.0      0.05       0.05      
+__________________________________________________
+Total Amount        : 15.34
+Tax Amount          : 752.00
+Non-Tax Amount      : -736.66
+Cashless Payment    : 0.00
+Cash Payment        : 15.34
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: F7kDmJ7BXrDU3CJ8YAVhR4z9RjCcCNGSsA2QDhKDmJ4b
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : APTEK
+Address             : AZ1141 BAKI ŞƏHƏRİ YASAMAL RAYONU FİRUDİN AĞAYEV ev.5
+Code                : 1500072561-13006
+Tax Payer           : "AZƏRİ MED" QAPALI SƏHMDAR CƏMİYYƏTİ
+TIN                 : 1500072561
+Receipt #           : 176071
+Cashier             : Kassir
+Date                : 02.01.2025
+Time                : 17:17:59
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+KORVALOL 25ml v kor F armak 1.0      1.08       1.08      
+BOLALGEN 20mg/500mg N100 (EDED) 20.0     0.08       1.60      
+KLOK ZEFERAN 22x25 LD PE (1kq=145) (EDED) 1.0      0.03       0.03      
+__________________________________________________
+Total Amount        : 2.71
+Tax Amount          : 271.00
+Non-Tax Amount      : -268.29
+Cashless Payment    : 271.00
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: FKUTcf4zKYYf918jz5ur5DH8SbSeEkPugFZt96fbU86U
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : GRANDMART
+Address             : AZ1118 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.46
+Code                : 1401395111-16002
+Tax Payer           : "GRAND-MART" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1401395111
+Receipt #           : 967239
+Cashier             : Calalova Lale
+Date                : 28.12.2024
+Time                : 08:18:58
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+AZCAKE BULKA SADE ED 1.0      0.63       0.63      
+AZCAKE SIMIT DUZLU   2.0      0.82       1.64      
+PECENYE ULKER IKRAM 5 8QR CIKOLATALI 1.0      0.75       0.75      
+PECENYE ULKER KAT KAT 25QR FINDIKL! 1.0      0.49       0.49      
+KEKS MINI OZMO OGO-P- 00 30QR AMADA 1.0      0.49       0.49      
+__________________________________________________
+Total Amount        : 4.00
+Tax Amount          : 4.00
+Non-Tax Amount      : 0.00
+Cashless Payment    : 0.00
+Cash Payment        : 4.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: G1fSXKgnBVqXEWQBpEUFRdhoia3252EHeYLG7HGbgMJK
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : ARAZ MARKET
+Address             : AZ1060 BAKI ŞƏHƏRİ NİZAMİ RAYONU MEHDİ ABBASOV ev/iLƏ ŞİRİN MİRZƏYEV KÜÇƏLƏRİNİN KƏSİŞMƏSİ
+Code                : 1001994141-16013
+Tax Payer           : "ARAZ SUPERMARKET" MƏHDUD MƏSULİYYƏTLİ CəMİYYƏTİ
+TIN                 : 1001994141
+Receipt #           : 586480
+Cashier             : Aygün Abbasova
+Date                : 15.12.2024
+Time                : 18:09:59
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+MINSKAYA MARKA BELAR 1.0      2.39       2.39      
+ETI TUTKU 60 GR      1.0      0.80       0.80      
+DC BATON KEPEKLI     1.0      0.95       0.95      
+LIMON LENKERAN EDED “Trade 2.0      0.19       0.38      
+ARMUD KG “Trade      0.77     1.69       1.30      
+Paket Araz 27*50 3KG 1.0      0.03       0.03      
+__________________________________________________
+Total Amount        : 5.85
+Tax Amount          : 3.30
+Non-Tax Amount      : 2.55
+Cashless Payment    : 0.00
+Cash Payment        : 5.85
+Paid Cash           : 5.85
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: G5Wj3G81a5MCa7rZvq9Gqy2pAyUAQx9TrT5YVr2YiUTY
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : APTEK
+Address             : AZ1141 BAKI ŞƏHƏRİ YASAMAL RAYONU FİRUDİN AĞAYEV ev.5
+Code                : 1500072561-13006
+Tax Payer           : "AZƏRİ MED" QAPALI SƏHMDAR CƏMİYYƏTİ
+TIN                 : 1500072561
+Receipt #           : 173256
+Cashier             : Kassir
+Date                : 20.12.2024
+Time                : 10:32:28
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+NAZOGRIP et) (EDED)  2.0      1.02       2.04      
+__________________________________________________
+Total Amount        : 2.04
+Tax Amount          : 2.04
+Non-Tax Amount      : 0.00
+Cashless Payment    : 0.00
+Cash Payment        : 2.04
+Paid Cash           : 2.04
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: G8926FUnuaTySCLFqsdUeqyMfdheynJN5tjmynAXJZcj
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : GRANDMART
+Address             : AZ1118 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.46
+Code                : 1401395111-16002
+Tax Payer           : "GRAND-MART" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1401395111
+Receipt #           : 967240
+Cashier             : Calalova Lale
+Date                : 28.12.2024
+Time                : 08:20:25
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+MVT.GM KARTOF GEDEBE YKG “Trade 3.17     1.59       5.04      
+__________________________________________________
+Total Amount        : 5.04
+Tax Amount          : 0.40
+Non-Tax Amount      : 4.64
+Cashless Payment    : 0.00
+Cash Payment        : 5.04
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: GpEqeV9sg1rHHbdQ4amwdNco4VRoLhVhM2rwEG6kJHya
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : "BELARUSKI" ƏRZAQ MAGAZASI
+Address             : AZ1096 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.61C
+Code                : 1300557531-16001
+Tax Payer           : "AZNUR" M@HDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1300557531
+Receipt #           : 279340
+Cashier             : KASSIR NEFTCILER 2
+Date                : 15.12.2024
+Time                : 17:55:51
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Sushki Sladkaya pugovka s aromatom vanili 180 qr BerestPek 1.0      1.80       1.80      
+Xama 22 1M Molochniy 180 qr Mol.qost 2.0      2.70       5.40      
+__________________________________________________
+Total Amount        : 7.20
+Tax Amount          : 7.20
+Non-Tax Amount      : 0.00
+Cashless Payment    : 0.00
+Cash Payment        : 7.20
+Paid Cash           : 100.00
+Change              : 92.80
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: GqNbW98WMcVSm4i1cASGJoqgztLPqgzFE1JQhbaE4EGf
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : LA LUNA
+Address             : AZ1095 BAKI ŞƏHƏRİ NƏSİMİ RAYONU NEFTÇİLƏR PR. ev.64-72
+Code                : 1703555261-14002
+Tax Payer           : "GUFİSA" Məhdud Məsuliyyətli Cəmiyyəti
+TIN                 : 1703555261
+Receipt #           : 11651
+Cashier             : Kamran Masadiyev
+Date                : 04.01.2025
+Time                : 19:39:17
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Angel tort Simplified tax 1.0      7.70       7.70      
+Cortado/ Flat White *Simplified tax 1.0      5.70       5.70      
+__________________________________________________
+Total Amount        : 13.40
+Tax Amount          : 13.40
+Non-Tax Amount      : 0.00
+Cashless Payment    : 13.40
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: GyAYSVbPiUDZdXkHv8HPEc8Hh48eQLfudeAcGPagvpn1
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : KÖHNƏ PALTARLAR MAGAZASI
+Address             : AZ1033 BAKI ŞƏHƏRİ NƏRİMANOV RAYONU TƏBRİZ ev.87 m.71
+Code                : 1504479291-15001
+Tax Payer           : "MAZRA-Z" Məhdud Məsuliyyətli Cəmiyyəti
+TIN                 : 1504479291
+Receipt #           : 15877
+Cashier             : Default Clerk
+Date                : 28.12.2024
+Time                : 11:46:32
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Geyim                1.0      21.00      21.00     
+__________________________________________________
+Total Amount        : 21.00
+Tax Amount          : 21.00
+Non-Tax Amount      : 0.00
+Cashless Payment    : 21.00
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: H4WVZuSFXuiW6qDHizhkWRjEQC2YZHQpD5tL1UtYzuXZ
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : ROTANTE
+Address             : AZ1095 BAKI ŞƏHƏRİ NƏSİMİ RAYONU NEFTÇİLƏR PR. ev.64-72.
+Code                : 1703736621-14001
+Tax Payer           : "UTILE" Mahdud Məsuliyyətli Cəmiyyəti
+TIN                 : 1703736621
+Receipt #           : 2310
+Cashier             : Əsmər
+Date                : 04.01.2025,
+Time                : 20:16:35
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+4lu KEMIKSIZ CITIR MENU *Simplified tax 1.0      9.90       9.90      
+4 PARCA CITIR TAVUK ST RIPS *Simplified tax 1.0      0.00       0.00      
+KUCUK BOY PATATES *Simplified tax 1.0      0.00       0.00      
+SPRITE 16 OZ 475ML *Simplified tax 1.0      0.60       0.60      
+Buzsuz *Simplified tax 1.0      0.00       0.00      
+__________________________________________________
+Total Amount        : 10.50
+Tax Amount          : 10.50
+Non-Tax Amount      : 0.00
+Cashless Payment    : 10.50
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: HeyZR3LzAZ4WzCFoyDGLnoPJffLjyK2iGMxKxK2ohZ7
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : RAHAT AİLƏ MARKET NEFTÇİLƏR 4
+Address             : AZ1118 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.62 m-
+Code                : 1701102351-16005
+Tax Payer           : "ANC GROUP" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1701102351
+Receipt #           : 588368
+Cashier             : Gülər Cəfərova Ceyhun
+Date                : 26.12.2024
+Time                : 20:36:53
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+ISTISU MINERAL SUYU 1L T PET 1.0      1.40       1.40      
+COREK DELTA COREKCI Z AVOD COREY! 1.0      0.75       0.75      
+__________________________________________________
+Total Amount        : 2.15
+Tax Amount          : 1.40
+Non-Tax Amount      : 0.75
+Cashless Payment    : 0.00
+Cash Payment        : 2.15
+Paid Cash           : 5.00
+Change              : 2.85
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: HmLFKUfVkUqED4TngAgQGFRLZScdRaUh8JeqrWDkejd4
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : RESTORAN SAHIL
+Address             : AZ1095 Baki ş Səbail r Uzeyir Hacıbəyov ev Bübül pr kes 207 saylı Mah 2-ci giriş 89 NBA
+Code                : 1700323971-17003
+Tax Payer           : "MCDONALD'S AZƏRBAYCAN" QAPALI SƏHMDAR CəMiYYƏTİ
+TIN                 : 1700323971
+Receipt #           : 115242
+Cashier             : Haybullah Omar Burtiyev
+Date                : 29.12.2024
+Time                : 21:47:33
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Espresso             1.0      3.50       3.50      
+__________________________________________________
+Total Amount        : 3.50
+Tax Amount          : 3.50
+Non-Tax Amount      : 0.00
+Cashless Payment    : 0.00
+Cash Payment        : 3.50
+Paid Cash           : 3.50
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: HpshbdwSQtg4RjBNNTdFvC4DoMyPUat4LSqxQFvwsvYC
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : ƏRZAQ MAGAZASI
+Address             : AZ1049 BAKI ŞƏHƏRİ SURAXANI RAYONU ƏMİRCAN STQ M.MUSTAFAYEV ev.21
+Code                : 2001177702-19002
+Tax Payer           : ŞAMXALOV MÜŞFİQ. TƏMRAZ OGLU
+TIN                 : 2001177702
+Receipt #           : 679675
+Cashier             : Kassal
+Date                : 31.12.2024
+Time                : 13:20:10
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+B.NORMAL BATON       2.0      0.70       1.40      
+RED BULL ENERGY 0.355 iad. 3.0      4.67       14.00     
+BONDUELLE QARGIDALI 500 ML ad, 2.0      3.17       1.00      
+SANDORA ALBALI 1L ad. 1.0      3.34       6.34      
+SOCHNAYA DOLINA SHAF TALIALMA 0.95 LT ad, 2.0      167.00     3.34      
+BALLI KULOK STS BOYUK 0.05 3.0      0.05       3.34      
+__________________________________________________
+Total Amount        : 28.58
+Tax Amount          : 27.03
+Non-Tax Amount      : 1.55
+Cashless Payment    : 0.00
+Cash Payment        : 28.58
+Paid Cash           : 28.58
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: JBAQkDC2NBkwwi97pAC2qFn8uds7dfLia6QzzoAzR9jn
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : Friends Central Perk
+Address             : AZ1006 BAKI ŞƏHƏRİ YASAMAL RAYONU HUSEYN CAVİD PR. ev.26
+Code                : 1605603422-13001
+Tax Payer           : SAHİBZADƏ ƏKBƏR ZAKIR OĞLU
+TIN                 : 1605603422
+Receipt #           : 1822
+Cashier             : Fira
+Date                : 03.01.2025,
+Time                : 19:42:49
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Feijoa&Lime Tea Hot *Simplified tax 1.0      8.90       8.90      
+__________________________________________________
+Total Amount        : 8.90
+Tax Amount          : 8.90
+Non-Tax Amount      : 0.00
+Cashless Payment    : 8.90
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: JDbiy1aCSKJn
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : AL MARKET
+Address             : AZ1114 BAKI ŞƏHƏRİ NƏSİMİ RAYONU MİRMAHMUD KAZIMOVSKİ ev.2018 m.-
+Code                : 1005498281-14013
+Tax Payer           : "AL MARKET" M@HDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1005498281
+Receipt #           : 303535
+Cashier             : AYSEL HÜMMƏT QIZI Ə,
+Date                : 14.12.2024
+Time                : 19:45:06
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+AL MARKET MUS.TOR. 26 S0CM 40MİK 1.0      0.03       0.03      
+QARABASAQLI COVDAR C OREYİ 350 1.0      0.60       0.60      
+ROMASKA XAMA 320 Q 2 5% 1.0      4.90       4.90      
+__________________________________________________
+Total Amount        : 5.53
+Tax Amount          : 4.93
+Non-Tax Amount      : 0.60
+Cashless Payment    : 5.53
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: KBiXeuAGnE2TsN1A45sbXP9qTXXfDaZTqh5GT6KiU7Y
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : FLO (MƏHƏMMƏD HADI)
+Address             : AZ1149 BAKI ŞƏHƏRİ XƏTAİ RAYONU MƏHƏMMƏD HADI ev.39R
+Code                : 1700118872-20001
+Tax Payer           : SALMANOV ZABİL ŞƏKİL: OĞLU
+TIN                 : 1700118872
+Receipt #           : 169865
+Cashier             : Əhmədova Vəzufa Meh.
+Date                : 05.01.2025,
+Time                : 12:07:29
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+KINETIX SHOES STARGO 4PR 1.0      62.90      62.90     
+__________________________________________________
+Total Amount        : 62.99
+Tax Amount          : 62.99
+Non-Tax Amount      : 0.00
+Cashless Payment    : 62.99
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: qJa6ZdoJ254kBKMLmbrUgKJWsipV21nNKcmMVtKyeXF
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : RAHAT MARKET CRESCENT
+Address             : AZ1095 BAKI ŞƏHƏRİ NƏSİMİ RAYONU NEFTÇİLƏR PR. ev.64-72.
+Code                : 1701102351-14014
+Tax Payer           : "ANC GROUP" MƏHDUD. MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1701102351
+Receipt #           : 92784
+Cashier             : Ülvüyyə Hacıyeva Mühü...
+Date                : 04.01.2025
+Time                : 20:04:53
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+RAHAT QAZSIZ R       1.0      0.35       0.35      
+__________________________________________________
+Total Amount        : 0.35
+Tax Amount          : 0.35
+Non-Tax Amount      : 0.00
+Cashless Payment    : 0.35
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: smCRKc7ECvCDtpvqCDAWnZz1NZGvLfdeGgPZXQxbQj3
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : "BELARUSKI" ƏRZAQ MAGAZASI
+Address             : AZ1096 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.61C
+Code                : 1300557531-16001
+Tax Payer           : "AZNUR" M@HDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+TIN                 : 1300557531
+Receipt #           : 285077
+Cashier             : KASSIR NEFTCILER 2
+Date                : 03.01.2025
+Time                : 11:16:06
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+Sushki Kusariki Maxi s fru ktozoy 250 qr MXP XZ Av tomat 1.0      1.50       1.50      
+Donuz piyi mehsullar Qr udinka po Derevenski lyu ks düzlü VMK kq *VAT: 18% Marmelad jevatelniy BLO GGERS Crazy Apple so vk usom yabloka 75 qr mini trubochki k s obsipke AV D 20.0     16.70      3.26      
+Xama 21 Bellakt 180 qr *VAT: 18% Paket kichik sellofan Bela ruski ed. 2.0      2.00       1.40      
+__________________________________________________
+Total Amount        : 10.79
+Tax Amount          : 10.79
+Non-Tax Amount      : 0.00
+Cashless Payment    : 10.79
+Cash Payment        : 0.00
+Paid Cash           : 0.00
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: wPeLM3wvuBUCQn4TMN5ZQZvheV7XuQg97meruVsqRVT
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : ƏRZAQ MAGAZASI
+Address             : AZ1049 BAKI ŞƏHƏRİ SURAXANI RAYONU ƏMİRCAN STQ M.MUSTAFAYEV ev.21
+Code                : 2001177702-19002
+Tax Payer           : ŞAMXALOV MÜŞFİQ. TƏMRAZ OGLU
+TIN                 : 2001177702
+Receipt #           : 251527
+Cashier             : Kassa3
+Date                : 22.12.2024
+Time                : 16:18:50
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+LAYS KLASSIK 140 GR ad. 1.0      2.95       2.95      
+Badamii qazli su 1 It ed. 1.0      0.74       0.74      
+PEPSI 1 LT ad.       1.0      0.99       0.99      
+M.KRUCOK NAZIK ad.   1.0      1.20       1.20      
+__________________________________________________
+Total Amount        : 5.88
+Tax Amount          : 5.88
+Non-Tax Amount      : 0.00
+Cashless Payment    : 0.00
+Cash Payment        : 5.88
+Paid Cash           : 10.00
+Change              : 4.12
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+FISCAL CODE: zkzC4ojjonxmK41uBS3xJp38JbUCWEFtyvMbBzip7my
+--------------------------------------------------
+                     RECEIPT                      
+--------------------------------------------------
+Store Name          : ARAZ MARKET
+Address             : AZ1060 BAKI ŞƏHƏRİ NİZAMİ RAYONU MEHDİ ABBASOV ev/iLƏ ŞİRİN MİRZƏYEV KÜÇƏLƏRİNİN KƏSİŞMƏSİ
+Code                : 1001994141-16013
+Tax Payer           : "ARAZ SUPERMARKET" MƏHDUD MƏSULİYYƏTLİ CəMİYYƏTİ
+TIN                 : 1001994141
+Receipt #           : 410991
+Cashier             : lalə Şirvanova
+Date                : 18.12.2024
+Time                : 21:08:47
+--------------------------------------------------
+Product              Qty      Price      Amount    
+__________________________________________________
+PORTAGAL KG          0.81     1.89       1.53      
+ARMUD KG             1.45     1.69       2.46      
+__________________________________________________
+Total Amount        : 3.99
+Tax Amount          : 0.18
+Non-Tax Amount      : 3.81
+Cashless Payment    : 0.00
+Cash Payment        : 3.99
+Paid Cash           : 3.99
+Change              : 0.00
+Bonus               : 0.00
+Prepayment          : 0.00
+Credit              : 0.00
+--------------------------------------------------
+                    THANK YOU!                    
+--------------------------------------------------
+
+
+Process finished with exit code 0
