@@ -1013,3 +1013,10 @@ fabric.properties
 /logs/receipts/receipt_qJa6ZdoJ254kBKMLmbrUgKJWsipV21nNKcmMVtKyeXF.jpg
 /logs/receipts/receipt_wPeLM3wvuBUCQn4TMN5ZQZvheV7XuQg97meruVsqRVT.jpg
 /logs/receipts/receipt_wPeLM3wvuBUCQn4TMN5ZQZvheV7XuQg97meruVsqRVT.log
+/.idea/.gitignore
+/.idea/markdown.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/ReceiptReader.iml
+/.idea/vcs.xml
