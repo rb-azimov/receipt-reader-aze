@@ -1,6 +1,9 @@
 import math
 import time
 
+import cv2
+from matplotlib import pyplot as plt
+
 from src.low_level_processors.Util import Util
 from src.low_level_processors.application_properties_service import ApplicationPropertiesService
 from src.low_level_processors.receipt_builder import ReceiptBuilder
@@ -29,7 +32,7 @@ class ReceiptService:
 
   """
 
-  def mine_receipt(self, fiscal_code: str):
+  def mine_receipt(self, image_ekassa_gray = None, fiscal_code = None):
     """
     Acquires receipt image from E-kassa using the fiscal code.
     Splits receipt image into general, products, payments parts.
@@ -43,7 +46,8 @@ class ReceiptService:
         return_type: Receipt instance
     """
     start_time = time.time()
-    image_ekassa_gray = ReceiptUtil.read_image_from_ekassa(fiscal_code)
+    if image_ekassa_gray is None:
+      image_ekassa_gray = ReceiptUtil.read_image_from_ekassa(fiscal_code)
 
     ApplicationPropertiesService.current_receipt_fiscal_code = fiscal_code
     ApplicationPropertiesService.current_receipt_processing_start_date_time = Util.prepare_current_datetime()
@@ -66,6 +70,8 @@ class ReceiptService:
       ApplicationPropertiesService.logger.log_text('general results',
                                                    f'Processed in {math.ceil(processing_time)} seconds!\n\n' +
                                                    receipt.__str__())
+      ApplicationPropertiesService.logger.log_receipt('extracted receipt text', receipt.__str__())
+      ApplicationPropertiesService.logger.log_receipt_image('receipt image', image_ekassa_gray)
     return receipt
 
   def perform_ner_on_general_part(self, image_general):
@@ -110,6 +116,19 @@ class ReceiptService:
     )
     return general_info
 
+  @staticmethod
+  def preprocess_image(image: object) -> object:
+    # Denoise
+    # denoised = cv2.medianBlur(image, 3)
+
+    # Adaptive Threshold
+    binary = cv2.adaptiveThreshold(image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
+
+    # Resize for better OCR
+    resized = cv2.resize(binary, None, fx=2, fy=2, interpolation=cv2.INTER_LINEAR)
+
+    return resized
+
   def perform_ner_on_products_part(self, image_products):
     """
     Splits products part of the receipt image into
@@ -143,8 +162,23 @@ class ReceiptService:
     product_line_margin = ApplicationPropertiesService.margin_properties.product_line_margin
     product_images = ReceiptUtil.prepare_product_images(clear_products_part, df_quantities,
                      quantities_image_height = clear_quantities_part.shape[0], product_line_margin = product_line_margin)
-
     product_names = ReceiptBuilder.extract_product_names(product_images)
+
+    # price_images = ReceiptUtil.prepare_price_images(clear_prices_part, df_quantities,
+    #                                                     quantities_image_height=clear_quantities_part.shape[0],
+    #                                                     price_line_margin=product_line_margin)
+    # amount_images = ReceiptUtil.prepare_amount_images(clear_amounts_part, df_quantities,
+    #                                                   quantities_image_height=clear_quantities_part.shape[0],
+    #                                                   amount_line_margin=product_line_margin)
+    # for i in range(len(price_images)):
+    #   price_image = price_images[i]
+    #   ApplicationPropertiesService.logger.log_image(f'Price-{i+1}', price_image)
+    # for i in range(len(amount_images)):
+    #   amount_image = amount_images[i]
+    #   ApplicationPropertiesService.logger.log_image(f'Amount-{i+1}', amount_image)
+    # prices = ReceiptBuilder.extract_prices(price_images)
+    # amounts = ReceiptBuilder.extract_amounts(amount_images)
+
 
     ocr_property = ApplicationPropertiesService.ocr_properties.prices_ocr_property
     prices, _ = ReceiptUtil.perform_ocr_obtain_values(image=clear_prices_part,

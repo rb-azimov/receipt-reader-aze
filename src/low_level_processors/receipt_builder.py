@@ -157,6 +157,56 @@ class ReceiptBuilder:
       product_names.append(product_name)
     return product_names
 
+  # @staticmethod
+  # def extract_prices(price_images):
+  #   """
+  #   Performs OCR on each of the images to obtain
+  #   price_names.
+  #
+  #   Args:
+  #       price_images (list): list of price images
+  #       ...
+  #
+  #   Returns:
+  #       return: price_names
+  #   """
+  #
+  #   prices = []
+  #   for i in range(len(price_images)):
+  #     price_image = price_images[i]
+  #     ocr_property = ApplicationPropertiesService.ocr_properties.prices_ocr_property
+  #     df_price = ReceiptUtil.perform_ocr(price_image, ocr_config=ocr_property.config, lang=ocr_property.lang)
+  #     price = ''.join(df_price.iloc[:].text.to_list())
+  #     price = ReceiptUtil.preprocess_to_real_number(price)
+  #     price = float(price)
+  #     prices.append(price)
+  #   return prices
+  #
+  # @staticmethod
+  # def extract_amounts(amount_images):
+  #   """
+  #   Performs OCR on each of the images to obtain
+  #   amount_names.
+  #
+  #   Args:
+  #       amount_images (list): list of amount images
+  #       ...
+  #
+  #   Returns:
+  #       return: amount_names
+  #   """
+  #
+  #   amounts = []
+  #   for i in range(len(amount_images)):
+  #     amount_image = amount_images[i]
+  #     ocr_property = ApplicationPropertiesService.ocr_properties.amounts_ocr_property
+  #     df_amount = ReceiptUtil.perform_ocr(amount_image, ocr_config=ocr_property.config, lang=ocr_property.lang)
+  #     amount = ''.join(df_amount.iloc[:].text.to_list())
+  #     amount = ReceiptUtil.preprocess_to_real_number(amount)
+  #     amount = float(amount)
+  #     amounts.append(amount)
+  #   return amounts
+
   @staticmethod
   def extract_values_from_payment_part(payment_part):
     """

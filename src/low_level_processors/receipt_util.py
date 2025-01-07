@@ -117,20 +117,95 @@ class ReceiptUtil:
     product_lines_ys = []
     for i in range(1, df_quantities.shape[0]):
       y1, y2 = df_quantities.iloc[i-1].top, df_quantities.iloc[i].top
+      # print(y1, y2)
       product_lines_ys.append((y1-product_line_margin,y2))
 
     y1, y2 = df_quantities.iloc[-1].top, quantities_image_height
+    # print(y1, y2)
     product_lines_ys.append((y1-product_line_margin,y2))
-
+    # print('Num lines:', len(product_lines_ys))
     product_images = []
     for i in range(len(product_lines_ys)):
       product_line_ys = product_lines_ys[i]
       y1, y2 = product_line_ys
+      # print(y1, y2)
       product_image = products_part[y1:y2,:]
       product_images.append(product_image)
       if ApplicationPropertiesService.is_debug_on:
         ApplicationPropertiesService.logger.log_image(f'Product-{i + 1}', product_image)
     return product_images
+
+  def prepare_price_images(prices_part, df_quantities, quantities_image_height, price_line_margin = 3):
+    """
+    Helps to segment price names image into images of seperate price names.
+
+    Args:
+       prices_part: image of the prices part
+       df_quantities: data frame that contains OCR results of quantities part
+       quantities_image_height: height of the quantities part
+       price_line_margin: int
+       ...
+
+    Returns:
+        return: price_images
+    """
+
+    price_lines_ys = []
+    for i in range(1, df_quantities.shape[0]):
+      y1, y2 = df_quantities.iloc[i-1].top, df_quantities.iloc[i].top
+      # print(y1, y2)
+      price_lines_ys.append((y1-price_line_margin,y2))
+
+    y1, y2 = df_quantities.iloc[-1].top, quantities_image_height
+    # print(y1, y2)
+    price_lines_ys.append((y1-price_line_margin,y2))
+    # print('Num lines:', len(price_lines_ys))
+    price_images = []
+    for i in range(len(price_lines_ys)):
+      price_line_ys = price_lines_ys[i]
+      y1, y2 = price_line_ys
+      # print(y1, y2)
+      price_image = prices_part[y1:y2,:]
+      price_images.append(price_image)
+      if ApplicationPropertiesService.is_debug_on:
+        ApplicationPropertiesService.logger.log_image(f'price-{i + 1}', price_image)
+    return price_images
+
+  def prepare_amount_images(amounts_part, df_quantities, quantities_image_height, amount_line_margin = 3):
+    """
+    Helps to segment amount names image into images of seperate amount names.
+
+    Args:
+       amounts_part: image of the amounts part
+       df_quantities: data frame that contains OCR results of quantities part
+       quantities_image_height: height of the quantities part
+       amount_line_margin: int
+       ...
+
+    Returns:
+        return: amount_images
+    """
+
+    amount_lines_ys = []
+    for i in range(1, df_quantities.shape[0]):
+      y1, y2 = df_quantities.iloc[i-1].top, df_quantities.iloc[i].top
+      # print(y1, y2)
+      amount_lines_ys.append((y1-amount_line_margin,y2))
+
+    y1, y2 = df_quantities.iloc[-1].top, quantities_image_height
+    # print(y1, y2)
+    amount_lines_ys.append((y1-amount_line_margin,y2))
+    # print('Num lines:', len(amount_lines_ys))
+    amount_images = []
+    for i in range(len(amount_lines_ys)):
+      amount_line_ys = amount_lines_ys[i]
+      y1, y2 = amount_line_ys
+      # print(y1, y2)
+      amount_image = amounts_part[y1:y2,:]
+      amount_images.append(amount_image)
+      if ApplicationPropertiesService.is_debug_on:
+        ApplicationPropertiesService.logger.log_image(f'amount-{i + 1}', amount_image)
+    return amount_images
 
   @staticmethod
   def select_keyword_existed_rows(df, searched_col_name, keywords, similiarity_thresh = 80):
@@ -386,3 +461,16 @@ class ReceiptUtil:
       prepayment = values[3]
       credit = values[4]
     return cashless, cash, paid_cash, change, bonus, prepayment, credit
+
+  # def preprocess_to_real_number(text):
+  #   if text[-1] == '.':
+  #     text = text[:-1]
+  #   if text[0] == '.':
+  #     text = text[1:]
+  #   return text
+
+  def preprocess_to_real_number(input_string):
+    parts = input_string.split('.')
+    parts = [part for part in parts if part]
+    real_number = ''.join(parts[:1]) + '.' + ''.join(parts[1:])
+    return real_number
