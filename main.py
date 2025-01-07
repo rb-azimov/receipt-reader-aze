@@ -94,7 +94,8 @@ def main():
     error_fiscal_code_list = ['2Avo4fThx8TH4hhd2TDW8anU5zKmvd7ep9t42F2EFDPr',
                               '9k7zRXSwsnUYph17upSsxA2EY7m2Rf64cUNQaY8ekwDt',
                               'EWvtdGBGWzFpFmBNiGAZpqgtL77saVEbanLeZ8SK8ox7',
-                              'Gh435awX2mqvPi4AYXzeAmrHEVkBrNYAHKNj4Q2t6Mjq']
+                              'Gh435awX2mqvPi4AYXzeAmrHEVkBrNYAHKNj4Q2t6Mjq',
+                              '8J3jwJr94LKa62SLaeuUtH9K8LnyfmWrpm8RrDotdaTk']
 
     with open(os.path.join('src','fiscal_codes_for_testing', 'ekassa_fiscal_codes.txt'), mode = 'r') as file:
         fiscal_codes = file.readlines()
