@@ -11,6 +11,11 @@ from rapidfuzz import fuzz, process
 from src.logger import LowLevelReceiptMinerLogger
 from src.low_level_processors.application_properties_service import ApplicationPropertiesService
 from src.low_level_processors.util import Util
+from src.models.product import Product
+from src.models.receipt import Receipt
+from src.models.receipt_general_info import ReceiptGeneralInfo
+from src.models.receipt_payment_info import ReceiptPaymentInfo
+from src.models.receipt_product_list import ReceiptProductList
 
 
 class ReceiptUtil:
@@ -42,6 +47,7 @@ class ReceiptUtil:
   """
 
   EXPORT_IMPORT_EXCEL = 3
+  EXPORT_IMPORT_WORD = 4
 
 
   @staticmethod
@@ -494,7 +500,9 @@ class ReceiptUtil:
   def export_receipts(receipts, export_option=None):
     if export_option is None:
       export_option = ReceiptUtil.EXPORT_IMPORT_EXCEL
-    return ReceiptUtil._export_receipts_to_excel(receipts)
+    if export_option == ReceiptUtil.EXPORT_IMPORT_EXCEL:
+      return ReceiptUtil._export_receipts_to_excel(receipts)
+
 
   @staticmethod
   def _export_receipts_to_excel(receipts):
@@ -532,15 +540,70 @@ class ReceiptUtil:
       ApplicationPropertiesService.logger.output_dir,
       'overal_data'
     )
+    date_time = Util.prepare_current_datetime()
     file_general_payment = os.path.join(
       folder_name,
-      f'{Util.prepare_current_datetime()}_general-info_payment.xlsx'
+      f'{date_time}_general-info_payment.xlsx'
     )
     file_products = os.path.join(
       folder_name,
-      f'{Util.prepare_current_datetime()}_products.xlsx'
+      f'{date_time}_products.xlsx'
     )
     df_general_info_payments.to_excel(file_general_payment, index=False)
     df_products.to_excel(file_products, index=False)
 
+  @staticmethod
+  def import_receipts(date_time, import_option=None):
+    if import_option is None:
+      import_option = ReceiptUtil.EXPORT_IMPORT_EXCEL
+    if import_option == ReceiptUtil.EXPORT_IMPORT_EXCEL:
+      return ReceiptUtil._import_receipts_from_excel(date_time)
 
+  @staticmethod
+  def _import_receipts_from_excel(date_time):
+    folder_name = os.path.join(
+      ApplicationPropertiesService.logger.output_dir,
+      'overal_data'
+    )
+    file_general_payment = os.path.join(
+      folder_name,
+      f'{date_time}_general-info_payment.xlsx'
+    )
+    file_products = os.path.join(
+      folder_name,
+      f'{date_time}_products.xlsx'
+    )
+    df_general_info_payments = pd.read_excel(file_general_payment)
+    df_products = pd.read_excel(file_products)
+
+    fiscal_codes = df_general_info_payments.FiscalCode.to_list()
+    receipts = []
+
+    for fiscal_code in fiscal_codes:
+      row = df_general_info_payments[df_general_info_payments.FiscalCode == fiscal_code].iloc[0]
+      general_info = ReceiptGeneralInfo(
+        row.ObjName, row.Address, row.ObjCode,
+        row.TaxPayer, row.TIN, row.ReceiptID, row.Cashier,
+        row.Date, row.Time
+      )
+      payment_info = ReceiptPaymentInfo(
+        row.TotalAmount, row.TaxAmount,
+        row.NonTaxAmount, row.Cashless, row.Cash, row.PaidCash,
+        row.Change, row.Bonus, row.PrePayment, row.Credit,
+      )
+      product_rows = df_products[df_products.FiscalCode == fiscal_code]
+      products = []
+      for index in range(len(df_products)):
+        row = df_products.iloc[index]
+        product = Product(
+          row.ProductName, row.Quantity, row.Price, row.Amount
+        )
+        products.append(product)
+      product_list = ReceiptProductList(products)
+
+      receipt = Receipt(
+        general_info, product_list, payment_info
+      )
+      receipt._fiscal_code = fiscal_code
+      receipts.append(receipt)
+    return receipts
