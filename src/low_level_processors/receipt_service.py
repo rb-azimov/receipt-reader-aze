@@ -4,7 +4,7 @@ import time
 import cv2
 from matplotlib import pyplot as plt
 
-from src.low_level_processors.Util import Util
+from src.low_level_processors.util import Util
 from src.low_level_processors.application_properties_service import ApplicationPropertiesService
 from src.low_level_processors.receipt_builder import ReceiptBuilder
 from src.low_level_processors.receipt_util import ReceiptUtil
