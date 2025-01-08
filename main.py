@@ -166,6 +166,7 @@ def main():
     # fiscal_codes = error_fiscal_code_list
     error_fiscal_code_list = []
 
+    # fiscal_codes = fiscal_codes[4:7]
     fiscal_codes = [fiscal_code.strip() for fiscal_code in fiscal_codes]
     fiscal_codes = list(set(fiscal_codes))
     fiscal_codes.sort()
@@ -178,7 +179,7 @@ def main():
 
     receipt_images_folder = os.path.join('logs', 'receipts')
     downloaded_receipt_images = os.listdir()
-    receipts = {}
+    receipts_dict = {}
     for i in range(len(fiscal_codes)):
         fiscal_code = fiscal_codes[i]
         if fiscal_code in error_fiscal_code_list:
@@ -194,15 +195,19 @@ def main():
         try:
             receipt = receipt_service.mine_receipt(image_ekassa_gray=image_ekassa_gray,
                                                    fiscal_code=fiscal_code)
+            receipt._fiscal_code = fiscal_code
         except Exception as e:
             print(f"An error occurred (on {fiscal_code}): {e}")
             traceback.print_exc()
         else:
-            receipts[fiscal_code] = receipt
+            receipts_dict[fiscal_code] = receipt
+
+    receipts = list(receipts_dict.values())
+    ReceiptUtil.export_receipts(receipts)
 
     print()
     print('<< Receipts >>')
-    for fiscal_code, receipt in receipts.items():
+    for fiscal_code, receipt in receipts_dict.items():
         print(f'FISCAL CODE: {fiscal_code}')
         print((receipt.__str__()))
 if __name__ == '__main__':

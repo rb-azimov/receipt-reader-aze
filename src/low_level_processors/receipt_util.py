@@ -1,3 +1,5 @@
+import os
+
 import cv2
 import numpy as np
 import pytesseract
@@ -6,7 +8,9 @@ import requests
 import pandas as pd
 from rapidfuzz import fuzz, process
 
+from src.logger import LowLevelReceiptMinerLogger
 from src.low_level_processors.application_properties_service import ApplicationPropertiesService
+from src.low_level_processors.util import Util
 
 
 class ReceiptUtil:
@@ -36,6 +40,9 @@ class ReceiptUtil:
       distribute_values_in_payment_type(values, is_paid_cash) -> Distributes values based on payment type (cash vs cashless).
 
   """
+
+  EXPORT_IMPORT_EXCEL = 3
+
 
   @staticmethod
   def read_image_from_ekassa(fiscal_code):
@@ -482,3 +489,58 @@ class ReceiptUtil:
     parts = [part for part in parts if part]
     real_number = ''.join(parts[:1]) + '.' + ''.join(parts[1:])
     return real_number
+
+  @staticmethod
+  def export_receipts(receipts, export_option=None):
+    if export_option is None:
+      export_option = ReceiptUtil.EXPORT_IMPORT_EXCEL
+    return ReceiptUtil._export_receipts_to_excel(receipts)
+
+  @staticmethod
+  def _export_receipts_to_excel(receipts):
+    df_general_info_payments = pd.DataFrame(columns=[
+      'FiscalCode', 'ObjName', 'Address', 'ObjCode',
+      'TaxPayer', 'TIN', 'ReceiptID', 'Cashier',
+      'Date', 'Time', 'TotalAmount', 'TaxAmount',
+      'NonTaxAmount', 'Cashless', 'Cash', 'PaidCash',
+      'Change', 'Bonus', 'PrePayment', 'Credit',
+    ])
+    df_products = pd.DataFrame(columns=[
+      'FiscalCode', 'ProductName', 'Quantity', 'Price', 'Amount'
+    ])
+
+    for i in range(len(receipts)):
+      receipt = receipts[i]
+      general_info = receipt.general_info
+      products = receipt.product_list.products
+      payment_info = receipt.payment_info
+      fiscal_code = receipt._fiscal_code
+      print('Code:', fiscal_code)
+      df_general_info_payments.loc[len(df_general_info_payments)] = [
+        fiscal_code, general_info.name, general_info.address, general_info.code,
+        general_info.tax_payer_name, general_info.TIN, general_info.sale_receipt_num, general_info.cashier_name,
+        general_info.date, general_info.time, payment_info.total_amount, payment_info.tax_amount,
+        payment_info.non_tax_amount, payment_info.cashless_payment_amount, payment_info.cash_payment_amount, payment_info.paid_cash_amount,
+        payment_info.change_cash_amount, payment_info.bonus, payment_info.prepayment, payment_info.credit
+      ]
+
+      for product in products:
+        df_products.loc[len(df_products)] = [
+          fiscal_code, product.name, product.quantity, product.price, product.amount
+        ]
+    folder_name = os.path.join(
+      ApplicationPropertiesService.logger.output_dir,
+      'overal_data'
+    )
+    file_general_payment = os.path.join(
+      folder_name,
+      f'{Util.prepare_current_datetime()}_general-info_payment.xlsx'
+    )
+    file_products = os.path.join(
+      folder_name,
+      f'{Util.prepare_current_datetime()}_products.xlsx'
+    )
+    df_general_info_payments.to_excel(file_general_payment, index=False)
+    df_products.to_excel(file_products, index=False)
+
+

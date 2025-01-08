@@ -7,12 +7,16 @@ class Receipt:
         self,
         general_info: 'ReceiptGeneralInfo',
         product_list: 'ReceiptProductList',
-        payment_info: 'ReceiptPaymentInfo'
+        payment_info: 'ReceiptPaymentInfo',
+        fiscal_code = None
     ):
         self._general_info = general_info
         self._product_list = product_list
         self._payment_info = payment_info
+        self._fiscal_code = fiscal_code
 
+        if self._fiscal_code is None:
+            self._fiscal_code = ''
     # Getter and Setter for general_info
     @property
     def general_info(self):
@@ -40,6 +44,16 @@ class Receipt:
     def payment_info(self, value: 'ReceiptPaymentInfo'):
         self._payment_info = value
 
+    @property
+    def fiscal_code(self):
+        return self._fiscal_code
+
+    @general_info.setter
+    def fiscal_code(self, value: 'str'):
+        self._fiscal_code = value
+        if self._fiscal_code is None:
+            self._fiscal_code = ''
+
     # Override __str__ method
     def __str__(self):
         return Receipt.format_receipt_to_show(self)
@@ -56,7 +70,7 @@ class Receipt:
       output += "-" * 50 + "\n"
 
       general_info = receipt.general_info
-      output += format_line("Store Name", general_info.name)
+      output += format_line("Object Name", general_info.name)
       output += format_line("Address", general_info.address)
       output += format_line("Code", general_info.code)
       output += format_line("Tax Payer", general_info.tax_payer_name)
