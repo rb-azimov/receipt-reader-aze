@@ -186,32 +186,47 @@ def main():
             continue
         print(f'{i+1}. {fiscal_code}')
         image_name = LowLevelReceiptMinerLogger.sanitize_string(f"receipt_{fiscal_code}.jpg")
-    #     if image_name not in downloaded_receipt_images:
-    #         image_ekassa_gray = ReceiptUtil.read_image_from_ekassa(fiscal_code)
-    #         image_file = os.path.join(receipt_images_folder, image_name)
-    #         cv2.imwrite(image_file, image_ekassa_gray)
-    #     image_ekassa_gray = cv2.imread(os.path.join(receipt_images_folder, image_name), cv2.IMREAD_GRAYSCALE)
-    #
-    #     try:
-    #         receipt = receipt_service.mine_receipt(image_ekassa_gray=image_ekassa_gray,
-    #                                                fiscal_code=fiscal_code)
-    #         receipt._fiscal_code = fiscal_code
-    #     except Exception as e:
-    #         print(f"An error occurred (on {fiscal_code}): {e}")
-    #         traceback.print_exc()
-    #     else:
-    #         receipts_dict[fiscal_code] = receipt
-    #
-    # receipts = list(receipts_dict.values())
-    # ReceiptUtil.export_receipts(receipts)
-    receipts = ReceiptUtil.import_receipts('2025-01-09_00-21-17')
-    receipts_dict = {}
-    for receipt in receipts:
-        receipts_dict[receipt._fiscal_code] = receipt
+        if image_name not in downloaded_receipt_images:
+            image_ekassa_gray = ReceiptUtil.read_image_from_ekassa(fiscal_code)
+            image_file = os.path.join(receipt_images_folder, image_name)
+            cv2.imwrite(image_file, image_ekassa_gray)
+        image_ekassa_gray = cv2.imread(os.path.join(receipt_images_folder, image_name), cv2.IMREAD_GRAYSCALE)
+
+        try:
+            receipt = receipt_service.mine_receipt(image_ekassa_gray=image_ekassa_gray,
+                                                   fiscal_code=fiscal_code)
+            receipt._fiscal_code = fiscal_code
+        except Exception as e:
+            print(f"An error occurred (on {fiscal_code}): {e}")
+            traceback.print_exc()
+        else:
+            receipts_dict[fiscal_code] = receipt
+
+    receipts = list(receipts_dict.values())
+    ReceiptUtil.export_receipts(receipts)
+    # receipts = ReceiptUtil.import_receipts('2025-01-09_00-21-17')
+    # receipts_dict = {}
+    # for receipt in receipts:
+    #     receipts_dict[receipt._fiscal_code] = receipt
     print()
     print('<< Receipts >>')
     for fiscal_code, receipt in receipts_dict.items():
         print(f'FISCAL CODE: {fiscal_code}')
         print((receipt.__str__()))
+
+    # receipt_images = []
+    # receipt_image_paths = []
+    # receipt_images_folder = os.path.join('logs', 'receipts')
+    # for fiscal_code in list(receipts_dict.keys()):
+    #     image_name = LowLevelReceiptMinerLogger.sanitize_string(f"receipt_{fiscal_code}.jpg")
+    #     receipt_image_path = os.path.join(receipt_images_folder, image_name)
+    #     receipt_image_paths.append(receipt_image_path)
+    #     receipt_image = cv2.imread(receipt_image_path, cv2.IMREAD_GRAYSCALE)
+    #     receipt_images.append(receipt_image)
+    # ReceiptUtil.export_receipts(
+    #     receipts=[receipt.__str__() for receipt in receipts],
+    #     receipt_image_paths = receipt_image_paths,
+    #     export_option=ReceiptUtil.EXPORT_IMPORT_PDF
+    # )
 if __name__ == '__main__':
     main()
