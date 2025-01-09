@@ -66,7 +66,8 @@ class Receipt:
 
       output = ""
       output += "-" * 50 + "\n"
-      output += f"{'RECEIPT':^50}\n"
+      # output += f"{'RECEIPT':^50}\n"
+      output += format_line('RECEIPT', receipt._fiscal_code if receipt._fiscal_code else '')
       output += "-" * 50 + "\n"
 
       general_info = receipt.general_info
@@ -101,7 +102,7 @@ class Receipt:
       output += format_line("Prepayment", f"{payment_info.prepayment:.2f}")
       output += format_line("Credit", f"{payment_info.credit:.2f}")
       output += "-" * 50 + "\n"
-      output += f"{'THANK YOU!':^50}\n"
-      output += "-" * 50 + "\n"
+      # output += f"{'THANK YOU!':^50}\n"
+      # output += "-" * 50 + "\n"
 
       return output

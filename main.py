@@ -139,51 +139,21 @@ def main():
     ApplicationPropertiesService.load_properties(application_properties)
     receipt_service = ReceiptService()
 
-    """
-    fiscal_codes = [
-        'wPeLM3wvuBUCQn4TMN5ZQZvheV7XuQg97meruVsqRVT',
-        'Dh8hsAoFVGFcyEzwYdmmykoZZZPhm5LeVe9r9VZQy9AH',
-        'JDbiy1aCSKJn',
-        'BaLH4264TYtf',
-        '8ofcmJhYPcaZ',
-        '4tFLVnqE1gbT',
-        'ER9s8qbNzEsyVcj2vhRi7yJGxsUgKkVvE7fydNX2Mz7y',
-        '97mG868j3tAdNn1AWwemUtt93B4F9ycDHvmoMdqFcqWy',
-        # 'Gh435awX2mqvPi4AYXzeAmrHEVkBrNYAHKNj4Q2t6Mjq',
-    ]
-    """
-    error_fiscal_code_list = [
-        '2Avo4fThx8TH4hhd2TDW8anU5zKmvd7ep9t42F2EFDPr',
-        '9k7zRXSwsnUYph17upSsxA2EY7m2Rf64cUNQaY8ekwDt',
-        'EWvtdGBGWzFpFmBNiGAZpqgtL77saVEbanLeZ8SK8ox7',
-        'Gh435awX2mqvPi4AYXzeAmrHEVkBrNYAHKNj4Q2t6Mjq',
-        '8J3jwJr94LKa62SLaeuUtH9K8LnyfmWrpm8RrDotdaTk'
-    ]
-
     with open(os.path.join('src','fiscal_codes_for_testing', 'ekassa_fiscal_codes.txt'), mode = 'r') as file:
         fiscal_codes = file.readlines()
 
-    # fiscal_codes = error_fiscal_code_list
-    error_fiscal_code_list = []
-
-    fiscal_codes = fiscal_codes[4:7]
+    # fiscal_codes = fiscal_codes[4:7]
     fiscal_codes = [fiscal_code.strip() for fiscal_code in fiscal_codes]
     fiscal_codes = list(set(fiscal_codes))
     fiscal_codes.sort()
 
-    # fiscal_codes_of_interest = [
-    #     '3rFyigVXEejxeSJKTup4vZ6SJLf98GGL2BMAMDPQeuko',
-    #     '4LsQxjbXecdZt99BNXYTEPmrfMJnrvEK3Z3Mc41qUbEQ',
-    #     '5zREhnapFAvbVB9fciWyPc6bXbhRVVJbG7vSDD38znd2',
-    # ]
-
+    # fiscal_codes_of_interest = []
+    fiscal_codes_with_error, errors, error_tracebacks = [], [], []
     receipt_images_folder = os.path.join('logs', 'receipts')
     downloaded_receipt_images = os.listdir()
     receipts_dict = {}
     for i in range(len(fiscal_codes)):
         fiscal_code = fiscal_codes[i]
-        if fiscal_code in error_fiscal_code_list:
-            continue
         print(f'{i+1}. {fiscal_code}')
         image_name = LowLevelReceiptMinerLogger.sanitize_string(f"receipt_{fiscal_code}.jpg")
         if image_name not in downloaded_receipt_images:
@@ -198,35 +168,53 @@ def main():
             receipt._fiscal_code = fiscal_code
         except Exception as e:
             print(f"An error occurred (on {fiscal_code}): {e}")
-            traceback.print_exc()
+            # traceback.print_exc()
+            errors.append(e)
+            error_tracebacks.append(traceback.format_exc())
+            fiscal_codes_with_error.append(fiscal_code)
         else:
             receipts_dict[fiscal_code] = receipt
 
     receipts = list(receipts_dict.values())
     ReceiptUtil.export_receipts(receipts)
-    # receipts = ReceiptUtil.import_receipts('2025-01-09_00-21-17')
-    # receipts_dict = {}
-    # for receipt in receipts:
-    #     receipts_dict[receipt._fiscal_code] = receipt
+
     print()
     print('<< Receipts >>')
     for fiscal_code, receipt in receipts_dict.items():
         print(f'FISCAL CODE: {fiscal_code}')
         print((receipt.__str__()))
 
-    # receipt_images = []
-    # receipt_image_paths = []
-    # receipt_images_folder = os.path.join('logs', 'receipts')
-    # for fiscal_code in list(receipts_dict.keys()):
-    #     image_name = LowLevelReceiptMinerLogger.sanitize_string(f"receipt_{fiscal_code}.jpg")
-    #     receipt_image_path = os.path.join(receipt_images_folder, image_name)
-    #     receipt_image_paths.append(receipt_image_path)
-    #     receipt_image = cv2.imread(receipt_image_path, cv2.IMREAD_GRAYSCALE)
-    #     receipt_images.append(receipt_image)
-    # ReceiptUtil.export_receipts(
-    #     receipts=[receipt.__str__() for receipt in receipts],
-    #     receipt_image_paths = receipt_image_paths,
-    #     export_option=ReceiptUtil.EXPORT_IMPORT_PDF
-    # )
+    receipt_images = []
+    receipt_image_paths = []
+    receipt_images_folder = os.path.join('logs', 'receipts')
+    for fiscal_code in list(receipts_dict.keys()):
+        image_name = LowLevelReceiptMinerLogger.sanitize_string(f"receipt_{fiscal_code}.jpg")
+        receipt_image_path = os.path.join(receipt_images_folder, image_name)
+        receipt_image_paths.append(receipt_image_path)
+        receipt_image = cv2.imread(receipt_image_path, cv2.IMREAD_GRAYSCALE)
+        receipt_images.append(receipt_image)
+    ReceiptUtil.export_receipts(
+        receipts=[receipt.__str__() for receipt in receipts],
+        receipt_image_paths = receipt_image_paths,
+        export_option=ReceiptUtil.EXPORT_IMPORT_HTML
+    )
+
+    print()
+    print('<<Fiscal codes that error occured>>')
+    for i in range(len(fiscal_codes_with_error)):
+        print(f'{(i+1)}. {fiscal_codes_with_error[i]}'.strip())
+
+    print('---------------')
+    print()
+    print('<<Errors>>')
+    for i in range(len(fiscal_codes_with_error)):
+        print(f'{(i+1)}. {errors[i]}'.strip())
+        print('---------------')
+    print()
+    print('<<Traceback>>')
+    for i in range(len(fiscal_codes_with_error)):
+        print(f'{(i+1)}. {errors[i]}\n{error_tracebacks[i]}'.strip())
+        print('---------------')
+
 if __name__ == '__main__':
     main()

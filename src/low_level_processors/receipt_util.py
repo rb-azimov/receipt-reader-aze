@@ -8,7 +8,6 @@ import requests
 import pandas as pd
 from rapidfuzz import fuzz, process
 
-from src.logger import LowLevelReceiptMinerLogger
 from src.low_level_processors.application_properties_service import ApplicationPropertiesService
 from src.low_level_processors.util import Util
 from src.models.product import Product
@@ -16,8 +15,6 @@ from src.models.receipt import Receipt
 from src.models.receipt_general_info import ReceiptGeneralInfo
 from src.models.receipt_payment_info import ReceiptPaymentInfo
 from src.models.receipt_product_list import ReceiptProductList
-from fpdf import FPDF
-from PIL import Image
 import os
 
 
@@ -50,8 +47,7 @@ class ReceiptUtil:
   """
 
   EXPORT_IMPORT_EXCEL = 3
-  EXPORT_IMPORT_PDF = 4
-
+  EXPORT_IMPORT_HTML = 4
 
   @staticmethod
   def read_image_from_ekassa(fiscal_code):
@@ -505,9 +501,9 @@ class ReceiptUtil:
       export_option = ReceiptUtil.EXPORT_IMPORT_EXCEL
     if export_option == ReceiptUtil.EXPORT_IMPORT_EXCEL:
       return ReceiptUtil._export_receipts_to_excel(receipts)
-    elif export_option == ReceiptUtil.EXPORT_IMPORT_PDF:
-      return ReceiptUtil._export_receipts_to_PDF(receipts, receipt_image_paths)
-
+    elif export_option == ReceiptUtil.EXPORT_IMPORT_HTML:
+      return ReceiptUtil._export_receipts_to_HTML(receipts, receipt_image_paths)
+    raise ValueError("No valid import/export option was selected!")
 
   @staticmethod
   def _export_receipts_to_excel(receipts):
@@ -557,64 +553,99 @@ class ReceiptUtil:
     df_general_info_payments.to_excel(file_general_payment, index=False)
     df_products.to_excel(file_products, index=False)
 
-
-
-  def _export_receipts_to_PDF(receipts, receipt_image_paths):
+  def _export_receipts_to_HTML(receipts, receipt_image_paths):
     """
-    Creates a PDF with receipts displayed in tabular format, showing both the image and the corresponding content string.
+    Creates an HTML page with receipts displayed in tabular format, showing both the image and the corresponding content string.
 
     Args:
         receipt_images (list of str): List of file paths to receipt images.
         receipts (list of str): List of receipt content strings.
         pdf_file_path (str): Output PDF file path.
     """
+    receipt_image_paths = [os.path.join(os.getcwd(), path) for path in receipt_image_paths]
     folder_name = os.path.join(
       ApplicationPropertiesService.logger.output_dir,
       'overal_data'
     )
     date_time = Util.prepare_current_datetime()
-    pdf_file_path = os.path.join(
+    html_file_path = os.path.join(
       folder_name,
-      f'{date_time}_results.pdf'
+      f'{date_time}_results.html'
     )
+
     if len(receipt_image_paths) != len(receipts):
       raise ValueError("The number of receipt images and receipt content strings must match.")
 
-    pdf = FPDF()
-    pdf.set_auto_page_break(auto=True, margin=15)
-    pdf.add_page()
-    font_path = "C:/Windows/Fonts/arial.ttf"
-    pdf.add_font("Arial", "", font_path, uni=True)
-    pdf.set_font("Arial", size=12)
+    html_content = """
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Receipt OCR Report</title>
+            <style>
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-bottom: 20px;
+                    border-spacing: 0 10px;
+                }
+                th, td {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    vertical-align: top;
+                    text-align: left;
+                }
+                <!-- vertical-align: middle;-->
+                th {
+                    background-color: #f4f4f4;
+                }
+                img {
+                    max-width: 300px;
+                    height: auto;
+                }
+                .container {
+                    margin: 20px;
+                    font-family: Arial, sans-serif;
+                }
+                .heading {
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1 class="heading">Receipt OCR Report</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Receipt Image</th>
+                            <th>Extracted Text</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        """
 
-    # Set up table header
-    pdf.set_font("Arial", style="B", size=12)
-    pdf.cell(80, 10, "Receipt Image", border=1, align="C")
-    pdf.cell(110, 10, "Receipt Content", border=1, align="C")
-    pdf.ln()
+    # Add rows for each image-text pair
+    for image_path, text in zip(receipt_image_paths, receipts):
+      html_content += f"""
+            <tr>
+                <td><img src="{image_path}" alt="Receipt Image"></td>
+                <td><pre>{text}</pre></td>
+            </tr>
+            """
 
-    for content, image_path in zip(receipts, receipt_image_paths):
-      # Add image
-      pdf.set_font("Arial", size=12)
-      try:
-        # Ensure the image fits into a cell (resize if necessary)
-        img = Image.open(image_path)
-        # img.thumbnail((160, 160))  # Resize to fit
-        temp_path = "temp_resized_image.jpg"
-        img.save(temp_path)
-
-        pdf.cell(80, 70, border=1, align="C")
-        pdf.image(temp_path, x=pdf.get_x() + 5, y=pdf.get_y() + 5, w=60)
-        os.remove(temp_path)
-      except Exception as e:
-        pdf.cell(80, 70, border=1, align="C", txt="[Image Error]")
-
-      # Add content
-      pdf.multi_cell(110, 10, content, border=1, align="L")
-      pdf.ln(10)
-
-    # Save PDF
-    pdf.output(pdf_file_path)
+    # Close the HTML tags
+    html_content += """
+                    </tbody>
+                </table>
+            </div>
+        </body>
+        </html>
+        """
+    # Write the content to the output file
+    with open(html_file_path, "w", encoding="utf-8") as file:
+      file.write(html_content)
+    return html_file_path
 
   @staticmethod
   def import_receipts(date_time, import_option=None):
