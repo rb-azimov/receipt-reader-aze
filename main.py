@@ -16,7 +16,7 @@ from src.low_level_processors.receipt_util import ReceiptUtil
 
 pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 
-def prepare_application_properties_v1(is_debug_on = False):
+def prepare_application_properties_v_core_1_logic_0_depend_0(is_debug_on = False):
     upper_letters = 'ABCÇDEƏFGĞHXIİJKQLMNOÖPRSŞTUÜVYZ'
     lower_letters = 'abcçdeəfgğhxıijkqlmnoöprsştuüvyz'
     azerbaijani_alphabet = upper_letters + lower_letters
@@ -74,7 +74,7 @@ def prepare_application_properties_v1(is_debug_on = False):
         is_debug_on
     )
 
-def prepare_application_properties_v2(is_debug_on=False):
+def prepare_application_properties_v_core_1_logic_0_depend_1(is_debug_on=False):
     upper_letters = 'ABCÇDEƏFGĞHXIİJKQLMNOÖPRSŞTUÜVYZ'
     lower_letters = 'abcçdeəfgğhxıijkqlmnoöprsştuüvyz'
     azerbaijani_alphabet = upper_letters + lower_letters
@@ -135,7 +135,7 @@ def prepare_application_properties_v2(is_debug_on=False):
     )
 
 def main():
-    application_properties = prepare_application_properties_v2(is_debug_on = True)
+    application_properties = prepare_application_properties_v_core_1_logic_0_depend_1(is_debug_on = True)
     ApplicationPropertiesService.load_properties(application_properties)
     receipt_service = ReceiptService()
 
