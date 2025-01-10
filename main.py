@@ -143,6 +143,15 @@ def main():
         fiscal_codes = file.readlines()
 
     # fiscal_codes = fiscal_codes[4:7]
+    # fiscal_codes_with_error = [
+    #     '5w7sCHzH6WJ9yvRYTY61mjeTfqBrUKAvTinvWB7z6axf',
+    #     'A9DYFDeVJckLTHxcQmpxcJhT5N8TA7KJr12Vga1Qxi3v',
+    #     'BEg9kmxBVEXBYfnHjNfD6qESa1gCwrnTi5MthJPW8T4T',
+    #     'EVXB15ma1sqz6aP6MzZoFtXU4mKNeXh7W66BRGyJWADf',
+    #     'EWvtdGBGWzFpFmBNiGAZpqgtL77saVEbanLeZ8SK8ox7',
+    #     'GWC8nazyCpt88pu4fNmfMf7NLafTGQrfg2r5WtiwL27X',
+    # ]
+    # fiscal_codes = fiscal_codes_with_error
     fiscal_codes = [fiscal_code.strip() for fiscal_code in fiscal_codes]
     fiscal_codes = list(set(fiscal_codes))
     fiscal_codes.sort()

@@ -125,23 +125,22 @@ class ReceiptUtil:
     Returns:
         return: product_images
     """
-
+    # print(df_quantities)
     product_lines_ys = []
     for i in range(1, df_quantities.shape[0]):
       y1, y2 = df_quantities.iloc[i-1].top, df_quantities.iloc[i].top
-      # print(y1, y2)
-      product_lines_ys.append((y1-product_line_margin,y2))
+      # product_lines_ys.append((y1-product_line_margin,y2))
+      product_lines_ys.append((max(y1-product_line_margin, 0),y2))
 
     y1, y2 = df_quantities.iloc[-1].top, quantities_image_height
-    # print(y1, y2)
-    product_lines_ys.append((y1-product_line_margin,y2))
+    # product_lines_ys.append((y1-product_line_margin,y2))
+    product_lines_ys.append((max(y1-product_line_margin, 0),y2))
     # print('Num lines:', len(product_lines_ys))
+    # print(product_lines_ys)
     product_images = []
-
     for i in range(len(product_lines_ys)):
       product_line_ys = product_lines_ys[i]
       y1, y2 = product_line_ys
-      # print(y1, y2)
       product_image = products_part[y1:y2,:]
       product_images.append(product_image)
       if ApplicationPropertiesService.is_debug_on:
