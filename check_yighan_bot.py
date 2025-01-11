@@ -15,12 +15,15 @@ from src.low_level_processors.receipt_service import ReceiptService
 
 # Function to start the bot
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Send me a QR code image, and I'll decode it for you!")
+    await update.message.reply_text("<b>ÇekYığan işləyir!</b>", parse_mode="HTML")
+    await update.message.reply_text("<i>Qəbzdəki QR kod hissəsinin şəklini göndərin.</i>", parse_mode="HTML")
+
+
 
 # Function to handle incoming QR code images
 async def handle_image(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not update.message.photo:
-        await update.message.reply_text("No image detected!")
+        await update.message.reply_text("Şəkil yüklənilmədi. Təkrar sınayın, zəhmət olmasa.")
         return
 
     try:
@@ -46,7 +49,7 @@ async def handle_image(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if decoded_objects:
             for obj in decoded_objects:
                 decoded_text = obj.data.decode('utf-8')
-                await update.message.reply_text(f"Decoded text: {decoded_text}")
+                await update.message.reply_text(f"QR kodun məzmunu: {decoded_text}")
                 application_properties = prepare_application_properties_v_core_1_logic_0_depend_1(is_debug_on=True)
                 ApplicationPropertiesService.load_properties(application_properties)
                 receipt_service = ReceiptService()
@@ -55,16 +58,18 @@ async def handle_image(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     receipt = receipt_service.mine_receipt(fiscal_code=fiscal_code)
                     receipt._fiscal_code = fiscal_code
                 except Exception as e:
-                    print(f"An error occurred: {e}")
+                    print(f"Error occured: {e}")
+                    await update.message.reply_text(f"Qəbzin oxunması baş vermədi: {e}.")
                     traceback.print_exc()
                 else:
                     print(receipt.__str__())
                 await update.message.reply_text(receipt.__str__())
 
         else:
-            await update.message.reply_text("No QR code detected in the image!")
+            await update.message.reply_text("QR kod oxunmur!")
     except Exception as e:
-        await update.message.reply_text(f"Failed to process the image: {str(e)}")
+        await update.message.reply_text(f"Qeyri-müəyyən səbəbdən proqram işləmir.: {str(e)}")
+    await start(update, context)
 
 # Main function to set up the bot
 def main():

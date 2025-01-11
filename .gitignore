@@ -4070,3 +4070,4 @@ fabric.properties
 !/.env
 !/.env
 /.env
+/logs/
