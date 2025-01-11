@@ -2,6 +2,7 @@
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
+.env
 # User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml
@@ -4066,3 +4067,6 @@ fabric.properties
 /logs/details/zkzC4ojjonxmK41uBS3xJp38JbUCWEFtyvMbBzip7my_2025-01-08_23-28-03/Products.jpg
 /logs/details/zkzC4ojjonxmK41uBS3xJp38JbUCWEFtyvMbBzip7my_2025-01-08_23-28-03/products part of receipt.jpg
 /logs/details/zkzC4ojjonxmK41uBS3xJp38JbUCWEFtyvMbBzip7my_2025-01-08_23-28-03/Quantities.jpg
+!/.env
+!/.env
+/.env
