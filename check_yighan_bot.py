@@ -75,7 +75,7 @@ async def handle_image(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def main():
     # Replace 'YOUR_TOKEN_HERE' with your Telegram bot token
     load_dotenv(dotenv_path='.env')
-    bot_token = os.getenv('API_KEY')
+    bot_token = os.getenv('TELEGRAM_BOT_KEY')
     if not bot_token:
         print("Error: API_KEY environment variable is not set.")
         return
