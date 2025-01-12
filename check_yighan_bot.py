@@ -12,7 +12,13 @@ from src.low_level_processors.application_properties_service import ApplicationP
 from src.low_level_processors.receipt_service import ReceiptService
 import pytesseract
 
-pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+# pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+if os.getenv("DYNO"):
+    # Heroku environment
+    pytesseract.pytesseract.tesseract_cmd = 'tesseract'
+else:
+    # Local environment
+    pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 
 # Function to start the bot
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
