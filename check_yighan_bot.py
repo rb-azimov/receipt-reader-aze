@@ -10,7 +10,9 @@ import io
 from src.low_level_processors.application_properties_builder import ApplicationPropertiesBuilder
 from src.low_level_processors.application_properties_service import ApplicationPropertiesService
 from src.low_level_processors.receipt_service import ReceiptService
+import pytesseract
 
+pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 
 # Function to start the bot
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -73,7 +75,8 @@ async def handle_image(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # Main function to set up the bot
 def main():
     # Replace 'YOUR_TOKEN_HERE' with your Telegram bot token
-    load_dotenv(dotenv_path='.env')
+    if os.path.exists('.env'):
+        load_dotenv(dotenv_path='.env')
     bot_token = os.getenv('TELEGRAM_BOT_KEY')
     if not bot_token:
         print("Error: API_KEY environment variable is not set.")

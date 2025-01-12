@@ -80,6 +80,7 @@ class ReceiptService:
                                                    receipt.__str__())
       ApplicationPropertiesService.logger.log_receipt('extracted receipt text', receipt.__str__())
       ApplicationPropertiesService.logger.log_receipt_image('receipt image', image_ekassa_gray)
+    receipt._fiscal_code = fiscal_code
     return receipt
 
   def perform_ner_on_general_part(self, image_general):
