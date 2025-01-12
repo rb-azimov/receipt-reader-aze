@@ -7,8 +7,7 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 from PIL import Image, ImageEnhance
 from pyzbar.pyzbar import decode
 import io
-
-from main import prepare_application_properties_v_core_1_logic_0_depend_1
+from src.low_level_processors.application_properties_builder import ApplicationPropertiesBuilder
 from src.low_level_processors.application_properties_service import ApplicationPropertiesService
 from src.low_level_processors.receipt_service import ReceiptService
 
@@ -50,7 +49,7 @@ async def handle_image(update: Update, context: ContextTypes.DEFAULT_TYPE):
             for obj in decoded_objects:
                 decoded_text = obj.data.decode('utf-8')
                 await update.message.reply_text(f"QR kodun məzmunu: {decoded_text}")
-                application_properties = prepare_application_properties_v_core_1_logic_0_depend_1(is_debug_on=True)
+                application_properties = ApplicationPropertiesBuilder.prepare_application_properties_v_core_1_logic_0_depend_1(is_debug_on=True)
                 ApplicationPropertiesService.load_properties(application_properties)
                 receipt_service = ReceiptService()
                 try:

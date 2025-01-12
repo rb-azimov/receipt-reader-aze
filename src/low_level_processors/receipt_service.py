@@ -1,9 +1,11 @@
 import math
+import os
 import time
 
 import cv2
 from matplotlib import pyplot as plt
 
+from src.logger import LowLevelReceiptMinerLogger
 from src.low_level_processors.util import Util
 from src.low_level_processors.application_properties_service import ApplicationPropertiesService
 from src.low_level_processors.receipt_builder import ReceiptBuilder
@@ -48,6 +50,12 @@ class ReceiptService:
     start_time = time.time()
     if image_ekassa_gray is None:
       image_ekassa_gray = ReceiptUtil.read_image_from_ekassa(fiscal_code)
+      receipt_images_folder = os.path.join('logs', 'receipts')
+      image_name = LowLevelReceiptMinerLogger.sanitize_string(f"receipt_{fiscal_code}.jpg")
+      if image_name not in os.listdir(receipt_images_folder):
+        image_file = os.path.join(receipt_images_folder, image_name)
+        image_ekassa_gray = ReceiptUtil.read_image_from_ekassa(fiscal_code)
+        cv2.imwrite(image_file, image_ekassa_gray)
 
     ApplicationPropertiesService.current_receipt_fiscal_code = fiscal_code
     ApplicationPropertiesService.current_receipt_processing_start_date_time = Util.prepare_current_datetime()

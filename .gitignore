@@ -1,5 +1,6 @@
 .idea/
 /logs/details
+/logs/overal_data
 .env
 !/.env
 /.env
