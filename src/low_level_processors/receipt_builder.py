@@ -1,3 +1,5 @@
+import cv2
+
 from src.low_level_processors.application_properties_service import ApplicationPropertiesService
 from src.low_level_processors.receipt_util import ReceiptUtil
 
@@ -51,7 +53,46 @@ class ReceiptBuilder:
     image_products = image[rect_ys_prod[0]:rect_ys_prod[1], :]
     image_total = image[rect_ys_total[0]:rect_ys_total[1] - payment_part_bottom_margin, :]
 
-    return image_general, image_products, image_total
+    # Print part between general info and products for debug
+    index1 = rect_ys_prod[0] - general_part_bottom_margin + 25
+    index2 = rect_ys_prod[0]
+    product_column_names_part = image[index1:index2,:]
+    ApplicationPropertiesService.logger.log_image_for_debug(
+      'product_column_names_part', product_column_names_part
+    )
+    # charset = "ProductQinycealT "
+    # config = f'--psm 7 -c tessedit_char_whitelist={charset}'
+    config = f'--psm 7'
+    values, df = ReceiptUtil.perform_ocr_obtain_values(product_column_names_part,
+                                          ocr_config = config, return_type=str, lang=None)
+    # print(values)
+    # print(df[['left', 'top', 'width', 'height', 'text']])
+    PRODUCT, QUANTITY, PRICE, TOTAL = 'Product', 'Quantity', 'Price', 'Total'
+
+    left_product = df[df.text == PRODUCT].iloc[0].left
+    width_product = df[df.text == PRODUCT].iloc[0].width
+    left_quantity = df[df.text == QUANTITY].iloc[0].left
+    width_quantity = df[df.text == QUANTITY].iloc[0].width
+    left_price = df[df.text == PRICE].iloc[0].left
+    width_price = df[df.text == PRICE].iloc[0].width
+    left_total = df[df.text == TOTAL].iloc[0].left
+    width_total = df[df.text == TOTAL].iloc[0].width
+
+    product_part_rect_xs_list = [
+      (0, left_quantity),
+      (left_quantity, left_price),
+      (left_price, left_total),
+      (left_total, image.shape[1]),
+    ]
+    # top_left = (left_quantity, 0)  # (x1, y1) coordinates
+    # bottom_right = (left_price, product_column_names_part.shape[0])  # (x2, y2) coordinates
+    # color = (0, 0, 255)  # Red color
+    # thickness = 1  # Thickness of the rectangle border
+    # cv2.rectangle(product_column_names_part, top_left, bottom_right, color, thickness)
+    # ApplicationPropertiesService.logger.log_image_for_debug(
+    #   'labeled_product_column_names_part', product_column_names_part
+    # )
+    return image_general, image_products, image_total, product_part_rect_xs_list
 
   @staticmethod
   def segment_cashier_date_time_part(image, df, selected_df):
@@ -154,6 +195,8 @@ class ReceiptBuilder:
       df_product = ReceiptUtil.perform_ocr(product_image, ocr_config = ocr_property.config, lang = ocr_property.lang)
       product_name = ' '.join(df_product.iloc[:-2].text.to_list())
 
+      # Remove redundant (pc) like things
+      product_name = product_name.replace(' (pc)', '')
       product_names.append(product_name)
     return product_names
 

@@ -54,12 +54,12 @@ class ReceiptService:
       image_name = LowLevelReceiptMinerLogger.sanitize_string(f"receipt_{fiscal_code}.jpg")
       if image_name not in os.listdir(receipt_images_folder):
         image_file = os.path.join(receipt_images_folder, image_name)
-        image_ekassa_gray = ReceiptUtil.read_image_from_ekassa(fiscal_code)
+        # image_ekassa_gray = ReceiptUtil.read_image_from_ekassa(fiscal_code)
         cv2.imwrite(image_file, image_ekassa_gray)
 
     ApplicationPropertiesService.current_receipt_fiscal_code = fiscal_code
     ApplicationPropertiesService.current_receipt_processing_start_date_time = Util.prepare_current_datetime()
-    image_general, image_products, image_payment = ReceiptBuilder.split_receipt_logical_parts(image_ekassa_gray)
+    image_general, image_products, image_payment, product_part_rect_xs_list = ReceiptBuilder.split_receipt_logical_parts(image_ekassa_gray)
 
     if ApplicationPropertiesService.is_debug_on:
       ApplicationPropertiesService.logger.log_image('Ekassa image (gray)', image_ekassa_gray)
@@ -68,7 +68,7 @@ class ReceiptService:
       ApplicationPropertiesService.logger.log_image('payments part of receipt', image_payment)
 
     general_info = self.perform_ner_on_general_part(image_general)
-    products = self.perform_ner_on_products_part(image_products)
+    products = self.perform_ner_on_products_part(image_products, product_part_rect_xs_list)
     payment_info = self.perform_ner_on_payment_details_part(image_payment)
 
     receipt = Receipt(general_info, products, payment_info)
@@ -138,7 +138,7 @@ class ReceiptService:
 
     return resized
 
-  def perform_ner_on_products_part(self, image_products):
+  def perform_ner_on_products_part(self, image_products, product_part_rect_xs_list):
     """
     Splits products part of the receipt image into
     product names, quantities, prices, amounts.
@@ -152,10 +152,11 @@ class ReceiptService:
     Returns:
         return_type: ReceiptProductsList instance
     """
-    vertical_hist_normalized, horizontal_hist_normalized = ReceiptUtil.calculate_histograms(image_products)
-    splitting_property = ApplicationPropertiesService.splitting_properties.products_part_splitting_properties
-    rect_xs_list = ReceiptUtil.determine_horizontal_splitting_rectangles(image_products, vertical_hist_normalized,
-                   threshold_scale = splitting_property.threshold_scale, min_diff = splitting_property.min_difference)
+    # vertical_hist_normalized, horizontal_hist_normalized = ReceiptUtil.calculate_histograms(image_products)
+    # splitting_property = ApplicationPropertiesService.splitting_properties.products_part_splitting_properties
+    # rect_xs_list = ReceiptUtil.determine_horizontal_splitting_rectangles(image_products, vertical_hist_normalized,
+    #                threshold_scale = splitting_property.threshold_scale, min_diff = splitting_property.min_difference)
+    rect_xs_list = product_part_rect_xs_list
     clear_products_part, clear_quantities_part, clear_prices_part, clear_amounts_part = ReceiptBuilder.segment_products_part(image_products, rect_xs_list)
 
     if ApplicationPropertiesService.is_debug_on:

@@ -88,6 +88,14 @@ class LowLevelReceiptMinerLogger:
         cv2.imwrite(image_file, image)
         # logging.info(f"Logged image for {image_id} during {tag}")
 
+    def log_image_for_debug(self, tag, image):
+        image_id = ApplicationPropertiesService.current_receipt_fiscal_code
+        folder_path = os.path.join(self.output_dir, 'temp')
+        os.makedirs(folder_path, exist_ok=True)
+        image_file = os.path.join(folder_path, LowLevelReceiptMinerLogger.sanitize_string(f"{tag}_{image_id}.jpg"))
+        cv2.imwrite(image_file, image)
+        # logging.info(f"Logged image for {image_id} during {tag}")
+
     def sanitize_string(input_string):
         """
         Replaces non-saveable characters in a string with safe alternatives.

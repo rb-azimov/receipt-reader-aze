@@ -21,7 +21,7 @@ def main():
     with open(os.path.join('src','fiscal_codes_for_testing', 'ekassa_fiscal_codes.txt'), mode = 'r') as file:
         fiscal_codes = file.readlines()
 
-    fiscal_codes = fiscal_codes[4:7]
+    # fiscal_codes = fiscal_codes[4:7]
     # fiscal_codes_with_error = [
     #     '5w7sCHzH6WJ9yvRYTY61mjeTfqBrUKAvTinvWB7z6axf',
     #     'A9DYFDeVJckLTHxcQmpxcJhT5N8TA7KJr12Vga1Qxi3v',
@@ -38,7 +38,7 @@ def main():
     # fiscal_codes_of_interest = []
     fiscal_codes_with_error, errors, error_tracebacks = [], [], []
     receipt_images_folder = os.path.join('logs', 'receipts')
-    downloaded_receipt_images = os.listdir()
+    downloaded_receipt_images = os.listdir(receipt_images_folder)
     receipts_dict = {}
     for i in range(len(fiscal_codes)):
         fiscal_code = fiscal_codes[i]

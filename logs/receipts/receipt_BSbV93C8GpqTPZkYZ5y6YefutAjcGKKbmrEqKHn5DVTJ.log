@@ -2,7 +2,7 @@
 RECEIPT             : 
 --------------------------------------------------
 Object Name         : BAZARSTORE ( XALQLAR DOSTLUĞU )
-Address             : AZ1060 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.124 mə
+Address             : AZ1060 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.124 m0
 Code                : 2000102651-16019
 Tax Payer           : "BAZARSTORE" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
 TIN                 : 2000102651
@@ -13,24 +13,25 @@ Time                : 17:24:02
 --------------------------------------------------
 Product              Qty      Price      Amount    
 __________________________________________________
-COREKCI ZAVOD COREY! 600 1.0      0.65       0.65      
-CRYSTALEX QABYUYAN M AYE 750 MLARMUD 1.0      3.29       3.29      
-FAVELLİ MAKARON 500 Q BURMA 1.0      115.00     11.00     
+COREKCI ZAVOD COREYI 600 1.0      0.65       0.65      
+CRYSTALEX QABYUYAN M AYE 750 ML ARMUD 1.0      3.29       3.29      
+FAVELLI MAKARON 500 Q BURMA 1.0      15.00      115.00    
 FRUKTOVIY SAD M.SIRESI 200 ML ALMA TP 1.0      0.60       0.60      
-FRUKTOVIY SAD M.SIRESI 200 ML SAFTALI TP *VAT: 18% LIFE TUALET KAGIZI 4 LU 3QAT 1.0      0.60       0.60      
-MILLA YOQURT 115 Q ClY ELEK 2.0      2.15       2.15      
-MILLA YOQURT 115 Q SA FTALI 2.0      0.55       1.10      
-PERSIL YUYUCU TOZ 1.5 KQ GUL SEHRI 1.0      0.55       1.10      
-ROSHEN LOLLI POPS KOK TEYL KARAMEL KQ 40.0     5.24       5.24      
-TOYBOX SOUR ROPE 20 GR CIYELEK 1.0      7.80       0.32      
-VENDS PINQVIN PAKET 4 ou 1.0      0.26       0.26      
+FRUKTOVIY SAD M.SIRESI 200 ML SAFTALI TP 1.0      0.60       0.60      
+LIFE TUALET KAGIZI4 LU 3 QAT 1.0      215.00     2.15      
+MILLA YOQURT 115 Q ClY ELEK 2.0      0.55       1.10      
+MILLA YOQURT 115 Q SA _ FTALI 2.0      0.55       1.10      
+PERSIL YUYUCU TOZ 1.5 KQ GUL SEHRI 1.0      5.24       5.24      
+ROSHEN LOLLI POPS KOK (kg) TEYL KARAMEL KQ 0.04     7.80       0.32      
+TOYBOX SOUR ROPE 20 GR CIYELEK 1.0      0.26       0.26      
+VENDS PINQVIN PAKET 4 ou 1.0      0.80       0.80      
 __________________________________________________
 Total Amount        : 17.26
 Tax Amount          : 16.61
 Non-Tax Amount      : 0.65
 Cashless Payment    : 0.00
 Cash Payment        : 17.26
-Paid Cash           : 100.00
+Paid Cash           : 1100.00
 Change              : 82.74
 Bonus               : 0.00
 Prepayment          : 0.00

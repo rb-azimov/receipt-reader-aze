@@ -67,6 +67,7 @@ class ReceiptUtil:
     image_data = np.frombuffer(response.content, np.uint8)
     image_ekassa = cv2.imdecode(image_data, cv2.IMREAD_COLOR)
     image_ekassa_gray = cv2.cvtColor(image_ekassa, cv2.COLOR_BGR2GRAY)
+    print('IMAGE READ FROM EKASSA')
     return image_ekassa_gray
 
   def perform_ocr(image, ocr_config, lang = None):
@@ -108,7 +109,10 @@ class ReceiptUtil:
 
     """
     df = ReceiptUtil.perform_ocr(image, ocr_config, lang = lang)
-    values = [return_type(item) for item in df.text.to_list()]
+    text_list = df.text.to_list()
+    if return_type == float:
+      text_list = [Util.clean_and_convert_to_float(text) for text in text_list]
+    values = [return_type(item) for item in text_list]
     return values, df
 
   def prepare_product_images(products_part, df_quantities, quantities_image_height, product_line_margin = 3):
