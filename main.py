@@ -38,7 +38,7 @@ def main():
     # fiscal_codes_of_interest = []
     fiscal_codes_with_error, errors, error_tracebacks = [], [], []
     receipt_images_folder = os.path.join('logs', 'receipts')
-    downloaded_receipt_images = os.listdir()
+    downloaded_receipt_images = os.listdir(receipt_images_folder)
     receipts_dict = {}
     for i in range(len(fiscal_codes)):
         fiscal_code = fiscal_codes[i]

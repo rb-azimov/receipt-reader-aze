@@ -1,6 +1,7 @@
 .idea/
 /logs/details
 /logs/overal_data
+/logs/temp
 .env
 !/.env
 /.env
