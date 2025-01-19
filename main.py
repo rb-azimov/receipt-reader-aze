@@ -31,7 +31,7 @@ def main():
         'EPszcWAvJNCGw3HwEYb8PE9Ap3ewAj2TxLN92cdTmLSo',
         'smCRKc7ECvCDtpvqCDAWnZz1NZGvLfdeGgPZXQxbQj3'
     ]
-    # fiscal_codes = fiscal_codes_with_error
+    fiscal_codes = fiscal_codes_with_error
     fiscal_codes = [fiscal_code.strip() for fiscal_code in fiscal_codes]
     fiscal_codes = list(set(fiscal_codes))
     fiscal_codes.sort()

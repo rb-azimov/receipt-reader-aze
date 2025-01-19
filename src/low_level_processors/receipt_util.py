@@ -115,6 +115,25 @@ class ReceiptUtil:
     values = [return_type(item) for item in text_list]
     return values, df
 
+  def perform_ocr_on_small_image(clear_quantities_part):
+    scale_factor = 2
+    clear_quantities_part_temp = clear_quantities_part[1:, :]
+    _, clear_quantities_part_temp = cv2.threshold(clear_quantities_part_temp, 0, 255,
+                                                  cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    vindex1, vindex2 = Util.find_vertical_bounds(clear_quantities_part_temp, 0)
+    hindex1, hindex2 = Util.find_horizontal_bounds(clear_quantities_part_temp, 0)
+    clear_quantities_part_temp = clear_quantities_part_temp[vindex1:vindex2 + 1, hindex1:hindex2 + 1]
+    clear_quantities_part_temp = cv2.copyMakeBorder(clear_quantities_part_temp, 1, 1, 1, 1, cv2.BORDER_CONSTANT, value=255)
+    quantities, df_quantities = ReceiptUtil.perform_ocr_obtain_values(image=clear_quantities_part_temp,
+                                                                      ocr_config='--psm 8 -c tessedit_char_whitelist=.0123456789',
+                                                                      return_type=float,
+                                                                      lang=None)  # -c tessedit_char_whitelist=.0123456789
+    df_quantities.top = df_quantities.top / scale_factor
+    df_quantities.left = df_quantities.left / scale_factor
+    df_quantities.width = df_quantities.width / scale_factor
+    df_quantities.height = df_quantities.height / scale_factor
+    return quantities, df_quantities
+
   def prepare_product_images(products_part, df_quantities, quantities_image_height, product_line_margin = 3):
     """
     Helps to segment product names image into images of seperate product names.

@@ -182,26 +182,8 @@ class ReceiptService:
     # Handle very small number segments when there is one number
     if df_quantities.shape[0] == 0:
       # print('DF quantities is empty!')
-      scale_factor = 2
-      clear_quantities_part_temp = clear_quantities_part[1:,:]
-      _, clear_quantities_part_temp = cv2.threshold(clear_quantities_part_temp, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-      vindex1, vindex2 = Util.find_vertical_bounds(clear_quantities_part_temp, 0)
-      hindex1, hindex2 = Util.find_horizontal_bounds(clear_quantities_part_temp, 0)
-      # print(vindex1, vindex2)
-      clear_quantities_part_temp = clear_quantities_part_temp[vindex1:vindex2+1,hindex1:hindex2+1]
-      clear_quantities_part_temp = cv2.copyMakeBorder(clear_quantities_part_temp, 1, 1, 1, 1, cv2.BORDER_CONSTANT, value=255)
+      quantities, df_quantities = ReceiptUtil.perform_ocr_on_small_image(clear_quantities_part)
 
-      # print('Shape:', clear_quantities_part_temp.shape)
-      ocr_property = ApplicationPropertiesService.ocr_properties.quantities_ocr_property
-      quantities, df_quantities = ReceiptUtil.perform_ocr_obtain_values(image=clear_quantities_part_temp,
-                  ocr_config='--psm 8 -c tessedit_char_whitelist=.0123456789', return_type = float, lang = None) # -c tessedit_char_whitelist=.0123456789
-      df_quantities.top = df_quantities.top / scale_factor
-      df_quantities.left = df_quantities.left / scale_factor
-      df_quantities.width = df_quantities.width / scale_factor
-      df_quantities.height = df_quantities.height / scale_factor
-
-    # print('quantities:', quantities)
-    # print('df_quantities:', df_quantities)
     product_line_margin = ApplicationPropertiesService.margin_properties.product_line_margin
     product_images = ReceiptUtil.prepare_product_images(clear_products_part, df_quantities,
                      quantities_image_height = clear_quantities_part.shape[0], product_line_margin = product_line_margin)
