@@ -24,8 +24,12 @@ def main():
     # fiscal_codes = fiscal_codes[4:7]
     fiscal_codes_with_error = [
         '3UF3VSiYyXbxe7AEkUYZjGQ698ugeQy5jWDS9vY1P5QJ',
+        '5Q5zCTnUCtLBVzRv5zyLXjyL58kLv9a7NfL7gtqx6pSQ',
+        '7W7ZLvJZSAgUmjKRaJKbga5HXb4WAzFANWqdFrqAGwkr',
         '7qMBFjj9rM27Cz9brWZuAWAaYHgrVeaRaQ44p1NokHj2',
         'BEg9kmxBVEXBYfnHjNfD6qESa1gCwrnTi5MthJPW8T4T',
+        'EPszcWAvJNCGw3HwEYb8PE9Ap3ewAj2TxLN92cdTmLSo',
+        'smCRKc7ECvCDtpvqCDAWnZz1NZGvLfdeGgPZXQxbQj3'
     ]
     # fiscal_codes = fiscal_codes_with_error
     fiscal_codes = [fiscal_code.strip() for fiscal_code in fiscal_codes]
