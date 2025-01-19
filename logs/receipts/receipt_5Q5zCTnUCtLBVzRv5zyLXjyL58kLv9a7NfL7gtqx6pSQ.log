@@ -4,7 +4,7 @@ RECEIPT             :
 Object Name         : "BELARUSKI" ƏRZAQ MAGAZASI
 Address             : AZ1096 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.61C
 Code                : 1300557531-16001
-Tax Payer           : "AZNUR" M@HDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
+Tax Payer           : "AZNUR" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
 TIN                 : 1300557531
 Receipt #           : 318707
 Cashier             : KASSIR NEFTCILER 1
@@ -13,7 +13,10 @@ Time                : 17:30:08
 --------------------------------------------------
 Product              Qty      Price      Amount    
 __________________________________________________
-Donuz piyi mehsullar Qr udinka po Derevenski lyu ks düzlü VMK kq *VAT: 18% Pechenye Malinoviy Slodi ch 100 qr Slodich *VAT: 18% Pechenye Slodich s frukt ozoy 100 qr Slodich *VAT: 18% Pechenye Vanilnoe luks 4 30 qr Slodich *VAT: 18% vafli Tradisionnie shokola dniy vkus 100 gr Slodich *VAT: 18% Kesmik Myaqkiy 4 Slavy anskie tradisii MMZ1 400 qr *VAT: 18% Xama 20 Yas Belous 180 ar Slutskiy Sdk 20.0     16.70      3.34      
+Donuz piyi mehsullar Qr udinka po Derevenski lyu ks duzlu VMK kq 0.2      16.70      3.34      
+Pechenye Malinoviy Slodi ch 100 qr Slodich *VAT: 18% Pechenye Slodich s frukt ozoy 100 qr Slodich *VAT: 18% Pechenye Vanilnoe luks 4 30 gr Slodich 1.0      0.00       0.70      
+Vafli Tradisionnie shokola dniy vkus 100 qr Slodich *VAT: 18% Kesmik Myaqkiy 4 Slavy (pe) anskie tradisii MMZ1 400 qr 1.0      0.70       0.70      
+Xama 20 Yas Belous 180 qr Slutskiy SdK 1.0      0.70       2.50      
 __________________________________________________
 Total Amount        : 13.59
 Tax Amount          : 13.59

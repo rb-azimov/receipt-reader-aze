@@ -21,15 +21,12 @@ def main():
     with open(os.path.join('src','fiscal_codes_for_testing', 'ekassa_fiscal_codes.txt'), mode = 'r') as file:
         fiscal_codes = file.readlines()
 
-    fiscal_codes = fiscal_codes[4:7]
-    # fiscal_codes_with_error = [
-    #     '5w7sCHzH6WJ9yvRYTY61mjeTfqBrUKAvTinvWB7z6axf',
-    #     'A9DYFDeVJckLTHxcQmpxcJhT5N8TA7KJr12Vga1Qxi3v',
-    #     'BEg9kmxBVEXBYfnHjNfD6qESa1gCwrnTi5MthJPW8T4T',
-    #     'EVXB15ma1sqz6aP6MzZoFtXU4mKNeXh7W66BRGyJWADf',
-    #     'EWvtdGBGWzFpFmBNiGAZpqgtL77saVEbanLeZ8SK8ox7',
-    #     'GWC8nazyCpt88pu4fNmfMf7NLafTGQrfg2r5WtiwL27X',
-    # ]
+    # fiscal_codes = fiscal_codes[4:7]
+    fiscal_codes_with_error = [
+        '3UF3VSiYyXbxe7AEkUYZjGQ698ugeQy5jWDS9vY1P5QJ',
+        '7qMBFjj9rM27Cz9brWZuAWAaYHgrVeaRaQ44p1NokHj2',
+        'BEg9kmxBVEXBYfnHjNfD6qESa1gCwrnTi5MthJPW8T4T',
+    ]
     # fiscal_codes = fiscal_codes_with_error
     fiscal_codes = [fiscal_code.strip() for fiscal_code in fiscal_codes]
     fiscal_codes = list(set(fiscal_codes))
@@ -55,7 +52,7 @@ def main():
                                                    fiscal_code=fiscal_code)
             receipt._fiscal_code = fiscal_code
         except Exception as e:
-            print(f"An error occurred (on {fiscal_code}): {e}")
+            print(f"! An error occurred (on {fiscal_code}): {e}")
             # traceback.print_exc()
             errors.append(e)
             error_tracebacks.append(traceback.format_exc())

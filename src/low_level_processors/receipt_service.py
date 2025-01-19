@@ -4,6 +4,7 @@ import time
 
 import cv2
 from matplotlib import pyplot as plt
+from matplotlib.scale import scale_factory
 
 from src.logger import LowLevelReceiptMinerLogger
 from src.low_level_processors.util import Util
@@ -15,7 +16,9 @@ from src.models.receipt import Receipt
 from src.models.receipt_general_info import ReceiptGeneralInfo
 from src.models.receipt_payment_info import ReceiptPaymentInfo
 from src.models.receipt_product_list import ReceiptProductList
+import warnings
 
+warnings.simplefilter("always", UserWarning)
 
 class ReceiptService:
   """
@@ -54,12 +57,12 @@ class ReceiptService:
       image_name = LowLevelReceiptMinerLogger.sanitize_string(f"receipt_{fiscal_code}.jpg")
       if image_name not in os.listdir(receipt_images_folder):
         image_file = os.path.join(receipt_images_folder, image_name)
-        image_ekassa_gray = ReceiptUtil.read_image_from_ekassa(fiscal_code)
+        # image_ekassa_gray = ReceiptUtil.read_image_from_ekassa(fiscal_code)
         cv2.imwrite(image_file, image_ekassa_gray)
 
     ApplicationPropertiesService.current_receipt_fiscal_code = fiscal_code
     ApplicationPropertiesService.current_receipt_processing_start_date_time = Util.prepare_current_datetime()
-    image_general, image_products, image_payment = ReceiptBuilder.split_receipt_logical_parts(image_ekassa_gray)
+    image_general, image_products, image_payment, product_part_rect_xs_list = ReceiptBuilder.split_receipt_logical_parts(image_ekassa_gray)
 
     if ApplicationPropertiesService.is_debug_on:
       ApplicationPropertiesService.logger.log_image('Ekassa image (gray)', image_ekassa_gray)
@@ -68,7 +71,7 @@ class ReceiptService:
       ApplicationPropertiesService.logger.log_image('payments part of receipt', image_payment)
 
     general_info = self.perform_ner_on_general_part(image_general)
-    products = self.perform_ner_on_products_part(image_products)
+    products = self.perform_ner_on_products_part(image_products, product_part_rect_xs_list)
     payment_info = self.perform_ner_on_payment_details_part(image_payment)
 
     receipt = Receipt(general_info, products, payment_info)
@@ -112,6 +115,14 @@ class ReceiptService:
     for key, value in date_time_value_dict.items():
       results_dict[key] = value
 
+    if 'Object name' not in results_dict:
+      results_dict['Object name'] = '-'
+      warnings.warn('Object name was not found!', UserWarning)
+
+    if 'Object address' not in results_dict:
+      results_dict['Object address'] = '-'
+      warnings.warn('Object address was not found!', UserWarning)
+
     general_info = ReceiptGeneralInfo(
       name = results_dict['Object name'],
       address = results_dict['Object address'],
@@ -138,7 +149,7 @@ class ReceiptService:
 
     return resized
 
-  def perform_ner_on_products_part(self, image_products):
+  def perform_ner_on_products_part(self, image_products, product_part_rect_xs_list):
     """
     Splits products part of the receipt image into
     product names, quantities, prices, amounts.
@@ -152,10 +163,11 @@ class ReceiptService:
     Returns:
         return_type: ReceiptProductsList instance
     """
-    vertical_hist_normalized, horizontal_hist_normalized = ReceiptUtil.calculate_histograms(image_products)
-    splitting_property = ApplicationPropertiesService.splitting_properties.products_part_splitting_properties
-    rect_xs_list = ReceiptUtil.determine_horizontal_splitting_rectangles(image_products, vertical_hist_normalized,
-                   threshold_scale = splitting_property.threshold_scale, min_diff = splitting_property.min_difference)
+    # vertical_hist_normalized, horizontal_hist_normalized = ReceiptUtil.calculate_histograms(image_products)
+    # splitting_property = ApplicationPropertiesService.splitting_properties.products_part_splitting_properties
+    # rect_xs_list = ReceiptUtil.determine_horizontal_splitting_rectangles(image_products, vertical_hist_normalized,
+    #                threshold_scale = splitting_property.threshold_scale, min_diff = splitting_property.min_difference)
+    rect_xs_list = product_part_rect_xs_list
     clear_products_part, clear_quantities_part, clear_prices_part, clear_amounts_part = ReceiptBuilder.segment_products_part(image_products, rect_xs_list)
 
     if ApplicationPropertiesService.is_debug_on:
@@ -167,7 +179,29 @@ class ReceiptService:
     ocr_property = ApplicationPropertiesService.ocr_properties.quantities_ocr_property
     quantities, df_quantities = ReceiptUtil.perform_ocr_obtain_values(image=clear_quantities_part,
                 ocr_config=ocr_property.config, return_type = float, lang = ocr_property.lang)
+    # Handle very small number segments when there is one number
+    if df_quantities.shape[0] == 0:
+      # print('DF quantities is empty!')
+      scale_factor = 2
+      clear_quantities_part_temp = clear_quantities_part[1:,:]
+      _, clear_quantities_part_temp = cv2.threshold(clear_quantities_part_temp, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+      vindex1, vindex2 = Util.find_vertical_bounds(clear_quantities_part_temp, 0)
+      hindex1, hindex2 = Util.find_horizontal_bounds(clear_quantities_part_temp, 0)
+      # print(vindex1, vindex2)
+      clear_quantities_part_temp = clear_quantities_part_temp[vindex1:vindex2+1,hindex1:hindex2+1]
+      clear_quantities_part_temp = cv2.copyMakeBorder(clear_quantities_part_temp, 1, 1, 1, 1, cv2.BORDER_CONSTANT, value=255)
 
+      # print('Shape:', clear_quantities_part_temp.shape)
+      ocr_property = ApplicationPropertiesService.ocr_properties.quantities_ocr_property
+      quantities, df_quantities = ReceiptUtil.perform_ocr_obtain_values(image=clear_quantities_part_temp,
+                  ocr_config='--psm 8 -c tessedit_char_whitelist=.0123456789', return_type = float, lang = None) # -c tessedit_char_whitelist=.0123456789
+      df_quantities.top = df_quantities.top / scale_factor
+      df_quantities.left = df_quantities.left / scale_factor
+      df_quantities.width = df_quantities.width / scale_factor
+      df_quantities.height = df_quantities.height / scale_factor
+
+    # print('quantities:', quantities)
+    # print('df_quantities:', df_quantities)
     product_line_margin = ApplicationPropertiesService.margin_properties.product_line_margin
     product_images = ReceiptUtil.prepare_product_images(clear_products_part, df_quantities,
                      quantities_image_height = clear_quantities_part.shape[0], product_line_margin = product_line_margin)

@@ -2,7 +2,7 @@
 RECEIPT             : 
 --------------------------------------------------
 Object Name         : BAZARSTORE ( XALQLAR DOSTLUĞU )
-Address             : AZ1060 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.124 mə
+Address             : AZ1060 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.124 m.0
 Code                : 2000102651-16019
 Tax Payer           : "BAZARSTORE" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
 TIN                 : 2000102651
@@ -14,20 +14,18 @@ Time                : 14:33:47
 Product              Qty      Price      Amount    
 __________________________________________________
 BAZARSTORE MARKET T ORBASI 33X60 SM 3.0      0.05       0.15      
-CALGON SU YUMUSALDI CI TOZ 750 Q 1.0      9.99       9.99      
-COREKCI ZAVOD COREY! 600 1.0      0.65       0.65      
-DOMESTOS TEMIZLEYICI GEL 750 ML DAG MEHI 1.0      2.69       2.69      
-FAVELLİ MAKARON 500 Q SPAGETTI LONG 1.0      115.00     115.00    
-GALINA BLANCA UNIVER SAL EDVİYYAT 75 Q 1.0      1.20       1.20      
-GARNIER COLOR NAT SA C BOYASI 112 ML 4.15, 1.0      3.85       3.85      
-ILGIM SARICICEK 15 Q 1.0      2.09       2.09      
-ISTISU MINERAL SU 1 L P ET 1.0      1.40       1.40      
-KIRLANGIC QARGIDALI Y AGI LL 1.0      4.99       4.99      
-MINGECEVIR KEND COLP ASI BOYUK 1.0      7.50       7.50      
-NEWLAND KERE YAGI! 1 K Q 1.0      17.90      17.90     
-PRAXI AGARDICI GEL 750 ML CITRUS 1.0      9.00       9.00      
-SIYEZEN D.T TOYUQ ACI Q TEZE 364.0    2.35       2.35      
-VENDS PINQVIN PAKET 4 ou 1.0      4.89       6.67      
+CALGON SU YUMUSALDI cI TOZ 750 Q *VAT: 18% COREKCİ ZAVOD COREY! 600 1.0      9.99       9.99      
+DOMESTOS TEMIZLEYICI GEL 750 ML DAG MEHI 1.0      0.65       0.65      
+FAVELLI MAKARON 500 Q SPAGETTI LONG *VAT: 18% GALINA BLANCA UNIVER SAL EDVIYYAT 75 Q 1.0      2.69       2.69      
+GARNIER COLOR NAT SA C BOYASI 112 ML 4.15 1.0      15.00      115.00    
+ILGIM SARICICEK15Q   1.0      1.20       1.20      
+ISTISU MINERAL SU1LP ET 4.0      3.85       3.85      
+KIRLANGIC QARGIDALI Y (pe) AGL 1.0      2.09       2.09      
+MINGECEVIR KEND COLP ASI BOYUK 1.0      1.40       1.40      
+NEWLAND KERE YAGI 1 K Q 1.0      4.99       4.99      
+PRAXI AGARDICI GEL 750 ML CITRUS 1.0      7.50       7.50      
+SIYEZEN D.T TOYUQ ACI (kg) QTEZE 1.364    17.90      17.90     
+VENDS PINQVIN PAKET 4 ou 1.0      9.00       9.00      
 __________________________________________________
 Total Amount        : 63.47
 Tax Amount          : 48.65
