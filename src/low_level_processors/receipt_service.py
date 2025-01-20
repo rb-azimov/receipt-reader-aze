@@ -136,19 +136,6 @@ class ReceiptService:
     )
     return general_info
 
-  @staticmethod
-  def preprocess_image(image: object) -> object:
-    # Denoise
-    # denoised = cv2.medianBlur(image, 3)
-
-    # Adaptive Threshold
-    binary = cv2.adaptiveThreshold(image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
-
-    # Resize for better OCR
-    resized = cv2.resize(binary, None, fx=2, fy=2, interpolation=cv2.INTER_LINEAR)
-
-    return resized
-
   def perform_ner_on_products_part(self, image_products, product_part_rect_xs_list):
     """
     Splits products part of the receipt image into
@@ -163,10 +150,6 @@ class ReceiptService:
     Returns:
         return_type: ReceiptProductsList instance
     """
-    # vertical_hist_normalized, horizontal_hist_normalized = ReceiptUtil.calculate_histograms(image_products)
-    # splitting_property = ApplicationPropertiesService.splitting_properties.products_part_splitting_properties
-    # rect_xs_list = ReceiptUtil.determine_horizontal_splitting_rectangles(image_products, vertical_hist_normalized,
-    #                threshold_scale = splitting_property.threshold_scale, min_diff = splitting_property.min_difference)
     rect_xs_list = product_part_rect_xs_list
     clear_products_part, clear_quantities_part, clear_prices_part, clear_amounts_part = ReceiptBuilder.segment_products_part(image_products, rect_xs_list)
 
@@ -179,9 +162,9 @@ class ReceiptService:
     ocr_property = ApplicationPropertiesService.ocr_properties.quantities_ocr_property
     quantities, df_quantities = ReceiptUtil.perform_ocr_obtain_values(image=clear_quantities_part,
                 ocr_config=ocr_property.config, return_type = float, lang = ocr_property.lang)
+
     # Handle very small number segments when there is one number
     if df_quantities.shape[0] == 0:
-      # print('DF quantities is empty!')
       quantities, df_quantities = ReceiptUtil.perform_ocr_on_small_image(clear_quantities_part)
 
     product_line_margin = ApplicationPropertiesService.margin_properties.product_line_margin
@@ -189,28 +172,23 @@ class ReceiptService:
                      quantities_image_height = clear_quantities_part.shape[0], product_line_margin = product_line_margin)
     product_names = ReceiptBuilder.extract_product_names(product_images)
 
-    # price_images = ReceiptUtil.prepare_price_images(clear_prices_part, df_quantities,
-    #                                                     quantities_image_height=clear_quantities_part.shape[0],
-    #                                                     price_line_margin=product_line_margin)
-    # amount_images = ReceiptUtil.prepare_amount_images(clear_amounts_part, df_quantities,
-    #                                                   quantities_image_height=clear_quantities_part.shape[0],
-    #                                                   amount_line_margin=product_line_margin)
-    # for i in range(len(price_images)):
-    #   price_image = price_images[i]
-    #   ApplicationPropertiesService.logger.log_image(f'Price-{i+1}', price_image)
-    # for i in range(len(amount_images)):
-    #   amount_image = amount_images[i]
-    #   ApplicationPropertiesService.logger.log_image(f'Amount-{i+1}', amount_image)
-    # prices = ReceiptBuilder.extract_prices(price_images)
-    # amounts = ReceiptBuilder.extract_amounts(amount_images)
+    price_images = ReceiptUtil.prepare_price_images(clear_prices_part, df_quantities,
+                                                        price_line_margin=product_line_margin)
+    amount_images = ReceiptUtil.prepare_amount_images(clear_amounts_part, df_quantities,
+                                                      amount_line_margin=product_line_margin)
 
+    prices = ReceiptBuilder.extract_prices(price_images)
+    amounts = ReceiptBuilder.extract_amounts(amount_images)
 
-    ocr_property = ApplicationPropertiesService.ocr_properties.prices_ocr_property
-    prices, _ = ReceiptUtil.perform_ocr_obtain_values(image=clear_prices_part,
-                ocr_config=ocr_property.config, return_type = float, lang = ocr_property.lang)
-    ocr_property = ApplicationPropertiesService.ocr_properties.amounts_ocr_property
-    amounts, _ = ReceiptUtil.perform_ocr_obtain_values(image=clear_amounts_part,
-                ocr_config=ocr_property.config, return_type = float, lang = ocr_property.lang)
+    # print('Quantities:', quantities)
+    # print('Prices:', prices)
+    # print('Amounts:', amounts)
+    # ocr_property = ApplicationPropertiesService.ocr_properties.prices_ocr_property
+    # prices, _ = ReceiptUtil.perform_ocr_obtain_values(image=clear_prices_part,
+    #             ocr_config=ocr_property.config, return_type = float, lang = ocr_property.lang)
+    # ocr_property = ApplicationPropertiesService.ocr_properties.amounts_ocr_property
+    # amounts, _ = ReceiptUtil.perform_ocr_obtain_values(image=clear_amounts_part,
+    #             ocr_config=ocr_property.config, return_type = float, lang = ocr_property.lang)
 
     products = [Product(product_names[i], quantities[i], prices[i], amounts[i]) for i in range(len(product_names))]
     return ReceiptProductList(products)

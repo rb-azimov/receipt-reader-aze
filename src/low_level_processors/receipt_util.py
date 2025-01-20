@@ -1,6 +1,9 @@
 import os
+import warnings
+from importlib.metadata import pass_none
 
 import cv2
+import matplotlib.pyplot as plt
 import numpy as np
 import pytesseract
 from pytesseract import Output
@@ -45,7 +48,7 @@ class ReceiptUtil:
       distribute_values_in_payment_type(values, is_paid_cash) -> Distributes values based on payment type (cash vs cashless).
 
   """
-
+  warnings.simplefilter("always", UserWarning)
   EXPORT_IMPORT_EXCEL = 3
   EXPORT_IMPORT_HTML = 4
 
@@ -109,13 +112,35 @@ class ReceiptUtil:
 
     """
     df = ReceiptUtil.perform_ocr(image, ocr_config, lang = lang)
-    text_list = df.text.to_list()
-    if return_type == float:
-      text_list = [Util.clean_and_convert_to_float(text) for text in text_list]
-    values = [return_type(item) for item in text_list]
+    # text_list = df.text.to_list()
+    values = []
+    for index, row in df.iterrows():
+      text = row.text
+      if return_type == str:
+        values.append(text)
+      elif return_type == float:
+        try:
+          value = float(text)
+          values.append(value)
+        except ValueError:
+          x1, x2 = row.left, row.left + row.width
+          y1, y2 = row.top, row.top + row.height
+          one_item_image = image[y1:y2,x1:x2]
+          text = ReceiptUtil.perform_ocr_on_single_item_image(one_item_image, scale_factor=4)
+          try:
+            value = float(text)
+            values.append(value)
+          except ValueError:
+            values.append(-1)
+            warnings.warn('Non-float value error supressed with `-1`', UserWarning)
+
+    # if return_type == float:
+    #   values = [Util.clean_and_convert_to_float(item) for item in text_list]
+    # else:
+    #   values = [return_type(item) for item in text_list]
     return values, df
 
-  def perform_ocr_on_small_image(clear_quantities_part):
+  def perform_ocr_on_small_image(clear_quantities_part, return_type = float):
     scale_factor = 2
     clear_quantities_part_temp = clear_quantities_part[1:, :]
     _, clear_quantities_part_temp = cv2.threshold(clear_quantities_part_temp, 0, 255,
@@ -126,13 +151,29 @@ class ReceiptUtil:
     clear_quantities_part_temp = cv2.copyMakeBorder(clear_quantities_part_temp, 1, 1, 1, 1, cv2.BORDER_CONSTANT, value=255)
     quantities, df_quantities = ReceiptUtil.perform_ocr_obtain_values(image=clear_quantities_part_temp,
                                                                       ocr_config='--psm 8 -c tessedit_char_whitelist=.0123456789',
-                                                                      return_type=float,
+                                                                      return_type=return_type,
                                                                       lang=None)  # -c tessedit_char_whitelist=.0123456789
     df_quantities.top = df_quantities.top / scale_factor
     df_quantities.left = df_quantities.left / scale_factor
     df_quantities.width = df_quantities.width / scale_factor
     df_quantities.height = df_quantities.height / scale_factor
     return quantities, df_quantities
+
+  def perform_ocr_on_single_item_image(image, scale_factor = 2):
+    image_temp = image[1:, :]
+    _, image_temp = cv2.threshold(image_temp, 0, 255,
+                                                  cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    vindex1, vindex2 = Util.find_vertical_bounds(image_temp, 0)
+    hindex1, hindex2 = Util.find_horizontal_bounds(image_temp, 0)
+    image_temp = image_temp[vindex1:vindex2 + 1, hindex1:hindex2 + 1]
+    image_temp = cv2.copyMakeBorder(image_temp, 1, 1, 1, 1, cv2.BORDER_CONSTANT, value=255)
+    df = ReceiptUtil.perform_ocr(image=image_temp, ocr_config='--psm 8 -c tessedit_char_whitelist=.0123456789',
+                        lang=None)  # -c tessedit_char_whitelist=.0123456789
+    if df.shape[0] != 0:
+      text = df.iloc[0].text
+    else:
+      text = ''
+    return text
 
   def prepare_product_images(products_part, df_quantities, quantities_image_height, product_line_margin = 3):
     """
@@ -152,14 +193,10 @@ class ReceiptUtil:
     product_lines_ys = []
     for i in range(1, df_quantities.shape[0]):
       y1, y2 = df_quantities.iloc[i-1].top, df_quantities.iloc[i].top
-      # product_lines_ys.append((y1-product_line_margin,y2))
       product_lines_ys.append((max(y1-product_line_margin, 0),y2))
 
     y1, y2 = df_quantities.iloc[-1].top, quantities_image_height
-    # product_lines_ys.append((y1-product_line_margin,y2))
     product_lines_ys.append((max(y1-product_line_margin, 0),y2))
-    # print('Num lines:', len(product_lines_ys))
-    # print(product_lines_ys)
     product_images = []
     for i in range(len(product_lines_ys)):
       product_line_ys = product_lines_ys[i]
@@ -170,7 +207,7 @@ class ReceiptUtil:
         ApplicationPropertiesService.logger.log_image(f'Product-{i + 1}', product_image)
     return product_images
 
-  def prepare_price_images(prices_part, df_quantities, quantities_image_height, price_line_margin = 3):
+  def prepare_price_images(prices_part, df_quantities, price_line_margin = 3):
     """
     Helps to segment price names image into images of seperate price names.
 
@@ -186,27 +223,21 @@ class ReceiptUtil:
     """
 
     price_lines_ys = []
-    for i in range(1, df_quantities.shape[0]):
-      y1, y2 = df_quantities.iloc[i-1].top, df_quantities.iloc[i].top
-      # print(y1, y2)
-      price_lines_ys.append((y1-price_line_margin,y2))
+    for i in range(df_quantities.shape[0]):
+      y1, y2 = df_quantities.iloc[i].top, df_quantities.iloc[i].top + df_quantities.iloc[i].height
+      price_lines_ys.append((y1-price_line_margin,y2+price_line_margin))
 
-    y1, y2 = df_quantities.iloc[-1].top, quantities_image_height
-    # print(y1, y2)
-    price_lines_ys.append((y1-price_line_margin,y2))
-    # print('Num lines:', len(price_lines_ys))
     price_images = []
     for i in range(len(price_lines_ys)):
       price_line_ys = price_lines_ys[i]
       y1, y2 = price_line_ys
-      # print(y1, y2)
       price_image = prices_part[y1:y2,:]
       price_images.append(price_image)
       if ApplicationPropertiesService.is_debug_on:
         ApplicationPropertiesService.logger.log_image(f'price-{i + 1}', price_image)
     return price_images
 
-  def prepare_amount_images(amounts_part, df_quantities, quantities_image_height, amount_line_margin = 3):
+  def prepare_amount_images(amounts_part, df_quantities, amount_line_margin = 3):
     """
     Helps to segment amount names image into images of seperate amount names.
 
@@ -222,20 +253,15 @@ class ReceiptUtil:
     """
 
     amount_lines_ys = []
-    for i in range(1, df_quantities.shape[0]):
-      y1, y2 = df_quantities.iloc[i-1].top, df_quantities.iloc[i].top
+    for i in range(df_quantities.shape[0]):
+      y1, y2 = df_quantities.iloc[i].top, df_quantities.iloc[i].top + df_quantities.iloc[i].height
       # print(y1, y2)
-      amount_lines_ys.append((y1-amount_line_margin,y2))
+      amount_lines_ys.append((y1-amount_line_margin,y2+amount_line_margin))
 
-    y1, y2 = df_quantities.iloc[-1].top, quantities_image_height
-    # print(y1, y2)
-    amount_lines_ys.append((y1-amount_line_margin,y2))
-    # print('Num lines:', len(amount_lines_ys))
     amount_images = []
     for i in range(len(amount_lines_ys)):
       amount_line_ys = amount_lines_ys[i]
       y1, y2 = amount_line_ys
-      # print(y1, y2)
       amount_image = amounts_part[y1:y2,:]
       amount_images.append(amount_image)
       if ApplicationPropertiesService.is_debug_on:

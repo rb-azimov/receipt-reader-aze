@@ -33,7 +33,7 @@ class Util:
         """
         if s.endswith('.'):
             s = s.rstrip('.')
-        return s
+        return float(s)
 
     @staticmethod
     def find_vertical_bounds(image, threshold=1):

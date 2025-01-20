@@ -1,7 +1,10 @@
+import warnings
+
 import cv2
 
 from src.low_level_processors.application_properties_service import ApplicationPropertiesService
 from src.low_level_processors.receipt_util import ReceiptUtil
+from src.low_level_processors.util import Util
 
 
 class ReceiptBuilder:
@@ -21,6 +24,8 @@ class ReceiptBuilder:
         extract_values_from_payment_type_part(payment_type_part) -> processes payment type part of the lower (payments and payment type details)
                                                                   of the receipt image to obtain cashless, cash, paid_cash, change, bonus, prepayment, credit values.
   """
+
+  warnings.simplefilter("always", UserWarning)
 
   @staticmethod
   def split_receipt_logical_parts(image):
@@ -200,55 +205,72 @@ class ReceiptBuilder:
       product_names.append(product_name)
     return product_names
 
-  # @staticmethod
-  # def extract_prices(price_images):
-  #   """
-  #   Performs OCR on each of the images to obtain
-  #   price_names.
-  #
-  #   Args:
-  #       price_images (list): list of price images
-  #       ...
-  #
-  #   Returns:
-  #       return: price_names
-  #   """
-  #
-  #   prices = []
-  #   for i in range(len(price_images)):
-  #     price_image = price_images[i]
-  #     ocr_property = ApplicationPropertiesService.ocr_properties.prices_ocr_property
-  #     df_price = ReceiptUtil.perform_ocr(price_image, ocr_config=ocr_property.config, lang=ocr_property.lang)
-  #     price = ''.join(df_price.iloc[:].text.to_list())
-  #     price = ReceiptUtil.preprocess_to_real_number(price)
-  #     price = float(price)
-  #     prices.append(price)
-  #   return prices
-  #
-  # @staticmethod
-  # def extract_amounts(amount_images):
-  #   """
-  #   Performs OCR on each of the images to obtain
-  #   amount_names.
-  #
-  #   Args:
-  #       amount_images (list): list of amount images
-  #       ...
-  #
-  #   Returns:
-  #       return: amount_names
-  #   """
-  #
-  #   amounts = []
-  #   for i in range(len(amount_images)):
-  #     amount_image = amount_images[i]
-  #     ocr_property = ApplicationPropertiesService.ocr_properties.amounts_ocr_property
-  #     df_amount = ReceiptUtil.perform_ocr(amount_image, ocr_config=ocr_property.config, lang=ocr_property.lang)
-  #     amount = ''.join(df_amount.iloc[:].text.to_list())
-  #     amount = ReceiptUtil.preprocess_to_real_number(amount)
-  #     amount = float(amount)
-  #     amounts.append(amount)
-  #   return amounts
+  @staticmethod
+  def extract_prices(price_images):
+    """
+    Performs OCR on each of the images to obtain
+    price_names.
+
+    Args:
+        price_images (list): list of price images
+        ...
+
+    Returns:
+        return: price_names
+    """
+
+    prices = []
+    for i in range(len(price_images)):
+      price_image = price_images[i]
+      ocr_property = ApplicationPropertiesService.ocr_properties.prices_ocr_property
+      df_price = ReceiptUtil.perform_ocr(price_image, ocr_config='--psm 8 -c tessedit_char_whitelist=.0123456789', lang=None)
+      price = ''.join(df_price.iloc[:].text.to_list())
+      price = ReceiptUtil.preprocess_to_real_number(price)
+      try:
+        price = Util.clean_and_convert_to_float(price)
+      except ValueError:
+        text = ReceiptUtil.perform_ocr_on_single_item_image(price_image)
+        if len(text) != 0:
+          price = float(text)
+        else:
+          price = -1
+          warnings.warn('Non-float value error supressed with `-1` {price}', UserWarning)
+      prices.append(price)
+    return prices
+
+  @staticmethod
+  def extract_amounts(amount_images):
+    """
+    Performs OCR on each of the images to obtain
+    amount_images.
+
+    Args:
+        amount_images (list): list of price images
+        ...
+
+    Returns:
+        return: amount_names
+    """
+
+    amounts = []
+    for i in range(len(amount_images)):
+      amount_image = amount_images[i]
+      ocr_property = ApplicationPropertiesService.ocr_properties.prices_ocr_property
+      df_amount = ReceiptUtil.perform_ocr(amount_image, ocr_config='--psm 8 -c tessedit_char_whitelist=.0123456789',
+                                         lang=None)
+      amount = ''.join(df_amount.iloc[:].text.to_list())
+      amount = ReceiptUtil.preprocess_to_real_number(amount)
+      try:
+        amount = Util.clean_and_convert_to_float(amount)
+      except ValueError:
+        text = ReceiptUtil.perform_ocr_on_single_item_image(amount_image)
+        if len(text) != 0:
+          amount = float(text)
+        else:
+          amount = -1
+          warnings.warn('Non-float value error supressed with `-1` {amount}', UserWarning)
+      amounts.append(amount)
+    return amounts
 
   @staticmethod
   def extract_values_from_payment_part(payment_part):
