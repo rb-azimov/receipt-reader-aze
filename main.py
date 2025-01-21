@@ -31,12 +31,25 @@ def main():
         'EPszcWAvJNCGw3HwEYb8PE9Ap3ewAj2TxLN92cdTmLSo',
         'smCRKc7ECvCDtpvqCDAWnZz1NZGvLfdeGgPZXQxbQj3'
     ]
+
+    fiscal_codes_with_error_add = [
+        '2FGhG4yH64QBrMqvEHckCrtXqHM5ADmDh5zxzQVQ85Uv',
+        '3Q2noagQ4v7v7dfBUhFZDMgNYpnxjVgq8ozQfcbyTvmz',
+        '5Db5MRpXTTQFMa5HZuSU1TaJMCsSRUmBAtXP4Bziqx2d',
+        '65XpnQziuianzawf45nAC6V9TvMidVniJ65DbGTeJQs4',
+        '7ywRvfvqJCN2aTRChJ9cbN8edMnnKQUassDdEb3RWf1t',
+        'CCPN4Hg9uyRRn3FT6kiJwfeXiYz6HQQcQGEzdHqaLtdo',
+        'ER9s8qbNzEsyVcj2vhRi7yJGxsUgKkVvE7fydNX2Mz7y',
+        'Gh435awX2mqvPi4AYXzeAmrHEVkBrNYAHKNj4Q2t6Mjq',
+        'KBiXeuAGnE2TsN1A45sbXP9qTXXfDaZTqh5GT6KiU7Y',
+        'qJa6ZdoJ254kBKMLmbrUgKJWsipV21nNKcmMVtKyeXF',
+    ]
     # fiscal_codes = fiscal_codes_with_error
+    # fiscal_codes = fiscal_codes_with_error_add
     fiscal_codes = [fiscal_code.strip() for fiscal_code in fiscal_codes]
     fiscal_codes = list(set(fiscal_codes))
     fiscal_codes.sort()
 
-    # fiscal_codes_of_interest = []
     fiscal_codes_with_error, errors, error_tracebacks = [], [], []
     receipt_images_folder = os.path.join('logs', 'receipts')
     downloaded_receipt_images = os.listdir(receipt_images_folder)

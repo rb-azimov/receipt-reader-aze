@@ -171,11 +171,13 @@ class ReceiptService:
     product_images = ReceiptUtil.prepare_product_images(clear_products_part, df_quantities,
                      quantities_image_height = clear_quantities_part.shape[0], product_line_margin = product_line_margin)
     product_names = ReceiptBuilder.extract_product_names(product_images)
-
+    # print(product_names)
+    # print('Df Quantities')
+    # print(df_quantities.iloc[:,-6:])
     price_images = ReceiptUtil.prepare_price_images(clear_prices_part, df_quantities,
-                                                        price_line_margin=product_line_margin)
+                                                        price_line_margin=product_line_margin+2)
     amount_images = ReceiptUtil.prepare_amount_images(clear_amounts_part, df_quantities,
-                                                      amount_line_margin=product_line_margin)
+                                                      amount_line_margin=product_line_margin+2)
 
     prices = ReceiptBuilder.extract_prices(price_images)
     amounts = ReceiptBuilder.extract_amounts(amount_images)

@@ -153,10 +153,11 @@ class ReceiptUtil:
                                                                       ocr_config='--psm 8 -c tessedit_char_whitelist=.0123456789',
                                                                       return_type=return_type,
                                                                       lang=None)  # -c tessedit_char_whitelist=.0123456789
-    df_quantities.top = df_quantities.top / scale_factor
-    df_quantities.left = df_quantities.left / scale_factor
-    df_quantities.width = df_quantities.width / scale_factor
-    df_quantities.height = df_quantities.height / scale_factor
+    # df_quantities.top = df_quantities.top / scale_factor
+    # df_quantities.left = df_quantities.left / scale_factor
+    # df_quantities.width = df_quantities.width / scale_factor
+    # df_quantities.height = df_quantities.height / scale_factor
+    # print('perform_ocr_on_small_image used!')
     return quantities, df_quantities
 
   def perform_ocr_on_single_item_image(image, scale_factor = 2):
@@ -225,8 +226,9 @@ class ReceiptUtil:
     price_lines_ys = []
     for i in range(df_quantities.shape[0]):
       y1, y2 = df_quantities.iloc[i].top, df_quantities.iloc[i].top + df_quantities.iloc[i].height
-      price_lines_ys.append((y1-price_line_margin,y2+price_line_margin))
-
+      price_lines_ys.append((max(y1-price_line_margin, 0), min(y2+price_line_margin, prices_part.shape[0])))
+      # price_lines_ys.append((y1-price_line_margin,y2+price_line_margin))
+    # print('Price lines:', price_lines_ys)
     price_images = []
     for i in range(len(price_lines_ys)):
       price_line_ys = price_lines_ys[i]
@@ -256,8 +258,9 @@ class ReceiptUtil:
     for i in range(df_quantities.shape[0]):
       y1, y2 = df_quantities.iloc[i].top, df_quantities.iloc[i].top + df_quantities.iloc[i].height
       # print(y1, y2)
-      amount_lines_ys.append((y1-amount_line_margin,y2+amount_line_margin))
-
+      amount_lines_ys.append((max(y1-amount_line_margin, 0), min(y2+amount_line_margin, amounts_part.shape[0])))
+      # amount_lines_ys.append((y1-amount_line_margin, y2+amount_line_margin))
+    # print('Amount lines:', amount_lines_ys)
     amount_images = []
     for i in range(len(amount_lines_ys)):
       amount_line_ys = amount_lines_ys[i]
