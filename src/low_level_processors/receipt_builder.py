@@ -48,7 +48,7 @@ class ReceiptBuilder:
     rect_ys_list = ReceiptUtil.determine_vertical_splitting_rectangles(image, horizontal_hist_normalized,
                     threshold_scale = splitting_property.threshold_scale, min_diff = splitting_property.min_difference)
 
-    rect_ys_list = rect_ys_list[-2:] # Bypass useless, incorrect splits
+    rect_ys_list = rect_ys_list[-2:] # Bypass useless, incorrect, intermediary splits
     rect_ys_prod = rect_ys_list[0]
     rect_ys_total = rect_ys_list[1]
 
@@ -65,13 +65,9 @@ class ReceiptBuilder:
     ApplicationPropertiesService.logger.log_image_for_debug(
       'product_column_names_part', product_column_names_part
     )
-    # charset = "ProductQinycealT "
-    # config = f'--psm 7 -c tessedit_char_whitelist={charset}'
     config = f'--psm 7'
     values, df = ReceiptUtil.perform_ocr_obtain_values(product_column_names_part,
                                           ocr_config = config, return_type=str, lang=None)
-    # print(values)
-    # print(df[['left', 'top', 'width', 'height', 'text']])
     PRODUCT, QUANTITY, PRICE, TOTAL = 'Product', 'Quantity', 'Price', 'Total'
 
     left_product = df[df.text == PRODUCT].iloc[0].left
@@ -89,14 +85,6 @@ class ReceiptBuilder:
       (left_price, left_total),
       (left_total, image.shape[1]),
     ]
-    # top_left = (left_quantity, 0)  # (x1, y1) coordinates
-    # bottom_right = (left_price, product_column_names_part.shape[0])  # (x2, y2) coordinates
-    # color = (0, 0, 255)  # Red color
-    # thickness = 1  # Thickness of the rectangle border
-    # cv2.rectangle(product_column_names_part, top_left, bottom_right, color, thickness)
-    # ApplicationPropertiesService.logger.log_image_for_debug(
-    #   'labeled_product_column_names_part', product_column_names_part
-    # )
     return image_general, image_products, image_total, product_part_rect_xs_list
 
   @staticmethod
@@ -223,7 +211,8 @@ class ReceiptBuilder:
     for i in range(len(price_images)):
       price_image = price_images[i]
       ocr_property = ApplicationPropertiesService.ocr_properties.prices_ocr_property
-      df_price = ReceiptUtil.perform_ocr(price_image, ocr_config='--psm 8 -c tessedit_char_whitelist=.0123456789', lang=None)
+      df_price = ReceiptUtil.perform_ocr(price_image,
+                                         ocr_config=ocr_property.config, lang=ocr_property.langsss)
       price = ''.join(df_price.iloc[:].text.to_list())
       price = ReceiptUtil.preprocess_to_real_number(price)
       try:
@@ -255,9 +244,9 @@ class ReceiptBuilder:
     amounts = []
     for i in range(len(amount_images)):
       amount_image = amount_images[i]
-      ocr_property = ApplicationPropertiesService.ocr_properties.prices_ocr_property
-      df_amount = ReceiptUtil.perform_ocr(amount_image, ocr_config='--psm 8 -c tessedit_char_whitelist=.0123456789',
-                                         lang=None)
+      ocr_property = ApplicationPropertiesService.ocr_properties.amounts_ocr_property
+      df_amount = ReceiptUtil.perform_ocr(amount_image, ocr_config=ocr_property.config,
+                                         lang=ocr_property.lang)
       amount = ''.join(df_amount.iloc[:].text.to_list())
       amount = ReceiptUtil.preprocess_to_real_number(amount)
       try:
