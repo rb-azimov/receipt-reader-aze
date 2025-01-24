@@ -23,7 +23,8 @@ class OCRProperties(Properties):
                  amounts_ocr_property,
                  payment_amount_part_ocr_property,
                  payment_type_part_names_ocr_property,
-                 payment_type_part_numbers_ocr_property):
+                 payment_type_part_numbers_ocr_property,
+                 small_image_ocr_property):
         self.general_part_ocr_property = general_part_ocr_property
         self.product_names_ocr_property = product_names_ocr_property
         self.quantities_ocr_property = quantities_ocr_property
@@ -32,6 +33,7 @@ class OCRProperties(Properties):
         self.payment_amount_part_ocr_property = payment_amount_part_ocr_property
         self.payment_type_part_names_ocr_property = payment_type_part_names_ocr_property
         self.payment_type_part_numbers_ocr_property = payment_type_part_numbers_ocr_property
+        self.small_image_ocr_property = small_image_ocr_property
 
 class SplittingProperties(Properties):
     def __init__(self,
@@ -49,12 +51,16 @@ class SplittingProperties(Properties):
 class MarginProperties(Properties):
     def __init__(self,
                  product_line_margin,
+                 price_line_margin,
+                 amount_line_margin,
                  general_part_bottom_margin,
                  payment_part_bottom_margin,
                  cashier_date_time_top_margin,
                  payment_amount_part_margin,
                  payment_type_name_value_margin):
         self.product_line_margin = product_line_margin
+        self.price_line_margin = price_line_margin
+        self.amount_line_margin = amount_line_margin
         self.general_part_bottom_margin = general_part_bottom_margin
         self.payment_part_bottom_margin = payment_part_bottom_margin
         self.cashier_date_time_top_margin = cashier_date_time_top_margin

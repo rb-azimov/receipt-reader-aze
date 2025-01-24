@@ -149,10 +149,14 @@ class ReceiptUtil:
     hindex1, hindex2 = Util.find_horizontal_bounds(clear_quantities_part_temp, 0)
     clear_quantities_part_temp = clear_quantities_part_temp[vindex1:vindex2 + 1, hindex1:hindex2 + 1]
     clear_quantities_part_temp = cv2.copyMakeBorder(clear_quantities_part_temp, 1, 1, 1, 1, cv2.BORDER_CONSTANT, value=255)
+    """
+    ocr_config='--psm 8 -c tessedit_char_whitelist=.0123456789', lang=None
+    """
+    ocr_property = ApplicationPropertiesService.ocr_properties.small_image_ocr_property
     quantities, df_quantities = ReceiptUtil.perform_ocr_obtain_values(image=clear_quantities_part_temp,
-                                                                      ocr_config='--psm 8 -c tessedit_char_whitelist=.0123456789',
+                                                                      ocr_config=ocr_property.config,
                                                                       return_type=return_type,
-                                                                      lang=None)  # -c tessedit_char_whitelist=.0123456789
+                                                                      lang=ocr_property.lang)
     # df_quantities.top = df_quantities.top / scale_factor
     # df_quantities.left = df_quantities.left / scale_factor
     # df_quantities.width = df_quantities.width / scale_factor
