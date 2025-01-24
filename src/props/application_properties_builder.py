@@ -1,5 +1,5 @@
-from src.low_level_processors.application_properties import ApplicationProperties
-from src.low_level_processors.properties import TextSimilarityThresholdProperties, MarginProperties, SplittingProperty, \
+from src.props.application_properties import ApplicationProperties
+from src.props.properties import TextSimilarityThresholdProperties, MarginProperties, SplittingProperty, \
     SplittingProperties, OCRProperty, OCRProperties
 
 class ApplicationPropertiesBuilder:

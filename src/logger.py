@@ -3,7 +3,7 @@ import re
 import cv2
 import logging
 
-from src.low_level_processors.application_properties_service import ApplicationPropertiesService
+from src.props.application_properties_service import ApplicationPropertiesService
 
 class LowLevelReceiptMinerLogger:
     def __init__(self, output_dir="logs"):

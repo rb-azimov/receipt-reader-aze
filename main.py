@@ -5,10 +5,10 @@ import cv2
 import pytesseract
 
 from src.logger import LowLevelReceiptMinerLogger
-from src.low_level_processors.application_properties_service import ApplicationPropertiesService
-from src.low_level_processors.receipt_service import ReceiptService
-from src.low_level_processors.receipt_util import ReceiptUtil
-from src.low_level_processors.application_properties_builder import ApplicationPropertiesBuilder
+from src.props.application_properties_service import ApplicationPropertiesService
+from src.receipt_processors.receipt_service import ReceiptService
+from src.receipt_processors.receipt_util import ReceiptUtil
+from src.props.application_properties_builder import ApplicationPropertiesBuilder
 
 pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 

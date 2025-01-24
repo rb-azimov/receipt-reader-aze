@@ -1,18 +1,15 @@
-import os
 import warnings
-from importlib.metadata import pass_none
 
 import cv2
-import matplotlib.pyplot as plt
 import numpy as np
 import pytesseract
 from pytesseract import Output
 import requests
 import pandas as pd
-from rapidfuzz import fuzz, process
+from rapidfuzz import fuzz
 
-from src.low_level_processors.application_properties_service import ApplicationPropertiesService
-from src.low_level_processors.util import Util
+from src.props.application_properties_service import ApplicationPropertiesService
+from src.receipt_processors.util import Util
 from src.models.product import Product
 from src.models.receipt import Receipt
 from src.models.receipt_general_info import ReceiptGeneralInfo

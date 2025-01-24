@@ -7,9 +7,9 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 from PIL import Image, ImageEnhance
 from pyzbar.pyzbar import decode
 import io
-from src.low_level_processors.application_properties_builder import ApplicationPropertiesBuilder
-from src.low_level_processors.application_properties_service import ApplicationPropertiesService
-from src.low_level_processors.receipt_service import ReceiptService
+from src.props.application_properties_builder import ApplicationPropertiesBuilder
+from src.props.application_properties_service import ApplicationPropertiesService
+from src.receipt_processors.receipt_service import ReceiptService
 import pytesseract
 
 # pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'

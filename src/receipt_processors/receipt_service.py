@@ -3,14 +3,12 @@ import os
 import time
 
 import cv2
-from matplotlib import pyplot as plt
-from matplotlib.scale import scale_factory
 
 from src.logger import LowLevelReceiptMinerLogger
-from src.low_level_processors.util import Util
-from src.low_level_processors.application_properties_service import ApplicationPropertiesService
-from src.low_level_processors.receipt_builder import ReceiptBuilder
-from src.low_level_processors.receipt_util import ReceiptUtil
+from src.receipt_processors.util import Util
+from src.props.application_properties_service import ApplicationPropertiesService
+from src.receipt_processors.receipt_builder import ReceiptBuilder
+from src.receipt_processors.receipt_util import ReceiptUtil
 from src.models.product import Product
 from src.models.receipt import Receipt
 from src.models.receipt_general_info import ReceiptGeneralInfo

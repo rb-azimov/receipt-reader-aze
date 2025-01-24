@@ -1,10 +1,8 @@
 import warnings
 
-import cv2
-
-from src.low_level_processors.application_properties_service import ApplicationPropertiesService
-from src.low_level_processors.receipt_util import ReceiptUtil
-from src.low_level_processors.util import Util
+from src.props.application_properties_service import ApplicationPropertiesService
+from src.receipt_processors.receipt_util import ReceiptUtil
+from src.receipt_processors.util import Util
 
 
 class ReceiptBuilder:
@@ -212,7 +210,7 @@ class ReceiptBuilder:
       price_image = price_images[i]
       ocr_property = ApplicationPropertiesService.ocr_properties.prices_ocr_property
       df_price = ReceiptUtil.perform_ocr(price_image,
-                                         ocr_config=ocr_property.config, lang=ocr_property.langsss)
+                                         ocr_config=ocr_property.config, lang=ocr_property.lang)
       price = ''.join(df_price.iloc[:].text.to_list())
       price = ReceiptUtil.preprocess_to_real_number(price)
       try:
