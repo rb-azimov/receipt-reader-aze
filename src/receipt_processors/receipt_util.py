@@ -129,12 +129,12 @@ class ReceiptUtil:
     return values, df
 
   def perform_ocr_on_single_item_image_mult_times(one_item_image):
-    text = ReceiptUtil.perform_ocr_on_single_item_image(one_item_image, scale_factor=4, stroke_length=1)
+    text = ReceiptUtil.perform_ocr_on_single_item_image(one_item_image, scale_factor=4, stroke_width=1)
     try:
       value = float(text)
       return value
     except ValueError:
-      text = ReceiptUtil.perform_ocr_on_single_item_image(one_item_image, scale_factor=4, stroke_length=10)
+      text = ReceiptUtil.perform_ocr_on_single_item_image(one_item_image, scale_factor=4, stroke_width=10)
       try:
         value = float(text)
         return value
@@ -167,14 +167,14 @@ class ReceiptUtil:
     # print('perform_ocr_on_small_image used!')
     return quantities, df_quantities
 
-  def perform_ocr_on_single_item_image(image, scale_factor = 2, stroke_length = 1):
+  def perform_ocr_on_single_item_image(image, scale_factor = 2, stroke_width = 1):
     image_temp = image[1:, :]
     _, image_temp = cv2.threshold(image_temp, 0, 255,
                                                   cv2.THRESH_BINARY + cv2.THRESH_OTSU)
     vindex1, vindex2 = Util.find_vertical_bounds(image_temp, 0)
     hindex1, hindex2 = Util.find_horizontal_bounds(image_temp, 0)
     image_temp = image_temp[vindex1:vindex2 + 1, hindex1:hindex2 + 1]
-    image_temp = cv2.copyMakeBorder(image_temp, stroke_length, stroke_length, stroke_length, stroke_length, cv2.BORDER_CONSTANT, value=255)
+    image_temp = cv2.copyMakeBorder(image_temp, stroke_width, stroke_width, stroke_width, stroke_width, cv2.BORDER_CONSTANT, value=255)
     df = ReceiptUtil.perform_ocr(image=image_temp, ocr_config='--psm 8 -c tessedit_char_whitelist=.0123456789',
                         lang=None)  # -c tessedit_char_whitelist=.0123456789
     if df.shape[0] != 0:
