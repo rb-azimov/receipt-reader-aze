@@ -132,17 +132,17 @@ class ReceiptService:
       if keyword not in results_dict:
         results_dict[keyword] = '-'
         warnings.warn(f'{keyword} was not found!', UserWarning)
-    print(results_dict)
+
     general_info = ReceiptGeneralInfo(
-      name = results_dict['Object name'],
-      address = results_dict['Object address'],
-      code = results_dict['Object code'],
-      tax_payer_name = results_dict['Taxpayer name'],
-      TIN = results_dict['TIN'],
-      sale_receipt_num = results_dict['Sale receipt №'],
-      cashier_name = results_dict['Cashier'],
-      date = results_dict['Date'],
-      time = results_dict['Time']
+      name = results_dict[OBJECT_NAME.replace(':', '')],
+      address = results_dict[OBJECT_ADDRESS.replace(':', '')],
+      code = results_dict[OBJECT_CODE.replace(':', '')],
+      tax_payer_name = results_dict[TAXPAYER_NAME.replace(':', '')],
+      TIN = results_dict[TIN.replace(':', '')],
+      sale_receipt_num = results_dict[SALE_RECEIPT_NUM.replace(':', '')],
+      cashier_name = results_dict[CASHIER.replace(':', '')],
+      date = results_dict[DATE.replace(':', '')],
+      time = results_dict[TIME.replace(':', '')]
     )
 
     # TEMPORARY OPPS!
