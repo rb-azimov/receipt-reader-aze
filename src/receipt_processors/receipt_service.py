@@ -95,13 +95,27 @@ class ReceiptService:
     Returns:
         return_type: ReceiptGeneralInfo instance
     """
-    multi_token_keywords = ['Object name', 'Object address:', 'Object code:', 'Taxpayer name:', 'Sale receipt №']
-    one_token_keywords = ['TIN:', 'Cashier:', 'Date:', 'Time:']
+
+    OBJECT_NAME = 'Object name'
+    OBJECT_ADDRESS = 'Object address:'
+    OBJECT_CODE = 'Object code:'
+    TAXPAYER_NAME = 'Taxpayer name:'
+    SALE_RECEIPT_NUM = 'Sale receipt №'
+
+    TIN = 'TIN:'
+    CASHIER = 'Cashier:'
+    DATE = 'Date:'
+    TIME = 'Time:'
+
+    multi_token_keywords = [OBJECT_NAME, OBJECT_ADDRESS, OBJECT_CODE,
+                            TAXPAYER_NAME, SALE_RECEIPT_NUM]
+    one_token_keywords = [TIN, CASHIER, DATE, TIME]
+
     results_dict, df, selected_df = ReceiptUtil.rule_based_text_extraction(image_general, multi_token_keywords, one_token_keywords)
 
     cashier_part_image, date_time_part_image = ReceiptBuilder.segment_cashier_date_time_part(image_general, df, selected_df)
-    cashier_value_dict, _, _ = ReceiptUtil.rule_based_text_extraction(cashier_part_image, multi_token_keywords = None, one_token_keywords = ['Cashier:',])
-    date_time_value_dict, _, _ = ReceiptUtil.rule_based_text_extraction(date_time_part_image, multi_token_keywords = None, one_token_keywords = ['Date:', 'Time:'])
+    cashier_value_dict, _, _ = ReceiptUtil.rule_based_text_extraction(cashier_part_image, multi_token_keywords = None, one_token_keywords = [CASHIER,])
+    date_time_value_dict, _, _ = ReceiptUtil.rule_based_text_extraction(date_time_part_image, multi_token_keywords = None, one_token_keywords = [DATE, TIME])
 
     if ApplicationPropertiesService.is_debug_on:
       ApplicationPropertiesService.logger.log_image('general-cashier part image', cashier_part_image)
@@ -112,14 +126,13 @@ class ReceiptService:
     for key, value in date_time_value_dict.items():
       results_dict[key] = value
 
-    if 'Object name' not in results_dict:
-      results_dict['Object name'] = '-'
-      warnings.warn('Object name was not found!', UserWarning)
-
-    if 'Object address' not in results_dict:
-      results_dict['Object address'] = '-'
-      warnings.warn('Object address was not found!', UserWarning)
-
+    keywords = multi_token_keywords + one_token_keywords
+    keywords = [keyword.replace(':', '') for keyword in keywords]
+    for keyword in keywords:
+      if keyword not in results_dict:
+        results_dict[keyword] = '-'
+        warnings.warn(f'{keyword} was not found!', UserWarning)
+    print(results_dict)
     general_info = ReceiptGeneralInfo(
       name = results_dict['Object name'],
       address = results_dict['Object address'],
@@ -131,6 +144,11 @@ class ReceiptService:
       date = results_dict['Date'],
       time = results_dict['Time']
     )
+
+    # TEMPORARY OPPS!
+    print('df')
+    print(df.iloc[:25,-7:])
+
     return general_info
 
   def perform_ner_on_products_part(self, image_products, product_part_rect_xs_list):

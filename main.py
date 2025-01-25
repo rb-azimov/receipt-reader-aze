@@ -23,29 +23,12 @@ def main():
 
     # fiscal_codes = fiscal_codes[4:7]
     fiscal_codes_with_error = [
-        '3UF3VSiYyXbxe7AEkUYZjGQ698ugeQy5jWDS9vY1P5QJ',
-        '5Q5zCTnUCtLBVzRv5zyLXjyL58kLv9a7NfL7gtqx6pSQ',
-        '7W7ZLvJZSAgUmjKRaJKbga5HXb4WAzFANWqdFrqAGwkr',
-        '7qMBFjj9rM27Cz9brWZuAWAaYHgrVeaRaQ44p1NokHj2',
-        'BEg9kmxBVEXBYfnHjNfD6qESa1gCwrnTi5MthJPW8T4T',
-        'EPszcWAvJNCGw3HwEYb8PE9Ap3ewAj2TxLN92cdTmLSo',
-        'smCRKc7ECvCDtpvqCDAWnZz1NZGvLfdeGgPZXQxbQj3'
+        '8ofcmJhYPcaZ',
+        'A9DYFDeVJckLTHxcQmpxcJhT5N8TA7KJr12Vga1Qxi3v',
+        'JDbiy1aCSKJn'
     ]
 
-    fiscal_codes_with_error_add = [
-        '2FGhG4yH64QBrMqvEHckCrtXqHM5ADmDh5zxzQVQ85Uv',
-        '3Q2noagQ4v7v7dfBUhFZDMgNYpnxjVgq8ozQfcbyTvmz',
-        '5Db5MRpXTTQFMa5HZuSU1TaJMCsSRUmBAtXP4Bziqx2d',
-        '65XpnQziuianzawf45nAC6V9TvMidVniJ65DbGTeJQs4',
-        '7ywRvfvqJCN2aTRChJ9cbN8edMnnKQUassDdEb3RWf1t',
-        'CCPN4Hg9uyRRn3FT6kiJwfeXiYz6HQQcQGEzdHqaLtdo',
-        'ER9s8qbNzEsyVcj2vhRi7yJGxsUgKkVvE7fydNX2Mz7y',
-        'Gh435awX2mqvPi4AYXzeAmrHEVkBrNYAHKNj4Q2t6Mjq',
-        'KBiXeuAGnE2TsN1A45sbXP9qTXXfDaZTqh5GT6KiU7Y',
-        'qJa6ZdoJ254kBKMLmbrUgKJWsipV21nNKcmMVtKyeXF',
-    ]
-    # fiscal_codes = fiscal_codes_with_error
-    # fiscal_codes = fiscal_codes_with_error_add
+    fiscal_codes = fiscal_codes_with_error
     fiscal_codes = [fiscal_code.strip() for fiscal_code in fiscal_codes]
     fiscal_codes = list(set(fiscal_codes))
     fiscal_codes.sort()
