@@ -29,6 +29,8 @@ class ReceiptUtil:
       read_image_from_ekassa(fiscal_code) -> obtains receipt image from ekassa.
       perform_ocr(image, ocr_config, lang = None) -> performs OCR on an image.
       perform_ocr_obtain_values(image, ocr_config, return_type, lang = None) -> performs OCR on an image and casts values to the given type.
+      perform_ocr_on_small_image(clear_quantities_part, return_type = float) -> performs OCR when large white/empty margin exists
+      perform_ocr_on_single_item_image(image, scale_factor=2, stroke_length=1) -> performs OCR on a single item/token image
       prepare_product_images(products_part, df_quantities, quantities_image_height, product_line_margin = 3) -> helps to segment
       product names image into images of seperate product names.
       select_keyword_existed_rows(df, searched_col_name, keywords, similiarity_thresh = 80) -> Helps to search for the keywords
@@ -109,7 +111,6 @@ class ReceiptUtil:
 
     """
     df = ReceiptUtil.perform_ocr(image, ocr_config, lang = lang)
-    # text_list = df.text.to_list()
     values = []
     for index, row in df.iterrows():
       text = row.text
@@ -123,19 +124,24 @@ class ReceiptUtil:
           x1, x2 = row.left, row.left + row.width
           y1, y2 = row.top, row.top + row.height
           one_item_image = image[y1:y2,x1:x2]
-          text = ReceiptUtil.perform_ocr_on_single_item_image(one_item_image, scale_factor=4)
-          try:
-            value = float(text)
-            values.append(value)
-          except ValueError:
-            values.append(-1)
-            warnings.warn('Non-float value error supressed with `-1`', UserWarning)
-
-    # if return_type == float:
-    #   values = [Util.clean_and_convert_to_float(item) for item in text_list]
-    # else:
-    #   values = [return_type(item) for item in text_list]
+          value = ReceiptUtil.perform_ocr_on_single_item_image_mult_times(one_item_image)
+          values.append(value)
     return values, df
+
+  def perform_ocr_on_single_item_image_mult_times(one_item_image):
+    text = ReceiptUtil.perform_ocr_on_single_item_image(one_item_image, scale_factor=4, stroke_length=1)
+    try:
+      value = float(text)
+      return value
+    except ValueError:
+      text = ReceiptUtil.perform_ocr_on_single_item_image(one_item_image, scale_factor=4, stroke_length=10)
+      try:
+        value = float(text)
+        return value
+      except ValueError:
+        warnings.warn('Non-float value error supressed with `-1`', UserWarning)
+        # ApplicationPropertiesService.logger.log_image(f'tiny_{Util.prepare_current_datetime()}', one_item_image)
+        return -1
 
   def perform_ocr_on_small_image(clear_quantities_part, return_type = float):
     scale_factor = 2
@@ -161,14 +167,14 @@ class ReceiptUtil:
     # print('perform_ocr_on_small_image used!')
     return quantities, df_quantities
 
-  def perform_ocr_on_single_item_image(image, scale_factor = 2):
+  def perform_ocr_on_single_item_image(image, scale_factor = 2, stroke_length = 1):
     image_temp = image[1:, :]
     _, image_temp = cv2.threshold(image_temp, 0, 255,
                                                   cv2.THRESH_BINARY + cv2.THRESH_OTSU)
     vindex1, vindex2 = Util.find_vertical_bounds(image_temp, 0)
     hindex1, hindex2 = Util.find_horizontal_bounds(image_temp, 0)
     image_temp = image_temp[vindex1:vindex2 + 1, hindex1:hindex2 + 1]
-    image_temp = cv2.copyMakeBorder(image_temp, 1, 1, 1, 1, cv2.BORDER_CONSTANT, value=255)
+    image_temp = cv2.copyMakeBorder(image_temp, stroke_length, stroke_length, stroke_length, stroke_length, cv2.BORDER_CONSTANT, value=255)
     df = ReceiptUtil.perform_ocr(image=image_temp, ocr_config='--psm 8 -c tessedit_char_whitelist=.0123456789',
                         lang=None)  # -c tessedit_char_whitelist=.0123456789
     if df.shape[0] != 0:
