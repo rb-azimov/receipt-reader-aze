@@ -22,13 +22,13 @@ def main():
         fiscal_codes = file.readlines()
 
     # fiscal_codes = fiscal_codes[4:7]
-    fiscal_codes_with_error = [
+    fiscal_codes_with_watermark = [
         '8ofcmJhYPcaZ',
         'A9DYFDeVJckLTHxcQmpxcJhT5N8TA7KJr12Vga1Qxi3v',
         'JDbiy1aCSKJn'
     ]
 
-    fiscal_codes = fiscal_codes_with_error
+    # fiscal_codes = fiscal_codes_with_error
     fiscal_codes = [fiscal_code.strip() for fiscal_code in fiscal_codes]
     fiscal_codes = list(set(fiscal_codes))
     fiscal_codes.sort()

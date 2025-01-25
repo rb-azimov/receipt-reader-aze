@@ -3,6 +3,7 @@ import os
 import time
 
 import cv2
+import numpy as np
 
 from src.logger import LowLevelReceiptMinerLogger
 from src.receipt_processors.util import Util
@@ -144,10 +145,6 @@ class ReceiptService:
       date = results_dict[DATE.replace(':', '')],
       time = results_dict[TIME.replace(':', '')]
     )
-
-    # TEMPORARY OPPS!
-    print('df')
-    print(df.iloc[:25,-7:])
 
     return general_info
 
