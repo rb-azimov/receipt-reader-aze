@@ -9,6 +9,7 @@ from src.props.application_properties_service import ApplicationPropertiesServic
 from src.receipt_processors.receipt_service import ReceiptService
 from src.receipt_processors.receipt_util import ReceiptUtil
 from src.props.application_properties_builder import ApplicationPropertiesBuilder
+from src.receipt_processors.receipt_validator import ReceiptValidator
 
 pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 
@@ -27,14 +28,7 @@ def main():
         'A9DYFDeVJckLTHxcQmpxcJhT5N8TA7KJr12Vga1Qxi3v',
         'JDbiy1aCSKJn'
     ]
-    fiscal_codes_with_error = [
-        '5Q5zCTnUCtLBVzRv5zyLXjyL58kLv9a7NfL7gtqx6pSQ',
-        '7W7ZLvJZSAgUmjKRaJKbga5HXb4WAzFANWqdFrqAGwkr',
-        'EPszcWAvJNCGw3HwEYb8PE9Ap3ewAj2TxLN92cdTmLSo',
-        'smCRKc7ECvCDtpvqCDAWnZz1NZGvLfdeGgPZXQxbQj3'
-    ]
 
-    # fiscal_codes = fiscal_codes_with_error
     fiscal_codes = [fiscal_code.strip() for fiscal_code in fiscal_codes]
     fiscal_codes = list(set(fiscal_codes))
     fiscal_codes.sort()
@@ -57,6 +51,12 @@ def main():
             receipt = receipt_service.mine_receipt(image_ekassa_gray=image_ekassa_gray,
                                                    fiscal_code=fiscal_code)
             receipt._fiscal_code = fiscal_code
+
+            errors = ReceiptValidator.validate_receipt(receipt, update = False)
+            if len(errors) > 0:
+                print('<< Consistency errors >>')
+                for error in errors:
+                    print(error)
         except Exception as e:
             print(f"! An error occurred (on {fiscal_code}): {e}")
             # traceback.print_exc()
