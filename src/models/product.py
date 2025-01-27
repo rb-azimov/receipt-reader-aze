@@ -45,6 +45,13 @@ class Product:
     def check_amount_coherence(self) -> bool:
         return self._amount == self._quantity * self._price
 
+    def copy(self):
+        return Product(
+            self._name,
+            self._quantity,
+            self._price,
+            self._amount
+        )
     # Override __str__ method
     def __str__(self):
         return str({

@@ -54,7 +54,7 @@ def main():
                                                    fiscal_code=fiscal_code)
             receipt._fiscal_code = fiscal_code
 
-            errors = ReceiptValidator.validate_receipt(receipt, update = False)
+            errors = ReceiptValidator.validate_receipt(receipt)
             if len(errors) > 0:
                 num_consistency_error_receipts += 1
                 print('<< Consistency errors >>')
@@ -62,7 +62,7 @@ def main():
                     print(error)
         except Exception as e:
             print(f"! An error occurred (on {fiscal_code}): {e}")
-            # traceback.print_exc()
+            traceback.print_exc()
             errors.append(e)
             error_tracebacks.append(traceback.format_exc())
             fiscal_codes_with_error.append(fiscal_code)
