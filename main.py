@@ -33,6 +33,8 @@ def main():
     fiscal_codes = list(set(fiscal_codes))
     fiscal_codes.sort()
 
+    num_consistency_error_receipts = 0
+
     fiscal_codes_with_error, errors, error_tracebacks = [], [], []
     receipt_images_folder = os.path.join('logs', 'receipts')
     downloaded_receipt_images = os.listdir(receipt_images_folder)
@@ -54,6 +56,7 @@ def main():
 
             errors = ReceiptValidator.validate_receipt(receipt, update = False)
             if len(errors) > 0:
+                num_consistency_error_receipts += 1
                 print('<< Consistency errors >>')
                 for error in errors:
                     print(error)
@@ -107,5 +110,7 @@ def main():
         print(f'{(i+1)}. {errors[i]}\n{error_tracebacks[i]}'.strip())
         print('---------------')
 
+    print()
+    print('Receipts with consistency errors:', num_consistency_error_receipts)
 if __name__ == '__main__':
     main()

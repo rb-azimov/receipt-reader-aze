@@ -16,8 +16,6 @@ Inconsistent Product 1: quantity=1.0, price=240.0, amount=2.4
 << Consistency errors >>
 Inconsistent Product 16: quantity=0.6, price=118.0, amount=7.09
 10. 3UF3VSiYyXbxe7AEkUYZjGQ698ugeQy5jWDS9vY1P5QJ
-<< Consistency errors >>
-Inconsistent Cash Change: cash=15.3, change=0, paid=0
 11. 3UchfE6kjJDUmNivwyAEhhsEgWySGTN4gCgu399hADfS
 12. 3bccagRjFrTVmVgnTyfSuv5ACs1YAn5qXraTnKwmJUU8
 13. 3dGYQLxGNzvkSQrKBUq5vHDbArpJ15JkGguto3AAnLsC
@@ -25,7 +23,6 @@ Inconsistent Cash Change: cash=15.3, change=0, paid=0
 << Consistency errors >>
 Inconsistent Product 2: quantity=1.0, price=177.0, amount=5.0
 Inconsistent Product 3: quantity=1.0, price=177.0, amount=1.77
-Inconsistent Cash Change: cash=10.78, change=0, paid=0
 Inconsistent Total Amount: calculated=13.91, real=10.78
 15. 4KPYbUnopqhk7QHu5pMtkxqXKMvFnoVhdnTdzu7fMHcU
 16. 4LsQxjbXecdZt99BNXYTEPmrfMJnrvEK3Z3Mc41qUbEQ
@@ -37,12 +34,8 @@ Inconsistent Total Amount: calculated=104.85, real=113.36
 20. 5Db5MRpXTTQFMa5HZuSU1TaJMCsSRUmBAtXP4Bziqx2d
 21. 5L95LUUKBBneYRZMAujy7Ro2KYQaCzz99VyiqCcunrPr
 22. 5Q3XXMhPHKDqqQy3j4ZgaxjNxv3Svy59XYqLxHVYUhFL
-<< Consistency errors >>
-Inconsistent Cash Change: cash=15.0, change=0, paid=0
 23. 5Q5zCTnUCtLBVzRv5zyLXjyL58kLv9a7NfL7gtqx6pSQ
 << Consistency errors >>
-Inconsistent Product 3: quantity=7.0, price=0.7, amount=0.7
-Inconsistent Product 5: quantity=7.0, price=3.2, amount=3.2
 Inconsistent Total Amount: calculated=11.09, real=13.59
 24. 5Qqbyqm1WNqUt2uahojwzrZni4A4SDSpcx8PMwxDv2iV
 25. 5T8qarffjc429N9GZYUAut6JFRj7yasCuSZmSxneBqAU
@@ -54,24 +47,18 @@ Inconsistent Total Amount: calculated=24.9, real=27.19
 << Consistency errors >>
 Inconsistent Product 14: quantity=1.0, price=7.0, amount=1.77
 Inconsistent Product 18: quantity=1.0, price=2.0, amount=177.0
-Inconsistent Cash Change: cash=153.94, change=0, paid=0
 Inconsistent Total Amount: calculated=323.19, real=153.94
 29. 6263Lqu2fLMf5JqW79xzo16LnALPVh68DV1dwMzSVwni
 30. 65XpnQziuianzawf45nAC6V9TvMidVniJ65DbGTeJQs4
 31. 6Gt4J4XHQEjGrWJPMEvNUcVGpeLK3VfmXZ6EsWrm3bso
 32. 6PT9Zz9mvnATL1hQ9UpmFyz2syWKQ8cfbbYJFVQHMRJL
-<< Consistency errors >>
-Inconsistent Cash Change: cash=21.33, change=0, paid=0
 33. 6S99n1goWymAPCitbEpJkxTgihay7YDuAH17JLW5kmSK
 34. 6SjKdCHygaozsnG9dDoYecpEBBi3h59XnmVCfwpxsR8X
 << Consistency errors >>
 Inconsistent Product 4: quantity=11.0, price=11.98, amount=1.27
 35. 6emsi4URQaPwtS4D5cCJJT1cgUMsgyepFSFApmukWvuT
-<< Consistency errors >>
-Inconsistent Cash Change: cash=4.27, change=0, paid=0
 36. 7W7ZLvJZSAgUmjKRaJKbga5HXb4WAzFANWqdFrqAGwkr
 << Consistency errors >>
-Inconsistent Product 3: quantity=7.0, price=0.85, amount=0.85
 Inconsistent Total Amount: calculated=8.33, real=11.93
 37. 7qMBFjj9rM27Cz9brWZuAWAaYHgrVeaRaQ44p1NokHj2
 << Consistency errors >>
@@ -84,7 +71,6 @@ Inconsistent Cash Change: cash=49.24, change=50.76, paid=1100.0
 Inconsistent Total Amount: calculated=44.18, real=49.24
 40. 8J3jwJr94LKa62SLaeuUtH9K8LnyfmWrpm8RrDotdaTk
 << Consistency errors >>
-Inconsistent Product 7: quantity=7.0, price=1.4, amount=1.4
 Inconsistent Total Amount: calculated=61.53, real=63.47
 41. 8JW3YHuksmvgduuFUXMo3YdPzqZZiKiGBFQGeWiMqMxJ
 42. 8ofcmJhYPcaZ
@@ -125,22 +111,14 @@ Inconsistent Cash Change: cash=17.26, change=82.74, paid=1100.0
 60. C5rDXqVkZdtiUZnc5zTWKPBm4ypVa8vphwKX4ZnYYF5P
 61. C8KCC49fnTU5FZMbaUhJAL7wqqgjDMneQEFd22AGTNo
 62. CCPN4Hg9uyRRn3FT6kiJwfeXiYz6HQQcQGEzdHqaLtdo
-<< Consistency errors >>
-Inconsistent Cash Change: cash=6.33, change=0, paid=0
 63. CDu193NGGZ9iezsfXYhNRgeDYLe4XXtafsCSgeJYtMz4
 64. D5EW1fsHMhq8kv2NoMoB81ZJbUQ8c4u9Da3jJ7kwmko
 65. DFMbWAtHcQQM2UpTaZpemgxyq5zjrYf4D1Np72XZ1hKn
-<< Consistency errors >>
-Inconsistent Cash Change: cash=12.75, change=0, paid=0
 66. Dh8hsAoFVGFcyEzwYdmmykoZZZPhm5LeVe9r9VZQy9AH
 67. DjM1pw15EDGA3aiXRZX7oHpxEV3mKhdKKcKdihhdEa1M
 68. DnE711ghyQHjGtkCQXt5k4VS2FLbobpn93mJ6WGKotDZ
 69. E7jGXVfpcKZWFiu41GTejVURj2SK39JMN2VDRroH5dBT
-<< Consistency errors >>
-Inconsistent Cash Change: cash=3.93, change=0, paid=0
 70. EPszcWAvJNCGw3HwEYb8PE9Ap3ewAj2TxLN92cdTmLSo
-<< Consistency errors >>
-Inconsistent Product 3: quantity=7.0, price=3.2, amount=3.2
 71. ER9s8qbNzEsyVcj2vhRi7yJGxsUgKkVvE7fydNX2Mz7y
 72. EVXB15ma1sqz6aP6MzZoFtXU4mKNeXh7W66BRGyJWADf
 << Consistency errors >>
@@ -148,19 +126,11 @@ Inconsistent Product 1: quantity=1.0, price=11.9, amount=119.0
 Inconsistent Total Amount: calculated=119.0, real=11.9
 73. EWvtdGBGWzFpFmBNiGAZpqgtL77saVEbanLeZ8SK8ox7
 74. EkwZnbpgUA5aR5mpT2PMKMF7r4aDcMMb5pb5UGLkX8YR
-<< Consistency errors >>
-Inconsistent Cash Change: cash=15.34, change=0, paid=0
 75. F7kDmJ7BXrDU3CJ8YAVhR4z9RjCcCNGSsA2QDhKDmJ4b
-<< Consistency errors >>
-Inconsistent payment parts: cashless=271.0, cash=0.0, bonus=0.0, prepayment=0.0, credit=0.0, total=2.71
 76. FKUTcf4zKYYf918jz5ur5DH8SbSeEkPugFZt96fbU86U
-<< Consistency errors >>
-Inconsistent Cash Change: cash=4.0, change=0, paid=0
 77. G1fSXKgnBVqXEWQBpEUFRdhoia3252EHeYLG7HGbgMJK
 78. G5Wj3G81a5MCa7rZvq9Gqy2pAyUAQx9TrT5YVr2YiUTY
 79. G8926FUnuaTySCLFqsdUeqyMfdheynJN5tjmynAXJZcj
-<< Consistency errors >>
-Inconsistent Cash Change: cash=5.04, change=0, paid=0
 80. GWC8nazyCpt88pu4fNmfMf7NLafTGQrfg2r5WtiwL27X
 81. Gh435awX2mqvPi4AYXzeAmrHEVkBrNYAHKNj4Q2t6Mjq
 82. GpEqeV9sg1rHHbdQ4amwdNco4VRoLhVhM2rwEG6kJHya
@@ -173,7 +143,6 @@ Inconsistent Total Amount: calculated=5.4, real=7.2
 86. H4WVZuSFXuiW6qDHizhkWRjEQC2YZHQpD5tL1UtYzuXZ
 87. HFr13r7MRAHJkcbxgh7MBUGBBQkKcAx6ZC1Tuc1aX6Ts
 << Consistency errors >>
-Inconsistent Cash Change: cash=2.1, change=0, paid=0
 Inconsistent Total Amount: calculated=0.8, real=2.1
 88. HeyZR3LzAZ4WzCFoyDGLnoPJffLjyK2iGMxKxK2ohZ7
 89. HmLFKUfVkUqED4TngAgQGFRLZScdRaUh8JeqrWDkejd4
@@ -193,11 +162,8 @@ Inconsistent Total Amount: calculated=0.6, real=5.53
 95. gp6s2gJSRTkYLdbPgWNmmTUcwg54ofnzEU1QKEyMXfh
 96. qJa6ZdoJ254kBKMLmbrUgKJWsipV21nNKcmMVtKyeXF
 97. qKFZoDJa9Zm3pL5Uo8Jz9QwFYHbyeyBzoxM5m7wPnbH
-<< Consistency errors >>
-Inconsistent Cash Change: cash=6.58, change=0, paid=0
 98. smCRKc7ECvCDtpvqCDAWnZz1NZGvLfdeGgPZXQxbQj3
 << Consistency errors >>
-Inconsistent Product 2: quantity=7.0, price=1.4, amount=1.4
 Inconsistent Total Amount: calculated=9.29, real=10.79
 99. wPeLM3wvuBUCQn4TMN5ZQZvheV7XuQg97meruVsqRVT
 100. zkzC4ojjonxmK41uBS3xJp38JbUCWEFtyvMbBzip7my
@@ -1524,7 +1490,7 @@ RECEIPT             : 7qMBFjj9rM27Cz9brWZuAWAaYHgrVeaRaQ44p1NokHj2
 Object Name         : RAHAT AİLƏ MARKET NEFTÇİLƏR 4
 Address             : AZ1118 BAKI ŞƏHƏRİ NİZAMİ RAYONU QARA QARAYEV PR. ev.62 m-
 Code                : 1701102351-16005
-Tax Payer           : "ANC GROUP" MƏHDUD MƏSULİYYƏTLİ CamiyaTi
+Tax Payer           : "ANC GROUP" MƏHDUD MƏSULİYYƏTLİ CƏMİYYƏTİ
 TIN                 : 1701102351
 Receipt #           : 357721
 Cashier             : Gülər Cəfərova Ceyhun
@@ -3605,5 +3571,7 @@ Credit              : 0.00
 <<Errors>>
 
 <<Traceback>>
+
+Receipts with consistency errors: 24
 
 Process finished with exit code 0

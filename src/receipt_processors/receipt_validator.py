@@ -36,11 +36,16 @@ class ReceiptValidator:
         for i in range(len(products)):
             product = products[i]
             if not ReceiptValidator.check_equality(product.quantity * product.price, product.amount):
-                errors.append('Inconsistent Product {0}: quantity={1}, price={2}, amount={3}'.format(
-                    i+1, product.quantity, product.price, product.amount
-                ))
-                if update:
-                    product.amount = product.quantity * product.price
+                # Character 1 may have been recognized as 7
+                if product.quantity == 7 and product.price == product.amount:
+                    if update:
+                        product.quantity = 1
+                else:
+                    errors.append('Inconsistent Product {0}: quantity={1}, price={2}, amount={3}'.format(
+                        i+1, product.quantity, product.price, product.amount
+                    ))
+                    if update:
+                        product.amount = product.quantity * product.price
         return errors
 
     @staticmethod
@@ -63,6 +68,10 @@ class ReceiptValidator:
     def validate_payment_types(receipt: Receipt, update: bool):
         errors = []
         payment_info = receipt.payment_info
+        if (payment_info.paid_cash_amount == 0
+                and payment_info.change_cash_amount == 0
+                and (payment_info.cash_payment_amount + payment_info.cashless_payment_amount) != 0):
+            return errors
         if not ReceiptValidator.check_equality(payment_info.cash_payment_amount + payment_info.change_cash_amount,
                                                payment_info.paid_cash_amount):
             errors.append('Inconsistent Cash Change: cash={0}, change={1}, paid={2}'.format(
