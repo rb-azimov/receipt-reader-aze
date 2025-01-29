@@ -29,6 +29,11 @@ def main():
         'JDbiy1aCSKJn'
     ]
 
+    fiscal_codes = [
+        'A3S3ozruypPLxd2CruLJeFZdoDrpifzUDvgcBTjSixYW',
+        '9y7QKhsGuK9zB2ftxWxMZoW64DcgeJEh8VRVrxFwchQy'
+    ]
+
     fiscal_codes = [fiscal_code.strip() for fiscal_code in fiscal_codes]
     fiscal_codes = list(set(fiscal_codes))
     fiscal_codes.sort()
@@ -62,7 +67,7 @@ def main():
                     print(error)
         except Exception as e:
             print(f"! An error occurred (on {fiscal_code}): {e}")
-            traceback.print_exc()
+            # traceback.print_exc()
             errors.append(e)
             error_tracebacks.append(traceback.format_exc())
             fiscal_codes_with_error.append(fiscal_code)

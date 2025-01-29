@@ -58,6 +58,8 @@ class ReceiptService:
         image_file = os.path.join(receipt_images_folder, image_name)
         cv2.imwrite(image_file, image_ekassa_gray)
 
+    # image_ekassa_gray = Util.resize_image(image_ekassa_gray, 2)
+
     ApplicationPropertiesService.current_receipt_fiscal_code = fiscal_code
     ApplicationPropertiesService.current_receipt_processing_start_date_time = Util.prepare_current_datetime()
     image_general, image_products, image_payment, product_part_rect_xs_list = ReceiptBuilder.split_receipt_logical_parts(image_ekassa_gray)
@@ -174,6 +176,29 @@ class ReceiptService:
     ocr_property = ApplicationPropertiesService.ocr_properties.quantities_ocr_property
     quantities, df_quantities = ReceiptUtil.perform_ocr_obtain_values(image=clear_quantities_part,
                 ocr_config=ocr_property.config, return_type = float, lang = ocr_property.lang)
+    print('Num quantities:', len(quantities))
+    print(df_quantities.iloc[:,-6:])
+
+    # <>
+    _, horizontal_hist_normalized = ReceiptUtil.calculate_histograms(clear_quantities_part, is_cleaning_applied=False)
+    rect_ys_list = ReceiptUtil.determine_vertical_splitting_rectangles(clear_quantities_part, horizontal_hist_normalized,
+                                                                       threshold_scale=0.01,
+                                                                       min_diff=7)
+    rect_ys_list = list(set(rect_ys_list))
+    rect_ys_list = [(pair[0].item(), pair[1].item()) for pair in rect_ys_list]
+    rect_ys_list.sort()
+    print('rect_ys_list:', rect_ys_list)
+    # </>
+
+    image_temp = np.copy(clear_quantities_part)
+    for index, row in df_quantities.iterrows():
+      x1 = row.left - 2
+      x2 = x1 + row.width + 2
+      y1 = row.top - 2
+      y2 = y1 + row.height + 2
+      cv2.rectangle(image_temp, (x1, y1), (x2, y2),
+                    color = (0,0,0), thickness=1)
+      ApplicationPropertiesService.logger.log_image('Quantities-Labeled', image_temp)
 
     # Handle very small number segments when there is one number
     if df_quantities.shape[0] == 0:

@@ -208,6 +208,8 @@ class ReceiptBuilder:
     prices = []
     for i in range(len(price_images)):
       price_image = price_images[i]
+      # price_image = Util.resize_image(price_image, 2)
+
       ocr_property = ApplicationPropertiesService.ocr_properties.prices_ocr_property
       df_price = ReceiptUtil.perform_ocr(price_image,
                                          ocr_config=ocr_property.config, lang=ocr_property.lang)
@@ -242,6 +244,8 @@ class ReceiptBuilder:
     amounts = []
     for i in range(len(amount_images)):
       amount_image = amount_images[i]
+      # amount_image = Util.resize_image(amount_image, 2)
+
       ocr_property = ApplicationPropertiesService.ocr_properties.amounts_ocr_property
       df_amount = ReceiptUtil.perform_ocr(amount_image, ocr_config=ocr_property.config,
                                          lang=ocr_property.lang)
