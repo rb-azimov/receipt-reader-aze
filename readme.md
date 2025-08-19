@@ -1,4 +1,4 @@
-# receipt-reader-ai
+# AzeReceiptReader.AI
 
 is intended to be a Telegram bot-based software for processing receipt images customers uploaded.
 
