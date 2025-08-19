@@ -1,4 +1,4 @@
-#receipt-reader-ai
+# receipt-reader-ai
 
 is intended to be a Telegram bot-based software for processing receipt images customers uploaded.
 
